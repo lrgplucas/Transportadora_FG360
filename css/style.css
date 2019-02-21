@@ -1,0 +1,433 @@
+body{
+    font-family: "Lato", Helvetica, sans-serif;
+    padding-top: 4rem;
+}
+
+.navbar-custom{
+    background-color: #fff;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .3);
+}
+
+.form-control-custom{
+    border: 0;
+    border-radius: 10px;
+    transition: border .5s ease;
+}
+
+.form-control-custom:focus{
+    border: 1px solid #fab432;
+}
+
+.resize-none{
+    resize: none;
+}
+
+.btn-custom{
+    background-color: #fab432;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: all .5s ease-in;
+}
+
+.btn-custom-secondary{
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: all .5s ease-in;
+}
+
+.btn-custom:hover{
+    background-color: #d1d1d1;
+    color: #fff;
+}
+
+.btn-custom-secondary:hover{
+    background-color: #919191;
+    color: #fff;
+}
+
+.navbar-toggler{
+    border-right: 1px solid #d1d1d1;
+    border-radius: 0;
+    padding: auto;
+}
+
+.toggler-icon-color{
+    color: #fab432;
+}
+
+.nav-img{
+    height: 80%;
+    width: 80%;
+}
+
+.navbar-custom .nav-link{
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all .5s ease;
+    color: #000;
+    font-weight: 700;
+}
+
+.navbar-custom .nav-btn{
+    width: 100%;
+}
+.navbar-custom .nav-link:hover{
+    color: #fab432;
+}
+
+@media screen and (min-width: 992px){
+
+    .navbar-custom .nav-link{
+        font-weight: 400;
+    }
+
+    .navbar-custom .nav-link:hover{
+        color: #fab432;
+        font-weight: 700;
+    }
+
+    .navbar-custom .nav-btn{
+        width: auto;
+    }
+}
+
+.hero-jumbotron{
+    background-image: url(../imgs/jumbo/overlay_01.png), url(../imgs/jumbo/caminhao_01.jpg);
+    background-position: right, center right;
+    background-size: cover;
+    height: 400px;
+}
+
+.hero-title{
+    color: #fff;
+    font-size: 1.75rem;
+    margin-top: 120px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+}
+
+.hero-text{
+    color: #fff;
+    font-size: .7rem;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+}
+
+@media screen and (min-width: 768px){
+    .hero-jumbotron{
+        background-position: right, bottom right;
+    }
+
+    .hero-title{
+        font-size: 3rem;
+        margin-top: 100px;
+    }
+
+    .hero-text{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .hero-jumbotron{
+        background-position: right, bottom top;
+    } 
+}
+
+.content-home .card{
+    border: 0;
+    border-radius: 0;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-home .card-cliente{
+    background-color: #000;
+}
+
+.content-home .card-rastreamento{
+    background-color: #fab432;
+}
+
+.content-home .content-card-text{
+    color: #fff;
+}
+
+.content-home .card-cliente .content-card-title{
+    color: #fff;
+    font-weight: 700;
+}
+
+.content-home .card-rastreamento .content-card-title{
+    font-weight: 700;
+}
+
+.content-home-input{
+    border: 0;
+    border-radius: 0;
+    background-color: #f0f0f0;
+    display: block;
+    padding: 10px 15px;
+    margin: 10px auto;
+    width: 300px;
+    font-size: 0.8rem;
+}
+
+.content-home-input:focus{
+   outline: none;
+}
+
+.content-home .card-body .btn{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.servicos-jumbotron{
+    background-image: linear-gradient(to right, transparent 60%, black 80%), url(../imgs/servicos/equipe_servicos_sm_01.png);
+    background-position: left, center;
+    background-size: 100%, cover;
+    height: 400px;
+}
+
+.servicos-home .servicos-home-title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 160px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+}
+
+.servicos-home .servicos-home-text{
+    color: #fff;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+    font-size: .8rem;
+    text-align: right;
+    margin-right: 5%;
+}
+
+.servicos-jumbotron .servicos-home-btn{
+   margin-right: 45%;
+}
+
+@media screen and (min-width: 768px){
+    .servicos-jumbotron .servicos-home-btn{
+        margin-right: 35%;
+     }
+}
+
+@media screen and (min-width: 992px){
+    .servicos-jumbotron .servicos-home-btn{
+        margin-right: 23%;
+     }
+}
+
+.time-home .time-home-title{
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.time-home .card-bottom{
+    position: relative;
+}
+
+.time-home .card .time-home-card-cargo{
+    height: 100px;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.time-home .time-home-card-cargo{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.time-home .card-img{
+    border-radius: 0;
+}
+
+.time-home .time-home-card{
+    border: 0;
+    border-radius: 0;
+}
+
+.time-home .time-home-cargo{
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    color: #fab432;
+    font-weight: 700;
+}
+
+.time-home .time-home-email{
+    font-size: 1rem;
+    color: #fff;
+}
+
+@media screen and (min-width: 768px){
+    .time-home .time-home-card-cargo{
+        visibility: visible;
+    }
+
+    .time-home .card .time-home-card-cargo{
+        height: 60px;
+    }
+
+    .time-home .time-home-cargo{
+        font-size: .75rem;
+    }
+
+    .time-home .time-home-email{
+        font-size: .75rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .time-home .card .time-home-card-cargo{
+        height: 100px;
+    }
+
+    .time-home .time-home-cargo{
+        font-size: 1.25rem;
+    }
+
+    .time-home .time-home-email{
+        font-size: 1rem;
+    }
+}
+
+.contato-home{
+    background-color: #e1e1e1;
+}
+
+.contato-home-title{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contato-home-label{
+    font-size: .9rem;
+
+}
+
+.clientes-home{
+    height: 100%;
+    background-image: url(../imgs/clientes/fundo_clientes.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position: cover;
+}
+
+.clientes-home-title{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.carousel-control-next,
+.carousel-control-prev{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: #fab432;
+    opacity: 1;
+    border-radius: 50px;
+}
+
+.clientes-home-img-lg{
+    width: 100%;
+}
+
+@media screen and (max-width: 576px){
+    #clientesHomeCarouselMD{
+        display: none;
+    }
+
+    .clientes-home-img-lg{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 576px){
+    #clientesHomeCarouselMD{
+        display: none;
+    }
+
+    .clientes-home-img-lg{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px){
+    #clientesHomeCarouselMD{
+        display: block;
+    }
+
+    #clientesHomeCarouselSM{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #clientesHomeCarouselMD{
+        display: none;
+    }
+
+    #clientesHomeCarouselSM{
+        display: none;
+    }
+
+    .clientes-home-img-lg{
+        display: block;
+    }
+}
+
+.footer{
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+}
+
+.footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-link{
+    padding-left: 1rem;
+}
+
+.footer-copy{
+    margin-top: 5px;
+    font-size: .7rem;
+}
+
+.footer-img{
+    width: 70%;
+    height: 70%;
+}

@@ -180,8 +180,8 @@ body{
     display: block;
     padding: 10px 15px;
     margin: 10px auto;
-    width: 300px;
     font-size: 0.8rem;
+    width: 75%;
 }
 
 .content-home-input:focus{

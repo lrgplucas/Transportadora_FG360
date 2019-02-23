@@ -32,6 +32,8 @@ body{
     font-weight: 400;
     font-size: 1rem;
     transition: all .5s ease-in;
+    min-width: auto;
+    box-sizing: border-box;
 }
 
 .btn-custom-secondary{
@@ -42,6 +44,8 @@ body{
     font-weight: 400;
     font-size: 1rem;
     transition: all .5s ease-in;
+    min-width: auto;
+    box-sizing: border-box;
 }
 
 .btn-custom:hover{
@@ -181,7 +185,7 @@ body{
     padding: 10px 15px;
     margin: 10px auto;
     font-size: 0.8rem;
-    width: 70%;
+    width: 75%;
 }
 
 .content-home-input:focus{
@@ -194,10 +198,17 @@ body{
 }
 
 .servicos-jumbotron{
-    background-image: linear-gradient(to right, transparent 60%, black 80%), url(../imgs/servicos/equipe_servicos_sm_01.png);
-    background-position: left, center;
+    background-image: linear-gradient(to right, transparent 60%, black 80%), url(../imgs/servicos/equipe_servicos_sm_02.png);
+    background-position: left, left center;
     background-size: 100%, cover;
+    background-repeat: no-repeat;
     height: 400px;
+}
+
+@media screen and (min-width: 992px){
+    .servicos-jumbotron{
+        background-image: linear-gradient(to right, transparent 60%, black 80%), url(../imgs/servicos/equipe_servicos_lg_02.png);
+    }
 }
 
 .servicos-home .servicos-home-title{

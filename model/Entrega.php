@@ -18,6 +18,7 @@ class Entrega {
     public $docCli;
     public $nf;
     public $produto;
+    public $codRastreio;
 
     //METODOS
 
@@ -212,6 +213,31 @@ class Entrega {
 
         return $this;
     }
+
+    /**
+     * Get the value of codRastreio
+     *
+     * @return mixed
+     */
+    public function getCodRastreio()
+    {
+        return $this->codRastreio;
+    }
+
+    /**
+     * Set the value of codRastreio
+     *
+     * @param mixed codRastreio
+     *
+     * @return self
+     */
+    public function setCodRastreio($codRastreio)
+    {
+        $this->codRastreio = $codRastreio;
+
+        return $this;
+    }
+
 
 }
 

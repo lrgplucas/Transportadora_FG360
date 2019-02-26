@@ -269,9 +269,13 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
 }
 
+.time-home .time-home-card-cargo:hover{
+    opacity: 1;
+}
 .time-home .card-img{
     border-radius: 0;
 }
@@ -295,10 +299,6 @@ body{
 }
 
 @media screen and (min-width: 768px){
-    .time-home .time-home-card-cargo{
-        visibility: visible;
-    }
-
     .time-home .card .time-home-card-cargo{
         height: 60px;
     }

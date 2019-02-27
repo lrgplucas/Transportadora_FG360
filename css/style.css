@@ -237,13 +237,13 @@ body{
     }
 
     .servicos-jumbotron .servicos-home-btn{
-        margin-right: 25%;
+        margin-right: 17%;
      }
 }
 
 @media screen and (min-width: 992px){
     .servicos-jumbotron .servicos-home-btn{
-        margin-right: 17%;
+        margin-right: 10%;
      }
 }
 

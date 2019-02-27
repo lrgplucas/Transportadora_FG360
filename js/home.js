@@ -40,8 +40,9 @@ $(document).ready(function(){
 
 //AJAX REQUEST 
 function sendEmail(body){
+    
     $.post( "./helper/PHPMailer/src/MailHome.php",body ,function( data ) {
-        alert(data);
+        toastr.success("Email enviado com sucesso!","Transportadora FG-360");
     });
 
 }

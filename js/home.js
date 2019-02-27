@@ -9,6 +9,7 @@ $(document).ready(function(){
 
     //ADD LISTENERS
 
+    //ENVIO DO EMAIL
     $("#btnEmail").click(function(){
 
        //ATRIBUTOS
@@ -30,8 +31,16 @@ $(document).ready(function(){
            "data":jsonEmail
        }
 
-       //ENVIAR EMAIL
        sendEmail(jsonEmail);
+    });
+
+    //FIX PARA IPHONE EFEITO HOVER
+    $(".time-home-card-cargo").on("touchstart",function(e){
+        $(this).fadeTo("slow", 1);
+    });
+
+    $(".time-home-card-cargo").on("touchend",function(e){
+        $(this).fadeTo(1200, 0); 
     });
 
 });

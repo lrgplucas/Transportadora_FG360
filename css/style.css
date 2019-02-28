@@ -198,47 +198,75 @@ body{
 }
 
 .servicos-jumbotron{
-    background-image: linear-gradient(to right, transparent 50%, black 60%), url(../imgs/servicos/equipe_servicos_sm_02.png);
-    background-position: left, left center;
-    background-size: 100%, cover;
+    background-image: url(../imgs/servicos/servicos_sm_01.png);
     background-repeat: no-repeat;
-    height: 400px;
-}
-
-@media screen and (min-width: 992px){
-    .servicos-jumbotron{
-        background-image: linear-gradient(to right, transparent 50%, black 60%), url(../imgs/servicos/equipe_servicos_lg_02.png);
-    }
+    background-size: cover;
+    height: 220px;
 }
 
 .servicos-home .servicos-home-title{
+    margin-top: 4rem;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #fff;
-    text-align: right;
-    margin-top: 160px;
     text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+    margin-bottom: .2rem;
 }
 
 .servicos-home .servicos-home-text{
     color: #fff;
     text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
     font-size: .6rem;
-    text-align: right;
+    margin-bottom: .2rem;
 }
 
 .servicos-jumbotron .servicos-home-btn{
-   margin-right: 15%;
+    width: auto;
+    font-size: .6rem;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 @media screen and (min-width: 768px){
+    .servicos-jumbotron{
+        background-image: url(../imgs/servicos/servicos_md_01.png);
+        height: 456px;
+    }
+
+    .servicos-home .servicos-home-title{
+        margin-top: 9rem;
+        font-size: 2.2rem;
+    }
+
     .servicos-home .servicos-home-text{
-        font-size: .8rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     .servicos-jumbotron .servicos-home-btn{
-        margin-right: 17%;
-     }
+        font-size: 1rem;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .servicos-jumbotron{
+        background-image: url(../imgs/servicos/servicos_lg_01.png);
+        background-position: 30%;
+    }
+
+    .servicos-home .servicos-home-title{
+        margin-left: 44%;
+    }
+
+    .servicos-home .servicos-home-text{
+        margin-left: 44%;
+    }
+
+    .servicos-jumbotron .servicos-home-btn{
+        margin-left: 44%;
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -444,6 +472,6 @@ body{
 }
 
 .footer-img{
-    width: 80%;
-    height: 80%;
+    width: auto;
+    height: auto;
 }

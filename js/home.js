@@ -36,11 +36,11 @@ $(document).ready(function(){
 
     //FIX PARA IPHONE EFEITO HOVER
     $(".time-home-card-cargo").on("touchstart",function(e){
-        $(this).fadeTo("slow", 1);
+        //$(this).fadeTo(700, 1);
     });
 
     $(".time-home-card-cargo").on("touchend",function(e){
-        $(this).fadeTo(1200, 0); 
+        // $(this).fadeTo(1200, 0); 
     });
 
 });

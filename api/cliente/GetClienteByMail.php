@@ -19,6 +19,10 @@ $returnedCliente = ClienteController::getClienteByEmail($emailInSession);
 
 http_response_code(200);
 
+//SET O ID NA SESSÃO
+$id = $returnedCliente->getId();
+$_SESSION['id_cli'] = $id;
+
 echo json_encode($returnedCliente);
 
 ?>

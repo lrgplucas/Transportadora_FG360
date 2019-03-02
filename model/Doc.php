@@ -3,7 +3,7 @@
 /*
 * author : joao
 * data : 20/02/2019
-* classe : Entrega
+* classe : Doc
 */
 
 class Doc {
@@ -15,6 +15,7 @@ class Doc {
   public $entrega;
   public $tipo;
   public $descricao;
+  public $id_cliente;
 
 
   //METODOS
@@ -162,6 +163,26 @@ class Doc {
         return $this;
     }
 
+
+  /**
+   * Get the value of id_cliente
+   */ 
+  public function getId_cliente()
+  {
+    return $this->id_cliente;
+  }
+
+  /**
+   * Set the value of id_cliente
+   *
+   * @return  self
+   */ 
+  public function setId_cliente($id_cliente)
+  {
+    $this->id_cliente = $id_cliente;
+
+    return $this;
+  }
 }
 
 

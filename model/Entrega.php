@@ -13,12 +13,10 @@ class Entrega {
     public $id;
     public $dataCriacao;
     public $dataPrevisao;
-    public $emailCli;
-    public $nomeCli;
-    public $docCli;
     public $nf;
     public $produto;
     public $codRastreio;
+    public $id_cliente;
 
     //METODOS
 
@@ -94,77 +92,6 @@ class Entrega {
         return $this;
     }
 
-    /**
-     * Get the value of Email Cli
-     *
-     * @return mixed
-     */
-    public function getEmailCli()
-    {
-        return $this->emailCli;
-    }
-
-    /**
-     * Set the value of Email Cli
-     *
-     * @param mixed emailCli
-     *
-     * @return self
-     */
-    public function setEmailCli($emailCli)
-    {
-        $this->emailCli = $emailCli;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of Nome Cli
-     *
-     * @return mixed
-     */
-    public function getNomeCli()
-    {
-        return $this->nomeCli;
-    }
-
-    /**
-     * Set the value of Nome Cli
-     *
-     * @param mixed nomeCli
-     *
-     * @return self
-     */
-    public function setNomeCli($nomeCli)
-    {
-        $this->nomeCli = $nomeCli;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of Doc Cli
-     *
-     * @return mixed
-     */
-    public function getDocCli()
-    {
-        return $this->docCli;
-    }
-
-    /**
-     * Set the value of Doc Cli
-     *
-     * @param mixed docCli
-     *
-     * @return self
-     */
-    public function setDocCli($docCli)
-    {
-        $this->docCli = $docCli;
-
-        return $this;
-    }
 
     /**
      * Get the value of Nf
@@ -239,6 +166,26 @@ class Entrega {
     }
 
 
+
+    /**
+     * Get the value of id_cliente
+     */ 
+    public function getId_cliente()
+    {
+        return $this->id_cliente;
+    }
+
+    /**
+     * Set the value of id_cliente
+     *
+     * @return  self
+     */ 
+    public function setId_cliente($id_cliente)
+    {
+        $this->id_cliente = $id_cliente;
+
+        return $this;
+    }
 }
 
 ?>

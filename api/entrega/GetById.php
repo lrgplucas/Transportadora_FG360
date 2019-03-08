@@ -14,7 +14,7 @@ $id = $_GET['id'];
 $entregas = EntregaController::getEntregaById($id);
 
 //VALIDAÇÃO
-if($entregas->count() > 0){
+if(count($entregas) > 0){
 
   //SET O HTTP STATUS CODE PARA 200
   http_response_code(200);

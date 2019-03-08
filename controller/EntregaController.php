@@ -143,7 +143,7 @@ class EntregaController
   public static function parseResults($resulSet)
   {
 
-    $entregas = new ArrayObject();
+    $entregas = array();
 
     foreach ($resulSet as $item) {
 
@@ -158,7 +158,7 @@ class EntregaController
       $newEntrega->setNf($item['nf']);
       $newEntrega->setCodRastreio($item['cod_rastreio']);
 
-      $entregas->append($newEntrega);
+      array_push($entregas,$newEntrega);
     }
 
     return $entregas;

@@ -106,6 +106,62 @@ body{
     }
 }
 
+.dropdown-menu {
+    width: 100%;
+    border-radius: 0px;
+    border-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .3);
+}
+
+.dropdown-profile a{
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-menu a:hover{
+    background-color: #d1d1d1;
+}
+
+.dropdown-profile-avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown-profile-text{
+    display: none;
+    padding: 0 5px;
+    font-size: .8rem;
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+.icon-dropdown{
+    display: none;
+}
+
+.dropdown-profile .icon-logout{
+    height: auto;
+    width: auto;
+}
+
+@media screen and (min-width:992px){
+    .dropdown-profile-text{
+        display: flex;
+    }
+    .icon-dropdown{
+        display: flex;
+        height: 10px;
+        width: 10px;
+    }
+
+    .dropdown-profile{
+        margin-left: 10px;
+        padding: 0 5px;
+        border-left: 1px solid #d1d1d1;
+        border-right: 1px solid #d1d1d1;
+    }
+}
+
 .hero-jumbotron{
     background-image: url(../imgs/jumbo/overlay_01.png), url(../imgs/jumbo/caminhao_01.jpg);
     background-position: right, center right;
@@ -474,4 +530,119 @@ body{
 .footer-img{
     width: auto;
     height: auto;
+}
+
+.cliente-content{
+    background-color: #e1e1e1;
+    padding: 25px 0;
+}
+
+.cliente-content .cliente-content-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cliente-content-container{
+    background-color: #fff;
+    min-height: 400px;
+}
+
+.cliente-content-consultar{
+    background-color: #fab432;
+    height: 75px;
+}
+
+.cliente-content-label{
+   color: #fff;
+   font-size: .6rem;
+}
+
+.cliente-content-select{
+    max-width: 85px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 0;
+    background-color: #e1e1e1;
+}
+
+.cliente-content-table{
+    font-size: 0.7rem;
+}
+
+.cliente-content-table .cliente-content-link{
+    border: 1px solid #fab432;
+    padding: 2px 5px;
+    color: #fab432;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+
+@media screen and (min-width: 768px){
+    .cliente-content{
+        min-height: 85vh;
+    }
+
+    .cliente-content-label{
+        font-size: 1.2rem;
+     }
+
+     .cliente-content-table{
+        font-size: 1.2rem;
+    }
+
+    .cliente-content-table .cliente-content-link{
+        display: inline-block;
+    }
+}
+
+.modal-login{
+    background-color: #000;
+}
+
+.modal-login-title{
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.modal-login-text{
+    color: #fff;
+    text-align: center;
+    font-size: .7rem;
+}
+
+.modal-login-label{
+    color: #fff;
+    font-size: 1rem;
+}
+
+.modal-login-input{
+    border: 0;
+    border-radius: 0;
+    padding: 5px 10px;
+}
+
+.modal-login-input:focus{
+    border: 1px solid #fab432;
+    border-radius: 0;
+}
+
+.modal-login .close{
+    opacity: 1;
+    text-shadow: none;
+}
+
+.modal-login-close{
+    color: #fab432;
+}
+
+.modal-login .modal-header{
+    border-bottom: 0;
+}
+
+.modal-login .modal-footer{
+    border-top: 0;
 }

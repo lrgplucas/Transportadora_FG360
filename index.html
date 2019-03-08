@@ -30,14 +30,14 @@
                         <span class="sr-only">Abrir ou fechar menu</span> <span class="toggler-icon-color">&#9776;</span>
                     </span>
                 </button>
-                <a class="navbar-brand mx-auto" href="#">
+                <a class="navbar-brand mx-auto" href="index.html">
                     <img src="imgs/logotipo.png" class="nav-img" alt="Logotipo FG 360">
                 </a>
                 
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home<span class="sr-only">(Página atual)</span></a>
+                            <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Serviços</a>
@@ -74,10 +74,50 @@
                         <div class="card-body">
                             <h2 class="h5 content-card-title">Sou cliente</h2>
                             <p class="content-card-text">Acesso à faturas, CTE'S e solicitar 2º via de boletos.</p>
-                            <a href="#" class="btn btn-custom">Acessar</a>
+                            <a href="#" class="btn btn-custom" data-toggle="modal" data-target="#modalLogin">Acessar</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal Login -->
+                <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content modal-login">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true"><i class="fas fa-times modal-login-close"></i></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h3 class="modal-login-title" id="modalLoginTitle">Sou cliente</h3>
+                            <p class="modal-login-text">Acesso à faturas, CTE's e solicitar 2º via de boletos</p>
+                            <div class="container">
+                                <div class="col-12">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label for="loginCnpj" class="modal-login-label">CNPJ:</label>
+                                                <input type="text" id="loginCnpj" class="form-control modal-login-input" placeholder="CNPJ">
+                                            </div>
+                                            <div class="col-12 mt-1">
+                                                <label for="loginSenha" class="modal-login-label">Senha:</label>
+                                                <input type="text" id="loginSenha" class="form-control modal-login-input" placeholder="Senha">
+                                                <div class="row justify-content-center">
+                                                    <input type="button" id="btnLogin" class="btn btn-custom text-center mt-2" value="Acessar">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                    </div>
+                </div> <!-- Fim Modal-->
+
+
                 <div class="col-lg-6 mt-2 mt-lg-0">
                     <div class="card text-center card-rastreamento">
                         <div class="card-body">

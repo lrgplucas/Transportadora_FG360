@@ -16,7 +16,7 @@ $id = $_SESSION['id_cli'];
 $results = DocController::getDocByCliente($id);
 
 //VALIDAÇÃO
-if($results->count() > 0){
+if(count($results) > 0){
 
     //SET O HTTP STATUS CODE PARA 200
     http_response_code(200);

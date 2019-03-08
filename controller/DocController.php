@@ -37,7 +37,7 @@ class DocController{
     {
         
       //FIX FAZER RETORNAR UM ARRAY PARA MELHORAR O JSON
-      $docs = new ArrayObject();
+      $docs = array();
   
       foreach ($resulSet as $item) {
   
@@ -50,9 +50,8 @@ class DocController{
         $newDoc->setTipo($item['tipo']);
         $newDoc->setDescricao($item['descricao']);
         $newDoc->setId_cliente($item['cli_id']);
-
-  
-        $docs->append($newDoc);
+        
+        array_push($docs,$newDoc);
       }
   
       return $docs;

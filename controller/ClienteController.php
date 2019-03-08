@@ -71,7 +71,7 @@ class ClienteController{
     //PARSE CLIENTE
     public static function parseCliente($resultSet){
 
-        $arrayClientes = new ArrayObject();
+        $arrayClientes =  array();
 
         foreach ($resultSet as $item) {
 
@@ -84,7 +84,7 @@ class ClienteController{
              $newCliente->setCnpj($item['cnpj']);
              $newCliente->setCpf($item['cpf']);
 
-             $arrayClientes->append($newCliente);
+             array_push($arrayClientes,$newCliente);
         }
 
         return $arrayClientes;

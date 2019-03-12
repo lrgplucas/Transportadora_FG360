@@ -4,8 +4,11 @@
 * classe : CLIENTE JS
 */
 const URL_USU_GET = "./api/cliente/GetClienteByMail.php";
+const URL_LOGOUT = "./api/cliente/Logout.php";
+const URL_CHECK_USU = "./api/cliente/checkUsu.php";
+const URL_HOME = "index.html";
 
-
+//PREENCHE INFORMAÇÕES DO USUÁRIO LOGADO 
 new Vue({
     el: '#appUsu',
     data () {
@@ -22,9 +25,12 @@ new Vue({
 
 $(document).ready(function(){
 
-   // getUsuario();
-    //LISTENERS
+    setInterval(checkUsu(), 3000);
 
+    //LISTENERS
+    $("#spanLogout").click(function(){
+        logout();
+    });
 
 
 
@@ -32,11 +38,22 @@ $(document).ready(function(){
 
 });
 
-//RESPONSÁVEL POR TRAZER O USUÁRIO NA PARTE SUPERIOR DA TELA
-function getUsuario(){
+//Logout
+function logout(){
+    $.get(URL_LOGOUT,function(){
+       window.location = URL_HOME ;
+    }).fail(function(){
+        toastr.error("Erro ao deslogar!","Transportadora FG-360");
+    });
 
-    $.get(URL_USU_GET,function(data){
-        alert(data);
+}
+
+function checkUsu(){
+    $.get(URL_CHECK_USU,function(){
+       
+    }).fail(function(){
+        toastr.error("Usuário nção autorizado!","Transportadora FG-360");
+        window.location = URL_HOME ;
     });
 
 }

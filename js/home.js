@@ -1,7 +1,7 @@
 /*
 * author : joao
 * data : 25/02/2019
-* classe : Entrega API GET ALL
+* classe : HOME JS
 */
 
 

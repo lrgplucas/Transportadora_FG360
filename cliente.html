@@ -57,7 +57,7 @@
                 <div class="dropdown dropdown-profile m-auto ml-lg-2 pt-1">
                     <a href="#" data-toggle="dropdown" class="d-flex justify-content-end align-items-center">
                         <img src="imgs/profile/user_01.png" class="dropdown-profile-avatar rounded-circle align-self-center" alt="Avatar">
-                        <p class="dropdown-profile-text flex-column mb-auto align-self-start">Nome da Empresa<br><small>CNPJ: XX.XXX.XXX/XXXX-XX</small></p>
+                        <p class="dropdown-profile-text flex-column mb-auto align-self-start" id="appUsu">{{info.data.nome}}<br><small>CNPJ: {{info.data.cnpj}}</small></p>
                         <img src="imgs/profile/dropdown.png" class="icon-dropdown align-self-center" alt="">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -203,6 +203,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./toastr/toastr.js"></script>
-    <script src="js/home.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/cliente.js"></script>
+    
 </body>
 </html>

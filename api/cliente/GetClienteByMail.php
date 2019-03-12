@@ -13,7 +13,7 @@ include_once '../../controller/ClienteController.php'; //CONTROLLER
 //O RETORNO SEMPRE SERA 200
 //FIX ME DESEMPENHO 
 
-$emailInSession = $_SESSION['email'];
+$emailInSession = $_SESSION['cnpj'];
 
 $returnedCliente = ClienteController::getClienteByEmail($emailInSession);
 

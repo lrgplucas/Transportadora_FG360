@@ -14,7 +14,7 @@ class ClienteController{
 
 
     //METODO PARA FAZER A AUTENTICAÇÃO
-    public static function authCliente($email , $senha){
+    public static function authCliente($cnpj , $senha){
 
         $generatorConn = new Connection();
 
@@ -24,7 +24,7 @@ class ClienteController{
         //QUERY
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
-        $result = $conn->query("SELECT id FROM cliente WHERE email='".$email."'  AND senha='".$senha."'");
+        $result = $conn->query("SELECT id FROM cliente WHERE cnpj='".$cnpj."'  AND senha='".$senha."'");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{
@@ -39,8 +39,9 @@ class ClienteController{
         }
     }
 
+    //FIX ME : NOME DO METODO
     //METODO PARA TRAZER OS DADOS DO CLIENTE 
-    public static function getClienteByEmail($email){
+    public static function getClienteByEmail($cnpj){
         $generatorConn = new Connection();
 
         //INSTANCIA DA CONEXAO
@@ -49,7 +50,7 @@ class ClienteController{
         //QUERY
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
-        $result = $conn->query("SELECT * FROM cliente WHERE email='".$email."'");
+        $result = $conn->query("SELECT * FROM cliente WHERE cnpj='".$cnpj."'");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{

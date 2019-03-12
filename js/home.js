@@ -7,6 +7,8 @@
 
 $(document).ready(function(){
 
+    var URL_CLIENTE = "cliente.html";
+
     //ADD LISTENERS
 
     //ENVIO DO EMAIL
@@ -34,14 +36,27 @@ $(document).ready(function(){
        sendEmail(jsonEmail);
     });
 
-    //FIX PARA IPHONE EFEITO HOVER
-    $(".time-home-card-cargo").on("touchstart",function(e){
-        //$(this).fadeTo(700, 1);
+
+    //LOGIN
+    $("#btnLogin").click(function(){
+
+        var cnpj  = $("#loginCnpj").val(); 
+        var senha = $("#loginSenha").val();
+        var data  = {
+            "cnpj":cnpj,
+            "senha":senha
+        }
+
+        $.post("./api/cliente/Auth.php", data ,function(){
+            toastr.success("Login realizado com sucesso","Transportadora FG-360");
+            window.location = URL_CLIENTE ;
+        }).fail(function(){
+            toastr.error("CNPJ ou senha inválidos!","Transportadora FG-360");
+        });
+
     });
 
-    $(".time-home-card-cargo").on("touchend",function(e){
-        // $(this).fadeTo(1200, 0); 
-    });
+  
 
 });
 
@@ -54,6 +69,12 @@ function sendEmail(body){
         toastr.success("Email enviado com sucesso!","Transportadora FG-360");
     });
 
+}
+
+function wait2Seconds(){
+    setInterval(function(){
+
+    },4300);
 }
 
 

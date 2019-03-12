@@ -13,25 +13,25 @@ include_once '../../controller/ClienteController.php'; //CONTROLLER
 $data = json_decode(file_get_contents("php://input"));
 
 
-if(!isset($data->email) || !isset($data->senha) ){
+if(!isset($_POST['cnpj']) || !isset($_POST['senha']) ){
     http_response_code(403);
 }
 //DADOS
-$email = $data->email;
-$senha = $data->senha;
+$cnpj = $_POST['cnpj'];
+$senha = $_POST['senha'];
 
-$login = ClienteController::authCliente($email,$senha);
+$login = ClienteController::authCliente($cnpj,$senha);
 
 
 //HTTP 
 
 if($login == true){
 
-    //SET O HTTP STATUS CODE PARA 401
-    http_response_code(401);
+    //SET O HTTP STATUS CODE PARA 202
+    http_response_code(200);
 
     //SETA O EMAIL SEESÃO
-    $_SESSION['email'] = $email;
+    $_SESSION['cnpj'] = $cnpj;
 
 }else {
     //SET O HTTP STATUS CODE PARA 403

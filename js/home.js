@@ -47,6 +47,7 @@ $(document).ready(function(){
             "senha":senha
         }
 
+        //AJAX PARA FAZER AUTENTICAÇÃO E REDIRECIONAR PARA PÁGINA DO CLIENTE
         $.post("./api/cliente/Auth.php", data ,function(){
             toastr.success("Login realizado com sucesso","Transportadora FG-360");
             window.location = URL_CLIENTE ;

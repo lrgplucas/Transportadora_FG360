@@ -81,7 +81,7 @@
             </div>
 
             <div class="row">
-            <table class="table table-striped table-borderless text-center cliente-content-table">
+            <table class="table table-striped table-borderless text-center cliente-content-table" id="appDebitos">
                 <thead>
                     <tr>
                         <th>Vencimento</th>
@@ -90,23 +90,25 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
+                   
                     <tr>
-                        <td>27/02/2019</td>
-                        <td>A vencer</td>
-                        <td>R$ 1.000,00</td>
+                        <td id="tdVencimento">27/02/2019</td>
+                        <td id="tdStatus">A vencer</td>
+                        <td id="tdValor">R$ 1.000,00</td>
                         <td>
-                            <a class="cliente-content-link" href="#">
-                                <i class="far fa-file-alt"></i><span class="pl-1">Fatura</span>
+                            <a class="cliente-content-link" href="./files/SmithChart.pdf" id="linkFatura" download>
+                                <i class="far fa-file-alt" id="tdValor"></i><span class="pl-1">Fatura</span>
                             </a>
-                            <a class="cliente-content-link" href="#">
+                            <a class="cliente-content-link" href="./files/SmithChart.pdf" id="linkCTE" download>
                                 <i class="far fa-file-alt"></i><span class="pl-1">CTE-s</span>
                             </a>
-                            <a class="cliente-content-link" href="#">
+                            <a class="cliente-content-link" href="./files/SmithChart.pdf" id="link2via" download> 
                                 <i class="far fa-file-alt"></i><span class="pl-1">2º via</span>
                             </a>
                         </td>
                     </tr>
+                    <!--
                     <tr>
                         <td>27/02/2019</td>
                         <td>Pago</td>
@@ -171,7 +173,7 @@
                                     <i class="far fa-file-alt"></i><span class="pl-1">CTE-s</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>-->
                 </tbody>
             </table>
             </div>

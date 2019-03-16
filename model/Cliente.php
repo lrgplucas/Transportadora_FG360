@@ -14,6 +14,7 @@ class Cliente{
     public $cnpj;
     public $cpf;
     public $senha;
+    public $tel;
 
 
 
@@ -136,6 +137,26 @@ class Cliente{
     public function setSenha($senha)
     {
         $this->senha = $senha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tel
+     */ 
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Set the value of tel
+     *
+     * @return  self
+     */ 
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
 
         return $this;
     }

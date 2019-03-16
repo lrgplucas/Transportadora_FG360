@@ -84,6 +84,7 @@ class ClienteController{
              $newCliente->setEmail($item['email']);
              $newCliente->setCnpj($item['cnpj']);
              $newCliente->setCpf($item['cpf']);
+             $newCliente->setTel($item['tel']);
 
              array_push($arrayClientes,$newCliente);
         }

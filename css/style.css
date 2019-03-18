@@ -646,3 +646,119 @@ body{
 .modal-login .modal-footer{
     border-top: 0;
 }
+
+.rastrear-jumbotron{
+    background-image: url(../imgs/rastreamento/hero_rastrear_sm.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 220px;
+}
+
+.hero-rastrear .hero-rastrear-title{
+    margin-top: 3.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+    padding-left: 2rem;
+}
+
+.hero-rastrear .hero-rastrear-text{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+    padding-left: 2rem;
+}
+
+@media screen and (min-width:768px){
+    .rastrear-jumbotron{
+        background-image: url(../imgs/rastreamento/hero_rastrear_md.png);
+        background-position: left, bottom;
+        height: 600px;
+    }
+
+    .hero-rastrear .hero-rastrear-title{
+        margin-top: 12rem;
+        font-size: 2.5rem;
+    }
+    
+    .hero-rastrear .hero-rastrear-text{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width:992px){
+    .rastrear-jumbotron{
+        background-image: url(../imgs/rastreamento/hero_rastrear_lg.png);
+        height: 320px;
+    }
+
+    .hero-rastrear .hero-rastrear-title{
+        margin-top: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    .hero-rastrear .hero-rastrear-text{
+        font-size: 2.5rem;
+    }
+}
+
+.rastrear-form{
+    min-height: 35vh;
+}
+
+.rastrear-form .rastrear-form-color{
+    background-color: #d1d1d1;
+    height: 80px;
+}
+
+.rastrear-form .rastrear-form-input{
+    border:0;
+    border-radius: 0;
+    text-transform: uppercase;
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.rastrear-form .rastrear-form-input:focus{
+    border: 1px solid #fab432;  
+}
+
+.rastrear-form .rastrear-form-color-link{
+    background-color: #fab432;
+}
+
+.rastrear-form .rastrear-form-link{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rastrear-form .rastrear-form-title{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px){
+    .rastrear-form .rastrear-form-color{
+        height: 120px;
+    }
+
+    .rastrear-form .rastrear-form-link{
+        font-size: 1.5rem;
+    }
+
+    .rastrear-form .rastrear-form-title{
+        font-size: 1.5rem;
+    }
+}

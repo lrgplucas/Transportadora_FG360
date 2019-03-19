@@ -762,3 +762,79 @@ body{
         font-size: 1.5rem;
     }
 }
+
+.section-status .section-status-title{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.section-status .section-status-text{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: .7rem;
+}
+
+@media screen and (min-width: 992px){
+    .section-status .section-status-text{
+        text-align: right;
+    }
+}
+
+.section-status .section-status-descricao{
+    background-color: #fab432;
+}
+
+.section-status .section-status-descricao-text{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: .8rem;
+    color: #fff;
+}
+
+.section-status .section-status-status{
+    background-color: #f7f7f7;
+}
+
+.section-status .section-status-img{
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    z-index: 200;
+}
+
+.section-status .section-status-line{
+    width: 70px;
+    border: 2px solid #e1e1e1;
+    margin-left: -4px;
+    margin-right: -20px;
+    display: inline-block;
+}
+
+.section-status .section-status-line-checked{
+    width: 70px;
+    border: 2px solid #fab432;
+    margin-left: -4px;
+    margin-right: -20px;
+    display: inline-block;
+}
+
+.section-status .section-status-text-check{
+    font-size: .9rem;
+    color: #e1e1e1;
+    margin: 0;
+}
+
+.section-status .section-status-text-checked{
+    word-wrap: normal;
+    color: #000;
+}
+
+.section-status .table-status-thead-tr{
+    background-color: #000;
+}
+
+.section-status .table-status-thead-title{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}

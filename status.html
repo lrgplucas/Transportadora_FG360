@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lrgp">
+    <meta name="description" content="Transportadora FG 360: O destino certo para o seu produto">
+    <meta name="keywords" content="Transportadora, transporte, produtos, serviços">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font-Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- TOASTR -->
+    <link rel="stylesheet" href="./toastr/build/toastr.css">
+
+    <title>FG360 - Status</title>
+  </head>
+
+  <body>
+        <header>
+            <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span class="sr-only">Abrir ou fechar menu</span> <span class="toggler-icon-color">&#9776;</span>
+                        </span>
+                    </button>
+                    <a class="navbar-brand mx-auto" href="index.html">
+                        <img src="imgs/logotipo.png" class="nav-img" alt="Logotipo FG 360">
+                    </a>
+                    
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rastrear.html">Rastreamento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contato</a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-lg btn-custom nav-btn" href="#">
+                                <i class="far fa-envelope"></i><span class="pl-1">Cotação</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero-rastrear">
+            <div class="jumbotron jumbotron-fluid rastrear-jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="hero-rastrear-title">Acompanhamento</h1>
+                            <p class="hero-rastrear-text">e rastreio</p>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-status">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 d-lg-flex align-items-center">
+                        <h2 class="section-status-title">Empresa/nome cliente</h2>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <p class="section-status-text">Email: email@gmail.com</p>
+                        <p class="section-status-text">Telefone: (DDD) XXXX-XXXX</p>
+                        <p class="section-status-text">CPF/CNPJ: XXX.XXX.XXX-XX</p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-lg-4 section-status-descricao py-2 d-flex flex-column justify-content-center">
+                        <p class="section-status-descricao-text"><b>Produto:</b> Lorem Ipsum</p>
+                        <p class="section-status-descricao-text"><b>ID:</b> 12543365241</p>
+                        <p class="section-status-descricao-text"><b>Tipo de carga:</b> Direta</p>
+                        <p class="section-status-descricao-text"><b>Previsão de entrega:</b> 25/03/2019</p>
+                        <p class="section-status-descricao-text"><b>Motorista:</b> Paulo</p>
+                        <p class="section-status-descricao-text"><b>Veículo:</b> Truck DLC-4563</p>
+                    </div>
+                    <div class="col-12 col-lg-8 section-status-status d-flex flex-column align-items-center justify-content-center py-5">
+                        <div class="row d-inline-block">
+                            <div class="col-12">
+                                <img src="imgs/rastreamento/recebido_orange.png" class="section-status-img" alt="">
+                                <div class="section-status-line-checked"></div>
+                                <img src="imgs/rastreamento/transporte_grey.png" class="section-status-img" alt="">
+                                <div class="section-status-line"></div>
+                                <img src="imgs/rastreamento/entregue_grey.png" class="section-status-img" alt="">
+                            </div>
+                        </div>
+                        <div class="row w-70 pt-3">
+                            <div class="col-4">
+                                <p class="section-status-text-checked">Produto recebido</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="section-status-text-check">Em transporte</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="section-status-text-check text-right">Entregue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <table class="table table-striped table-borderless">
+                        <thead>
+                            <tr class="table-status-thead-tr">
+                                <th class="table-status-thead-title">Data</th>
+                                <th class="table-status-thead-title">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15/03/2019</td>
+                                <td>Produto recebido pela FG 360</td>
+                            </tr>
+                            <tr>
+                                <td>17/03/2019</td>
+                                <td>Seu produto está em transporte</td>
+                            </tr>
+                            <tr>
+                                <td>25/03/2019</td>
+                                <td>Seu produto foi entregue em Curitiba(recebido por Maria)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <ul>
+                <li class="footer-copy">&copy; Copyright 2019 FG 360 - Por Luz Comunicação</li>
+                <li>
+                    <a href="https://www.facebook.com/FG-360-Transportes-571421250024615/" class="footer-link">
+                        <span class="sr-only">Facebook</span>
+                        <img class="footer-img" src="imgs/social/facebook_icon.png" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/fg360transportes" class="footer-link">
+                        <span class="sr-only">Instagram</span>
+                        <img class="footer-img" src="imgs/social/instagram_icon.png" alt="Instagram">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+        <script src="./js/dist/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./toastr/toastr.js"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>

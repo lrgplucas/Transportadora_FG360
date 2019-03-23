@@ -157,6 +157,9 @@ class EntregaController
       $newEntrega->setDocCli($item['doc_cli']);
       $newEntrega->setNf($item['nf']);
       $newEntrega->setCodRastreio($item['cod_rastreio']);
+      $newEntrega->setMotorista($item['motorista']);
+      $newEntrega->setVeiculo($item['veiculo']);
+      $newEntrega->setTipo_carga($item['tipo_carga']);
 
       array_push($entregas,$newEntrega);
     }

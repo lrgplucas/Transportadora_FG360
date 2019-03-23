@@ -17,6 +17,10 @@ class Entrega {
     public $produto;
     public $codRastreio;
     public $id_cliente;
+    public $motorista;
+    public $veiculo;
+    public $tipo_carga;
+
 
     //METODOS
 
@@ -183,6 +187,66 @@ class Entrega {
     public function setId_cliente($id_cliente)
     {
         $this->id_cliente = $id_cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of motorista
+     */ 
+    public function getMotorista()
+    {
+        return $this->motorista;
+    }
+
+    /**
+     * Set the value of motorista
+     *
+     * @return  self
+     */ 
+    public function setMotorista($motorista)
+    {
+        $this->motorista = $motorista;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of veiculo
+     */ 
+    public function getVeiculo()
+    {
+        return $this->veiculo;
+    }
+
+    /**
+     * Set the value of veiculo
+     *
+     * @return  self
+     */ 
+    public function setVeiculo($veiculo)
+    {
+        $this->veiculo = $veiculo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipo_carga
+     */ 
+    public function getTipo_carga()
+    {
+        return $this->tipo_carga;
+    }
+
+    /**
+     * Set the value of tipo_carga
+     *
+     * @return  self
+     */ 
+    public function setTipo_carga($tipo_carga)
+    {
+        $this->tipo_carga = $tipo_carga;
 
         return $this;
     }

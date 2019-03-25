@@ -66,7 +66,31 @@ class ClienteController{
     }
 
 
+    //FIX ME : NOME DO METODO
+    //METODO PARA TRAZER OS DADOS DO CLIENTE 
+    public static function getClienteById($id){
+        $generatorConn = new Connection();
 
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT * FROM cliente WHERE id=".$id."");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result)[0];
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
 
 
     //PARSE CLIENTE

@@ -69,7 +69,7 @@ class EntregaController
     $conn = $generatorConn->getConection();
 
     //QUERY
-    $result = $conn->query("SELECT * FROM entrega WHERE doc_rastreio=$cod;");
+    $result = $conn->query("SELECT * FROM entrega WHERE cod_rastreio='$cod';");
     $formatedResult = self::parseResults($result);
 
     $conn = null;
@@ -152,10 +152,9 @@ class EntregaController
       $newEntrega->setId($item['id']);
       $newEntrega->setDataCriacao($item['data_criacao']);
       $newEntrega->setDataPrevisao($item['data_previsao']);
-      $newEntrega->setNomeCli($item['nome_cli']);
-      $newEntrega->setEmailCli($item['email_cli']);
-      $newEntrega->setDocCli($item['doc_cli']);
+      $newEntrega->setProduto($item['produto']);
       $newEntrega->setNf($item['nf']);
+      $newEntrega->setId_cliente($item['cli_id']);
       $newEntrega->setCodRastreio($item['cod_rastreio']);
       $newEntrega->setMotorista($item['motorista']);
       $newEntrega->setVeiculo($item['veiculo']);

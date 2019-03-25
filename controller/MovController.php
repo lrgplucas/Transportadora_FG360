@@ -27,6 +27,23 @@ class MovController
         return $formatedResult;
     }
 
+    public static function getMovsByEntrega($id)
+    {
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+        $result = $conn->query("SELECT * FROM movimentacoes WHERE entrega_id =$id;");
+        $formatedResult = self::parseResults($result);
+
+        $conn = null;
+
+        return $formatedResult;
+    }
+
+
 
 
 
@@ -40,7 +57,7 @@ class MovController
       $newMovs = new Movimentacoes();
 
       $newMovs->setId($item['id']);
-      $newMovs->setDataCriacao($item['data_criacao']);
+      $newMovs->setData_create($item['data_criacao']);
       $newMovs->setData($item['data']);
       $newMovs->setStatus($item['status']);
       $newMovs->setEntrega($item['entrega_id']);

@@ -14,7 +14,17 @@ body{
     transition: border .5s ease;
 }
 
+.form-control-custom-secondary{
+    border: 1px solid #919191;
+    border-radius: 10px;
+    transition: border .5s ease;
+}
+
 .form-control-custom:focus{
+    border: 1px solid #fab432;
+}
+
+.form-control-custom-secondary:focus{
     border: 1px solid #fab432;
 }
 
@@ -522,6 +532,14 @@ body{
     padding-left: 1rem;
 }
 
+.footer-link-luz{
+    color: #fff;
+}
+
+.footer-link-luz:hover{
+    color: #fff;
+}
+
 .footer-copy{
     margin-top: 8px;
     font-size: .7rem;
@@ -837,4 +855,124 @@ body{
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
+}
+
+.section-hero-contato .hero-jumbotron-contato{
+    background-image: url(../imgs/contato/banner_contato_sm_01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 170px;
+}
+
+.section-hero-contato .hero-contato-title{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-hero-contato .hero-contato-text{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-top: -10px;
+    padding-top: 0;
+}
+
+@media screen and (min-width: 768px){
+    .section-hero-contato .hero-jumbotron-contato{
+        background-image: url(../imgs/contato/banner_contato_md_01.png);
+        background-position: center bottom;
+        height: 500px;
+    }
+
+    .section-hero-contato .hero-contato-title{
+        font-size: 2rem;
+        margin-left: 25px;
+    }
+    
+    .section-hero-contato .hero-contato-text{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .section-hero-contato .hero-jumbotron-contato{
+        background-image: url(../imgs/contato/banner_contato_lg_01.png);
+        background-position: center bottom;
+        height: 300px;
+    }
+
+    .section-hero-contato .hero-contato-title{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: 70px;
+    }
+    
+    .section-hero-contato .hero-contato-text{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+}
+
+.form-contato .form-contato-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.form-contato .form-contato-text{
+    font-size: .8rem;
+}
+
+.form-contato .form-contato-label{
+    padding-top: 5px;
+    margin-bottom: 0;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.box-contato{
+    background-color: #f7f7f7;
+    padding: 30px 10px;
+}
+
+.box-contato .box-contato-title{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.box-contato .box-contato-text{
+    font-size: .9rem;
+    text-align: justify;
+}
+
+.box-contato .box-contato-img{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.box-contato .box-contato-name{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 2px 0;
+}
+
+.box-contato .box-contato-cargo{
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 2px 0;
+}
+
+.box-contato .box-contato-telefone{
+    font-size: .9rem;
+    font-weight: 700;
+    margin: 2px 0;
 }

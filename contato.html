@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lrgp">
+    <meta name="description" content="Transportadora FG 360: O destino certo para o seu produto">
+    <meta name="keywords" content="Transportadora, transporte, produtos, serviços">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font-Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- TOASTR -->
+    <link rel="stylesheet" href="./toastr/build/toastr.css">
+
+    <title>FG360 - Contato</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span class="sr-only">Abrir ou fechar menu</span> <span class="toggler-icon-color">&#9776;</span>
+                    </span>
+                </button>
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="imgs/logotipo.png" class="nav-img" alt="Logotipo FG 360">
+                </a>
+                
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rastrear.html">Rastreamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-lg btn-custom nav-btn" href="#">
+                            <i class="far fa-envelope"></i><span class="pl-1">Cotação</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-hero-contato">
+        <div class="jumbotron jumbotron-fluid hero-jumbotron-contato">
+            <div class="container">
+                <h1 class="hero-contato-title">Fale</h1>
+                <p class="hero-contato-text">conosco</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-contato">
+        <div class="container">
+            <h2 class="form-contato-title">Como podemos te ajudar?</h2>
+            <p class="form-contato-text">Preencha os campos abaixo selecionando pessoa física ou jurídica e nos envie sua mensagem!</p>
+            <div class="row">
+                <div class="col-12">
+                    <label for="rdo_fisica">
+                        <input id="rdo_fisica" type="radio" name="pessoa" value="Pessoa física">
+                        Pessoa física
+                    </label>
+                    <label for="rdo_juridica">
+                        <input id="rdo_juridica" type="radio" name="pessoa" value="Pessoa jurídica">
+                        Pessoa jurídica
+                    </label>
+                </div>
+
+                <div class="col-12 col-lg-8">
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                    <label class="form-contato-label" for="assunto">Assunto</label>
+                                    <select id="assunto" class="form-control form-control-custom-secondary">
+                                        <option value="0">Selecione...</option>
+                                    </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-contato-label" for="area">Área</label>
+                                <select id="area" class="form-control form-control-custom-secondary">
+                                    <option value="0">Selecione...</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-contato-label" for="cpf">CPF</label>
+                                <input id="cpf" type="text" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-4 d-none">
+                                <label class="form-contato-label" for="cnpj">CNPJ</label>
+                                <input id="cnpj" type="text" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-8">
+                                <label class="form-contato-label" for="nome">Nome</label>
+                                <input id="nome" type="text" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-8 d-none">
+                                <label class="form-contato-label" for="razaosocial">Razão social</label>
+                                <input id="razaosocial" type="text" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-contato-label" for="nomecontato">Nome do contato</label>
+                                <input id="nomecontato" type="text" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-4">
+                                <label class="form-contato-label" for="estado">Estado</label>
+                                <select id="estado" class="form-control form-control-custom-secondary">
+                                    <option value="0">Selecione...</option>
+                                </select>
+                            </div>
+                            <div class="col-8">
+                                <label class="form-contato-label" for="cidade">Cidade</label>
+                                <select id="Cidade" class="form-control form-control-custom-secondary">
+                                    <option value="0">Selecione...</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-contato-label" for="telefone">Telefone</label>
+                                <input id="telefone" type="tel" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-6 d-none">
+                                <label class="form-contato-label" for="telcomercial">Telefone comercial</label>
+                                <input id="telcomercial" type="tel" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-contato-label" for="telcelular">Telefone celular</label>
+                                <input id="telcelular" type="tel" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-contato-label" for="email">E-mail</label>
+                                <input id="email" type="email" class="form-control form-control-custom-secondary">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <label class="form-contato-label" for="msg">Mensagem</label>
+                                <textarea id="msg" class="form-control form-control-custom-secondary resize-none" rows="5"></textarea>
+                                <div class="row justify-content-center">
+                                    <input type="button" id="btnEnviar" class="btn btn-custom text-center mt-2 mb-5" value="Enviar">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="row box-contato mb-5">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="col-12">
+                                <h3 class="box-contato-title">Endereço</h3>
+                                <p class="box-contato-text">Rua Ibraim Pacífico da Silva, Jardim Panorama, Caçapava-SP</p>
+                            </div>
+                            <div class="col-12">
+                                <h3 class="box-contato-title">Contato por telefone</h3>
+                                <p class="box-contato-text">Caso tenha algum assunto específico para tratar diretamente com um de nossos responsáveis, utilize os canais de atendimento</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="row">
+                                <div class="col-2 mt-3">
+                                    <img src="imgs/contato/icon_operacional.png" class="box-contato-img" alt="">
+                                </div>
+                                <div class="col-10 mt-2">
+                                    <h4 class="box-contato-name">Fábio Luís</h4>
+                                    <p class="box-contato-cargo">Diretor Operacional e Comercial</p>
+                                    <p class="box-contato-telefone">(12) 3351-2028</p>
+                                </div>
+                                <div class="col-2 mt-3">
+                                    <img src="imgs/contato/icon_financeiro.png" class="box-contato-img" alt="">
+                                </div>
+                                <div class="col-10 mt-2">
+                                    <h4 class="box-contato-name">Camila Félix</h4>
+                                    <p class="box-contato-cargo">Diretora Administrativa e Financeira</p>
+                                    <p class="box-contato-telefone">(12) 3655-3099</p>
+                                </div>
+                                <div class="col-2 mt-3">
+                                    <img src="imgs/contato/icon_adiministrativo.png" class="box-contato-img" alt="">
+                                </div>
+                                <div class="col-10 mt-2">
+                                    <h4 class="box-contato-name">Gabriel Silva</h4>
+                                    <p class="box-contato-cargo">Diretor Administrativo</p>
+                                    <p class="box-contato-telefone">(12) 3655-3099</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <ul>
+            <li class="footer-copy">&copy; Copyright 2019 FG 360 - <a href="http://www.agencialuzcomunica.com.br/" class="footer-link-luz">Por Luz Comunicação</a></li>
+            <li>
+                <a href="https://www.facebook.com/FG-360-Transportes-571421250024615/" class="footer-link">
+                    <span class="sr-only">Facebook</span>
+                    <img class="footer-img" src="imgs/social/facebook_icon.png" alt="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/fg360transportes" class="footer-link">
+                    <span class="sr-only">Instagram</span>
+                    <img class="footer-img" src="imgs/social/instagram_icon.png" alt="Instagram">
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="./js/dist/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./toastr/toastr.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

@@ -23,7 +23,14 @@ $(document).ready(function(){
     let promise = new Promise(function(success , fail) {
       $.get(URL_API_ENTREGA_BY_COD,{cod:cod}, function (data){
         var temporary  =  data; 
+
+        if(!temporary){
+          
+          toastr.error("ID inválido!","Transportadora FG-360");
+        }
         entrega = JSON.parse(temporary);
+
+        
         id_cliente = entrega[0].id_cliente;
         id_entrega = entrega[0].id ;
 

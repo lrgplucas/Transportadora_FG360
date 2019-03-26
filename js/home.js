@@ -8,6 +8,7 @@
 $(document).ready(function(){
 
     var URL_CLIENTE = "cliente.html";
+    var URL_STATUS_RASTREIO = "status.html";
 
     //ADD LISTENERS
 
@@ -33,6 +34,8 @@ $(document).ready(function(){
            "data":jsonEmail
        }
 
+
+
        sendEmail(jsonEmail);
     });
 
@@ -55,6 +58,18 @@ $(document).ready(function(){
             toastr.error("CNPJ ou senha inválidos!","Transportadora FG-360");
         });
 
+    });
+
+    $("#btn_rastreio").on("click",function(){
+
+        if($("#txtCod").val() != ""){
+            var cod = $("#txtCod").val();
+
+             //redireciona para pagina de status
+            window.location = URL_STATUS_RASTREIO+"?cod="+cod;
+        }else{
+            toastr.error("Insira o ID de rastreio","Transportadora FG-360")
+        }
     });
 
   

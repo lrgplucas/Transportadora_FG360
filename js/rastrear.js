@@ -4,7 +4,7 @@
 * classe : RASTREAR JS
 */
 
-var URL_STATUS = "status.html"
+var URL_STATUS = "status.html";
 
 $(document).ready(function(){
 

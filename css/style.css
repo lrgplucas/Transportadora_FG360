@@ -976,3 +976,220 @@ body{
     font-weight: 700;
     margin: 2px 0;
 }
+
+.section-hero-servicos .hero-jumbotron-servicos{
+    background-image: url(../imgs/servicos/banner_nossos_servicos_sm_01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 170px;
+}
+
+.section-hero-servicos .hero-servicos-title{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-hero-servicos .hero-servicos-text{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-top: -10px;
+    padding-top: 0;
+}
+
+@media screen and (min-width: 768px){
+    .section-hero-servicos .hero-jumbotron-servicos{
+        background-image: url(../imgs/servicos/banner_nossos_servicos_md_01.png);
+        background-position: center top;
+        height: 500px;
+    }
+
+    .section-hero-servicos .hero-servicos-title{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: 150px;
+    }
+    
+    .section-hero-servicos .hero-servicos-text{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .section-hero-servicos .hero-jumbotron-servicos{
+        background-image: url(../imgs/servicos/banner_nossos_servicos_lg_01.png);
+        background-position: center;
+        height: 300px;
+    }
+
+    .section-hero-servicos .hero-servicos-title{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: 70px;
+    }
+    
+    .section-hero-servicos .hero-servicos-text{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+}
+
+.section-conheca-servicos .conheca-servicos-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section-conheca-servicos .conheca-servicos-title-2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.section-conheca-servicos .conheca-servicos-borda{
+    border-left: 1px solid #fab432;
+    margin-left: 20px;
+}
+
+.section-conheca-servicos .conheca-servicos-text{
+    font-size: .9rem;
+    padding-left: 15px;
+}
+
+@media screen and (min-width: 768px){
+    .section-conheca-servicos .conheca-servicos-borda{
+        margin-left: -30px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .section-conheca-servicos .conheca-servicos-borda{
+        margin-left: -150px;
+    }
+}
+
+.section-servicos-servicos .hr-line{
+    border: 5px solid #fab432;
+}
+
+.section-servicos-servicos .servicos-servicos-title{
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.section-servicos-servicos .card{
+    border: 0px;
+    border-radius: 0px;
+    background-color: #f7f7f7;
+}
+
+.section-servicos-servicos .card-body{
+    border: 0px;
+    border-radius: 0px;
+    background-color: #f0f0f0;
+}
+
+.section-servicos-servicos .btn-link{
+    font-size: .8rem;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+}
+
+.section-servicos-servicos .servicos-servicos-card-text{
+    font-size: .8rem;
+}
+
+.section-servicos-servicos .servicos-servicos-img{
+   background-image: url(../imgs/servicos/truck_servicos_01.png);
+   background-size: 100%;
+   background-repeat: no-repeat;
+   height: 200px;
+}
+
+@media screen and (min-width: 992px){
+    .section-servicos-servicos .servicos-servicos-img{
+        height: 350px;
+     }
+}
+
+.enviar-servicos .enviar-servicos-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.enviar-servicos-card{
+    border: 0;
+    border-radius: 0;
+    transition: background-color .5s ease;
+}
+
+.enviar-servicos-card:hover .enviar-servicos-card-body{
+    background-color: #fab432;
+}
+
+.enviar-servicos-card .enviar-servicos-card-img{
+    border-radius: 0;
+    height: 13rem;
+}
+
+.enviar-servicos-card .enviar-servicos-card-body{
+    min-height: 200px;
+    background-color: #f7f7f7;
+}
+
+.enviar-servicos-card .enviar-servicos-card-title{
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.enviar-servicos-card .enviar-servicos-card-text{
+    font-size: .9rem;
+    font-weight: 700;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media screen and (min-width: 768px){
+    .enviar-servicos-card .enviar-servicos-card-body{
+        border-left: 1px solid #fab432;
+    }
+
+    .enviar-servicos-card .enviar-servicos-border{
+        border: 0;
+    }
+}
+
+.section-seguranca{
+    background-color: #d1d1d1;
+    min-height: 200px;
+}
+
+.seguranca-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.seguranca-title-2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.seguranca-text{
+    font-size: .9rem;
+    font-weight: 700;
+}

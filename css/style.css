@@ -769,15 +769,44 @@ body{
 
 @media screen and (min-width: 768px){
     .rastrear-form .rastrear-form-color{
-        height: 120px;
+        height: 100px;
+    }
+
+    .rastrear-form .rastrear-form-input{
+        height: 50px;
     }
 
     .rastrear-form .rastrear-form-link{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .rastrear-form .rastrear-form-title{
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .rastrear-form .rastrear-form-color{
+        height: 50px;
+        margin-left: auto;
+    }
+
+    .rastrear-form .rastrear-form-color-link{
+        margin-right: auto;
+    }
+
+    .rastrear-form .rastrear-form-input{
+        height: 30px;
+    }
+
+    .rastrear-form .rastrear-form-link{
+        font-size: 1.2rem;
+    }
+
+    .rastrear-form .rastrear-form-title{
+        font-size: 1.5rem;
+        text-align: center;
+        
     }
 }
 
@@ -811,17 +840,37 @@ body{
 
 .section-status .section-status-status{
     background-color: #f7f7f7;
+    height: 150px;
+}
+
+@media screen and (min-width: 768px){
+    .section-status .section-status-descricao{
+        height: 125px;
+    }
+
+    .section-status .section-status-status{
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .section-status .section-status-descricao{
+        height: 150px;
+    }
+
+    .section-status .section-status-status{
+        height: 150px;
+    }
 }
 
 .section-status .section-status-img{
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     display: inline-block;
-    z-index: 200;
 }
 
 .section-status .section-status-line{
-    width: 70px;
+    width: 100px;
     border: 2px solid #e1e1e1;
     margin-left: -4px;
     margin-right: -20px;
@@ -829,7 +878,7 @@ body{
 }
 
 .section-status .section-status-line-checked{
-    width: 70px;
+    width: 100px;
     border: 2px solid #fab432;
     margin-left: -4px;
     margin-right: -20px;
@@ -844,7 +893,26 @@ body{
 
 .section-status .section-status-text-checked{
     word-wrap: normal;
+    font-size: .9rem;
     color: #000;
+}
+
+@media screen and (min-width: 768px){
+    .section-status .section-status-line{
+        width: 250px;
+    }
+
+    .section-status .section-status-line-checked{
+        width: 250px;
+    }
+
+    .section-status .section-status-text-check{
+        padding: 0 auto;
+    }
+
+    .section-status .section-status-text-checked{
+        padding: 0 auto;
+    }
 }
 
 .section-status .table-status-thead-tr{

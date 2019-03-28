@@ -87,69 +87,69 @@
                         <div class="row">
                             <div class="col-6">
                                     <label class="form-contato-label" for="assunto">Assunto</label>
-                                    <select id="assunto" class="form-control form-control-custom-secondary">
+                                    <select id="assunto" class="form-control form-control-custom-secondary" required>
                                         <option value="0">Selecione...</option>
                                     </select>
                             </div>
                             <div class="col-6">
                                 <label class="form-contato-label" for="area">Área</label>
-                                <select id="area" class="form-control form-control-custom-secondary">
+                                <select id="area" class="form-control form-control-custom-secondary" required>
                                     <option value="0">Selecione...</option>
                                 </select>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4" id="divCpf">
                                 <label class="form-contato-label" for="cpf">CPF</label>
-                                <input id="cpf" type="text" class="form-control form-control-custom-secondary">
+                                <input id="cpf" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
-                            <div class="col-4 d-none">
+                            <div class="col-4 d-none" id="divCnpj">
                                 <label class="form-contato-label" for="cnpj">CNPJ</label>
-                                <input id="cnpj" type="text" class="form-control form-control-custom-secondary">
+                                <input id="cnpj" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
-                            <div class="col-8">
+                            <div class="col-8" id="divNome">
                                 <label class="form-contato-label" for="nome">Nome</label>
-                                <input id="nome" type="text" class="form-control form-control-custom-secondary">
+                                <input id="nome" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
-                            <div class="col-8 d-none">
+                            <div class="col-8 d-none" id="divRazaoSocial">
                                 <label class="form-contato-label" for="razaosocial">Razão social</label>
-                                <input id="razaosocial" type="text" class="form-control form-control-custom-secondary">
+                                <input id="razaosocial" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12" >
                                 <label class="form-contato-label" for="nomecontato">Nome do contato</label>
-                                <input id="nomecontato" type="text" class="form-control form-control-custom-secondary">
+                                <input id="nomecontato" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-4">
                                 <label class="form-contato-label" for="estado">Estado</label>
-                                <select id="estado" class="form-control form-control-custom-secondary">
+                                <select id="estado" class="form-control form-control-custom-secondary" required>
                                     <option value="0">Selecione...</option>
                                 </select>
                             </div>
                             <div class="col-8">
                                 <label class="form-contato-label" for="cidade">Cidade</label>
-                                <select id="Cidade" class="form-control form-control-custom-secondary">
+                                <select id="Cidade" class="form-control form-control-custom-secondary" required>
                                     <option value="0">Selecione...</option>
                                 </select>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6" id="divTelefone">
                                 <label class="form-contato-label" for="telefone">Telefone</label>
-                                <input id="telefone" type="tel" class="form-control form-control-custom-secondary">
+                                <input id="telefone" type="tel" class="form-control form-control-custom-secondary" required>
                             </div>
-                            <div class="col-6 d-none">
+                            <div class="col-6 d-none" id="divTelefoneComercial">
                                 <label class="form-contato-label" for="telcomercial">Telefone comercial</label>
-                                <input id="telcomercial" type="tel" class="form-control form-control-custom-secondary">
+                                <input id="telcomercial" type="tel" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-6">
                                 <label class="form-contato-label" for="telcelular">Telefone celular</label>
-                                <input id="telcelular" type="tel" class="form-control form-control-custom-secondary">
+                                <input id="telcelular" type="tel" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-12">
                                 <label class="form-contato-label" for="email">E-mail</label>
-                                <input id="email" type="email" class="form-control form-control-custom-secondary">
+                                <input id="email" type="email" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-12 mt-3">
                                 <label class="form-contato-label" for="msg">Mensagem</label>
-                                <textarea id="msg" class="form-control form-control-custom-secondary resize-none" rows="5"></textarea>
+                                <textarea id="msg" class="form-control form-control-custom-secondary resize-none" rows="5" required></textarea>
                                 <div class="row justify-content-center">
-                                    <input type="button" id="btnEnviar" class="btn btn-custom text-center mt-2 mb-5" value="Enviar">
+                                    <input type="submit" id="btnEnviar" class="btn btn-custom text-center mt-2 mb-5" value="Enviar" >
                                 </div>
                             </div>
 

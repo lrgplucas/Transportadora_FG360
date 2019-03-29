@@ -1159,6 +1159,46 @@ body{
     background-color: #f7f7f7;
 }
 
+.section-servicos-servicos .card .card-header-seta-direta{
+    padding-left: 195px;
+    color: #fab432;
+}
+
+.section-servicos-servicos .card .card-header-seta-fracionada{
+    padding-left: 172px;
+    color: #fab432;
+}
+.section-servicos-servicos .card .card-header-seta-compartilhada{
+    padding-left: 150px;
+    color: #fab432;
+}
+
+@media screen and (min-width: 768px){
+    .section-servicos-servicos .card .card-header-seta-direta{
+        padding-left: 182px;
+    }
+    
+    .section-servicos-servicos .card .card-header-seta-fracionada{
+        padding-left: 157px;
+    }
+    .section-servicos-servicos .card .card-header-seta-compartilhada{
+        padding-left: 135px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .section-servicos-servicos .card .card-header-seta-direta{
+        padding-left: 392px;
+    }
+    
+    .section-servicos-servicos .card .card-header-seta-fracionada{
+        padding-left: 368px;
+    }
+    .section-servicos-servicos .card .card-header-seta-compartilhada{
+        padding-left: 346px;
+    }
+}
+
 .section-servicos-servicos .card-body{
     border: 0px;
     border-radius: 0px;

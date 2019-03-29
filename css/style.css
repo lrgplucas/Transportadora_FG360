@@ -96,6 +96,12 @@ body{
 .navbar-custom .nav-btn{
     width: 100%;
 }
+
+#navbarMenu .navbar-nav li.active > a {
+    color: #fab432;
+    font-weight: 700;
+}
+
 .navbar-custom .nav-link:hover{
     color: #fab432;
 }

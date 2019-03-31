@@ -3,6 +3,8 @@ body{
     padding-top: 4rem;
 }
 
+/* SITE */
+
 .navbar-custom{
     background-color: #fff;
     box-shadow: 0 5px 12px rgba(0, 0, 0, .3);
@@ -1306,4 +1308,69 @@ body{
 .seguranca-text{
     font-size: .9rem;
     font-weight: 700;
+}
+
+/* PAINEL ADMINISTRATIVO */
+
+.navbar-painel{
+    background-color: #fab432;
+}
+
+.navbar-painel .nav-link{
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    transition: all .5s ease;
+    color: #fff;
+    font-weight: normal;
+}
+
+#navbarPainel .navbar-nav li.active > a {
+    color: #fff;
+    font-weight: 700;
+}
+
+.content-painel{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-painel .content-painel-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.content-painel .content-painel-text{
+    font-size: .8rem;
+}
+
+.form-painel .form-painel-label{
+    padding-top: 5px;
+    margin-bottom: 0;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.radio{
+    padding-right: 20px;
+    font-size: .9rem;
+}
+
+.attFaturas-link{
+    border: 1px solid #fab432;
+    padding: 1px 5px;
+    color: #fab432;
+}
+
+.attFaturas-link:hover{
+    border: 1px solid #fab432;
+    padding: 1px 5px;
+    color: #fab432;
+}
+
+.upload-doc{
+    border: 1px solid #000;
+    padding: 25px;
+    border-radius: 10px;
 }

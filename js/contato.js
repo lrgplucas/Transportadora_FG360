@@ -82,9 +82,10 @@ $(document).ready(function(){
         }
        
         
-        //alert(email+"-"+cpf+"-"+cnpj+"-"+nome+"-"+razao+"-"+tel+"-"+telComercial+"-"+celular+"-"+msg);
-
-
+        $.post(URL_EMAIL_CONTATO,jsonEmail,function(data){
+            toastr.success("Enviado!","Transportadora FG-360");
+           
+        });
     });
 
 });

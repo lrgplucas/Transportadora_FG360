@@ -10,6 +10,13 @@ var URL_CIDADES = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{
 
 $(document).ready(function(){
 
+    $("#divNome").hide();
+    $("#divCpf").hide(); 
+    $("#divTelefone").hide();
+    $("#divRazaoSocial").removeClass("d-none");
+    $("#divCnpj").removeClass("d-none");
+    $("#divTelefoneComercial").removeClass("d-none");
+
 
     //PREENCHE O COMBO DOS ESTADOS
     getEstados();

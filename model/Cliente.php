@@ -15,7 +15,7 @@ class Cliente{
     public $cpf;
     public $senha;
     public $tel;
-
+    public $celular;
 
 
     //MÉTODOS
@@ -157,6 +157,27 @@ class Cliente{
     public function setTel($tel)
     {
         $this->tel = $tel;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of celular
+     */ 
+    public function getCelular()
+    {
+        return $this->celular;
+    }
+
+    /**
+     * Set the value of celular
+     *
+     * @return  self
+     */ 
+    public function setCelular($celular)
+    {
+        $this->celular = $celular;
 
         return $this;
     }

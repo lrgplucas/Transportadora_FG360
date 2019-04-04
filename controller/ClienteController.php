@@ -93,6 +93,43 @@ class ClienteController{
     }
 
 
+    public static function insertCliente($cliente,$isJuridica){
+        $generatorConn = new Connection();
+
+        $nome = $cliente->getNome();
+        $cpf =  $cliente->getCpf();
+        $cnpj = "111";
+        $tel = $cliente->getTel();
+        $celular =  $cliente->getCelular();
+        $email =  $cliente->getEmail();
+        $senha =  $cliente->getSenha();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+        try{
+            $insert = $conn->prepare("INSERT INTO cliente (nome , tel ,celular , cpf , cnpj , email , senha ) VALUES (".
+                ":nome , :tel , :celular , :cpf , :cnpj , :email , :senha);");
+
+            $insert->bindParam(":nome",$nome);
+            $insert->bindParam(":cpf",$cpf);
+            $insert->bindParam(":cnpj",$cnpj);
+            $insert->bindParam(":tel",$tel);
+            $insert->bindParam(":celular",$celular);
+            $insert->bindParam(":email",$email);
+            $insert->bindParam(":senha",$senha);
+
+            $insert->execute();
+        
+
+            return $insert->rowCount();
+        }catch (PDOException $e) {
+            return $e->getMessage();
+
+        }
+
+    }
+
+
     //PARSE CLIENTE
     public static function parseCliente($resultSet){
 
@@ -109,6 +146,7 @@ class ClienteController{
              $newCliente->setCnpj($item['cnpj']);
              $newCliente->setCpf($item['cpf']);
              $newCliente->setTel($item['tel']);
+             $newCliente->setCelular($item['celular']);
 
              array_push($arrayClientes,$newCliente);
         }

@@ -32,6 +32,42 @@ class DocController{
 
     }
 
+    public static function insertDoc ($doc)
+    { 
+
+  
+      $generatorConn = new Connection();
+  
+      //INSTANCIA DA CONEXAO
+      $conn = $generatorConn->getConection();
+
+      $data_upload = date('Y-m-d');
+      $arquivo_path  = $doc->getArquivoPath() ;
+      $tipo = $doc->getTipo();
+      $cli_id = $doc->getId_cliente();
+      $status = $doc->getDescricao();
+      $valor = $doc->getValor();
+      $vencimento = $doc->getVencimento();
+
+      $insert = $conn->prepare("INSERT INTO `doc` ( `data_upload`, `arquivo_path`, `tipo`, `descricao`, `cli_id`, `vencimento`, `status`, `valor`)  VALUES ".
+                                    "  (:data_upload , :arquivo_path , :descricao , :tipo , :cli_id , :vencimento , :status , :valor);");
+
+      $insert->bindParam(":data_upload", $data_upload);
+      $insert->bindParam(":arquivo_path", $arquivo_path );
+      $insert->bindParam(":tipo",  $tipo );
+      $insert->bindParam(":cli_id", $cli_id);
+      $insert->bindParam(":vencimento", $vencimento);
+      $insert->bindParam(":status", $status);
+      $insert->bindParam(":valor", $valor);
+      $insert->bindParam(":descricao", $tipo);
+
+
+  
+      $insert->execute();
+  
+      return $insert->rowCount();
+  
+    }
 
     public static function parseResults($resulSet)
     {

@@ -22,6 +22,7 @@ class Entrega {
     public $tipo_carga;
 
 
+
     //METODOS
 
     /**

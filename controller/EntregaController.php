@@ -61,6 +61,23 @@ class EntregaController
     return $formatedResult;
   }
 
+  public static function getAllByCliente($id)
+  {
+    $generatorConn = new Connection();
+
+    //INSTANCIA DA CONEXAO
+    $conn = $generatorConn->getConection();
+
+    //QUERY
+    $result = $conn->query("SELECT * FROM entrega WHERE cli_id=$id;");
+    $formatedResult = self::parseResults($result);
+
+    $conn = null;
+
+    return $formatedResult;
+  }
+
+
   public static function getAllEntregaByCodRastreio($cod)
   {
     $generatorConn = new Connection();
@@ -79,33 +96,35 @@ class EntregaController
 
   public static function postEntrega($entrega)
   { 
-    $novaEntrega = self::parseResultFromRequest($entrega);
+    $novaEntrega = $entrega;
 
     $generatorConn = new Connection();
 
     //INSTANCIA DA CONEXAO
     $conn = $generatorConn->getConection();
 
-    $dataPrevisao = $novaEntrega->getDataCriacao() ;
-    $dataCriacao = $novaEntrega->getDataPrevisao();
-    $emailCli = $novaEntrega->getEmailCli();
-    $nomeCli = $novaEntrega->getNomeCli();
-    $docCli = $novaEntrega->getDocCli();
+    $dataPrevisao = $novaEntrega->getDataPrevisao() ;
+    $dataCriacao = $novaEntrega->getDataCriacao();
     $nf = $novaEntrega->getNf();
     $codRastreio = $novaEntrega->getProduto();
     $produto = $novaEntrega->getCodRastreio() ;
+    $id_cliente = $novaEntrega->getId_cliente();
+    $tipo = $novaEntrega->getTipo_carga();
+    $motorista =  $novaEntrega->getMotorista();
+    $veiculo =$novaEntrega->getVeiculo();
 
-    $insert = $conn->prepare("INSERT INTO entrega (data_criacao , data_previsao , email_cli , nome_cli , doc_cli , nf , produto , cod_rastreio) VALUES".
-                                  "  (:data_criacao, :data_previsao , :email_cli , :nome_cli , :doc_cli , :nf , :produto , :cod_rastreio)");
+    $insert = $conn->prepare("INSERT INTO entrega ( nf , produto , cod_rastreio,cli_id,tipo_carga ,data_criacao,data_previsao ,motorista ,veiculo) VALUES".
+                                  "  ( :nf , :produto , :cod_rastreio , :cli_id,:tipo_carga , :data_criacao,:data_previsao ,:motorista ,:veiculo);");
 
     $insert->bindParam(":data_criacao", $dataCriacao);
     $insert->bindParam(":data_previsao", $dataPrevisao);
-    $insert->bindParam(":email_cli", $emailCli);
-    $insert->bindParam(":nome_cli", $nomeCli);
-    $insert->bindParam(":doc_cli", $docCli);
     $insert->bindParam(":nf", $nf );
     $insert->bindParam(":produto",  $produto );
-    $insert->bindParam(":doc_rastreio", $codRastreio);
+    $insert->bindParam(":cod_rastreio", $codRastreio);
+    $insert->bindParam(":cli_id", $id_cliente);
+    $insert->bindParam(":tipo_carga", $tipo);
+    $insert->bindParam(":motorista", $motorista);
+    $insert->bindParam(":veiculo", $veiculo);
 
     $insert->execute();
 
@@ -130,13 +149,10 @@ class EntregaController
   {
     $newEntrega = new Entrega();
 
-    $newEntrega->setDataCriacao($item->data_criacao);
-    $newEntrega->setDataPrevisao($item->data_previsao);
-    $newEntrega->setNomeCli($item->nome_cli);
-    $newEntrega->setEmailCli($item->email_cli);
-    $newEntrega->setDocCli($item->doc_cli);
-    $newEntrega->setNf($item->nf);
-    $newEntrega->setCodRastreio($item->cod_rastreio);
+    $newEntrega->setDataCriacao($item->data);
+    $newEntrega->setDataPrevisao($item->previsao);
+ 
+    $newEntrega->setCodRastreio($item->id_rastreio);
 
     return $newEntrega;
   }

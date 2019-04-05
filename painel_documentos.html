@@ -71,7 +71,7 @@
             <div class="row">
                     <div class="col-12">
                         <label for="rdo_novoDoc" class="radio">
-                            <input id="rdo_novoDoc" type="radio" name="documento" value="Novo documento">
+                            <input id="rdo_novoDoc" type="radio" name="documento" value="Novo documento" checked>
                             Novo documento
                         </label>
                         <label for="rdo_attDoc" class="radio">
@@ -164,7 +164,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="row justify-content-center">
-                                                <input type="file">
+                                                <input id="fileUp" type="file">
                                             </div>
                                         </div>
                                     </div>
@@ -178,6 +178,9 @@
                                     <label class="form-painel-label" for="status">Status</label>
                                     <select id="status" class="form-control form-control-custom-secondary">
                                         <option value="0">Selecione...</option>
+                                        <option value="A vencer">A vencer</option>
+                                        <option value="Pago">Pago</option>
+                                        <option value="Pendente">Pendente</option>
                                     </select>
                                 </div>
                                 <div class="col-4">
@@ -201,7 +204,7 @@
 
                                 <div class="col-12 mt-3">
                                     <div class="row justify-content-center">
-                                        <input type="submit" id="btnSalvar" class="btn btn-custom text-center mt-2 mb-5" value="Salvar">
+                                        <input type="button" id="btnSalvar" class="btn btn-custom text-center mt-2 mb-5" value="Salvar">
                                     </div>
                                 </div>
                             </div>
@@ -224,6 +227,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./toastr/toastr.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/painel_documentos.js"></script>
 </body>
 </html>

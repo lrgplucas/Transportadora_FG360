@@ -18,6 +18,8 @@ class Movimentacoes {
     public $data;
     public $data_create;
     public $status;
+    public $motorista;
+    public $veiculo;
 
 
     /**
@@ -116,6 +118,46 @@ class Movimentacoes {
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of motorista
+     */ 
+    public function getMotorista()
+    {
+        return $this->motorista;
+    }
+
+    /**
+     * Set the value of motorista
+     *
+     * @return  self
+     */ 
+    public function setMotorista($motorista)
+    {
+        $this->motorista = $motorista;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of veiculo
+     */ 
+    public function getVeiculo()
+    {
+        return $this->veiculo;
+    }
+
+    /**
+     * Set the value of veiculo
+     *
+     * @return  self
+     */ 
+    public function setVeiculo($veiculo)
+    {
+        $this->veiculo = $veiculo;
 
         return $this;
     }

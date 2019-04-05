@@ -92,6 +92,32 @@ class ClienteController{
         }
     }
 
+    
+
+    public static function getClientes(){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT * FROM cliente ;");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result);
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
+
 
     public static function insertCliente($cliente,$isJuridica){
         $generatorConn = new Connection();

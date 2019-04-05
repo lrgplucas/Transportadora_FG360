@@ -43,6 +43,36 @@ class MovController
         return $formatedResult;
     }
 
+    public static function InsertMov($mov)
+    {
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        $entrega = $mov->getEntrega();
+        $data = $mov->getData();
+        $data_criacao = $mov->getData_create();
+        $status = $mov->getStatus();
+        $motorista = $mov->getMotorista();
+        $veiculo = $mov->getVeiculo();
+
+        $insert = $conn->prepare("INSERT INTO `movimentacoes` (`entrega_id`, `data`, `data_criacao`, `status` , `motorista` ,`veiculo`)  VALUES".
+        "  (:entrega_id , :data , :data_criacao , :status ,:motorista , :veiculo );");
+
+        $insert->bindParam(":entrega_id", $entrega );
+        $insert->bindParam(":data",  $data );
+        $insert->bindParam(":data_criacao", $data_criacao);
+        $insert->bindParam(":status", $status);
+        $insert->bindParam(":motorista", $motorista);
+        $insert->bindParam(":veiculo", $veiculo);
+
+        $insert->execute();
+
+
+        return $insert->rowCount();
+    }
+
 
 
 

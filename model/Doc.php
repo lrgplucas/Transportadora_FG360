@@ -16,6 +16,8 @@ class Doc {
   public $tipo;
   public $descricao;
   public $id_cliente;
+  public $valor;
+  public $vencimento;
 
 
   //METODOS
@@ -180,6 +182,46 @@ class Doc {
   public function setId_cliente($id_cliente)
   {
     $this->id_cliente = $id_cliente;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of valor
+   */ 
+  public function getValor()
+  {
+    return $this->valor;
+  }
+
+  /**
+   * Set the value of valor
+   *
+   * @return  self
+   */ 
+  public function setValor($valor)
+  {
+    $this->valor = $valor;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of vencimento
+   */ 
+  public function getVencimento()
+  {
+    return $this->vencimento;
+  }
+
+  /**
+   * Set the value of vencimento
+   *
+   * @return  self
+   */ 
+  public function setVencimento($vencimento)
+  {
+    $this->vencimento = $vencimento;
 
     return $this;
   }

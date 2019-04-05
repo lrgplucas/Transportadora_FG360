@@ -79,7 +79,7 @@
                                     </select>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
-                                <a class="form-painel-link" href="#">Cadastrar novo cliente?</a>
+                                <a class="form-painel-link" href="painel_cliente.html">Cadastrar novo cliente?</a>
                             </div>
                             <div class="row d-none" id="cadastroCliente">
                                 <div class="container">
@@ -175,11 +175,14 @@
                                 <label class="form-painel-label" for="status">Status entrega</label>
                                 <select id="status" class="form-control form-control-custom-secondary">
                                     <option value="0">Selecione...</option>
+                                    <option value="Pendente">Produto recebido</option>
+                                    <option value="Em Transporte">Em Transporte</option>
+                                    <option value="Entregue">Entregue</option>
                                 </select>
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="row justify-content-center">
-                                    <input type="submit" id="btnCadastrar" class="btn btn-custom text-center mt-2 mb-5" value="Cadastrar">
+                                    <input type="button" id="btnCadastrar" class="btn btn-custom text-center mt-2 mb-5" value="Cadastrar">
                                 </div>
                             </div>
                         </div>
@@ -202,6 +205,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./toastr/toastr.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/painel_rastreamento.js"></script>
 </body>
 </html>

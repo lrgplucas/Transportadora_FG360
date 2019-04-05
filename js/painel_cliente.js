@@ -33,7 +33,9 @@ $(document).ready(function(){
 
         $.post(URL_CREATE_CLIENTE_API,values,function(data){
 
-
+            if(data == 1){
+                toastr.success("Salvo com sucesso","Transportadora FG-360");
+            }
 
         });
 

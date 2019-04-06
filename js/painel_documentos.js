@@ -2,7 +2,24 @@
 
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE = './api/doc/CreateDoc.php';
+var data = new FormData();
+
+
 $(document).ready(function(){
+    var file ;
+    var fileName;
+ 
+    $("#fileUp").on("change",function(){
+        file = document.getElementById("fileUp").files[0];
+        fileName =  $('#fileUp').val().replace(/C:\\fakepath\\/i, '');
+        data.append("filename", fileName);
+        data.append("file", file);    
+    });
+
+    $("#rdo_attDoc").click(function(){
+
+        
+    });
 
     getClientes();
 
@@ -16,21 +33,25 @@ $(document).ready(function(){
         var vencimento = getFinalDate($("#vencimento").val());
         var status = $("#status").val();
         var valor = $("#valor").val();
+         
+        sendFile(function(data){
 
-        var json = {
-            "cliente":cliente,
-            "tipo":tipo,
-            "path":path,
-            "status":status,
-            "valor":valor,
-            "vencimento":vencimento
-        }
+            var json = {
+                "cliente":cliente,
+                "tipo":tipo,
+                "path":data,
+                "status":status,
+                "valor":valor,
+                "vencimento":vencimento
+            }
 
-        $.post(URL_CREATE ,json ,function(){
-            toastr.success("Cadastrado com sucesso","Transportadora FG-360");
-        }).fail(function(){
-            toastr.error("Erro ao cadastrar!","Transportadora FG-360");
-        });
+            $.post(URL_CREATE ,json ,function(){
+                toastr.success("Cadastrado com sucesso","Transportadora FG-360");
+            }).fail(function(){
+                toastr.error("Erro ao cadastrar!","Transportadora FG-360");
+            });
+
+         });
     });
 
 });
@@ -59,4 +80,18 @@ function getFinalDate(dateFromInput){
     var fullDate = year+'-'+mounth+'-'+day;
 
     return fullDate
+}
+
+function sendFile(returnData){
+    jQuery.ajax({
+        url: './upload.php',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        success: function(data){
+            returnData(data);
+        }
+    });
 }

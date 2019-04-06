@@ -20,7 +20,7 @@ class DocController{
         //QUERY
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
-        $result = $conn->query("SELECT * FROM doc WHERE cli_id='".$id."'");
+        $result = $conn->query("SELECT * FROM doc WHERE cli_id=".$id.";");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{
@@ -82,10 +82,11 @@ class DocController{
         $newDoc->setId($item['id']);
         $newDoc->setDataUpload($item['data_upload']);
         $newDoc->setArquivoPath($item['arquivo_path']);
-        $newDoc->setEntrega($item['entrega']);
         $newDoc->setTipo($item['tipo']);
         $newDoc->setDescricao($item['descricao']);
         $newDoc->setId_cliente($item['cli_id']);
+        $newDoc->setVencimento($item['vencimento']);
+        $newDoc->setValor($item['valor']);
         
         array_push($docs,$newDoc);
       }

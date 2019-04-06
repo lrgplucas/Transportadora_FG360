@@ -11,7 +11,13 @@ include_once '../../controller/DocController.php'; //CONTROLLER
 
 //ESSA API NÃO PRECISA DE NENHUM INPUT DE DADOS ELA SÓ RETORNA OS DADOS DO CLIENTE NA SEÇÃO
 
-$id = $_SESSION['id_cli'];
+$id = $_GET['id_cli'];
+
+
+//FIX PARA NAO QUEBRAR
+if(empty($id)){
+  $id=$_SESSION["id_cli"];
+}
 
 $results = DocController::getDocByCliente($id);
 
@@ -27,7 +33,7 @@ if(count($results) > 0){
   }else{
   
     //SET O HTTP STATUS CODE PARA 404
-    http_response_code(204);
+    http_response_code(500);
   
     //RETORNA O JSON
     echo  "";

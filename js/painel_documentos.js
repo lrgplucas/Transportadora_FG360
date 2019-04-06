@@ -1,13 +1,15 @@
 
-
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE = './api/doc/CreateDoc.php';
-var data = new FormData();
+const URL_GET_DOC_BY_CLI = './api/doc/GetDocByCliente.php';
+const SITE = "Transportadora FG-360";
 
+var data = new FormData();
 
 $(document).ready(function(){
     var file ;
     var fileName;
+    var flagNovo = true;
  
     $("#fileUp").on("change",function(){
         file = document.getElementById("fileUp").files[0];
@@ -17,8 +19,35 @@ $(document).ready(function(){
     });
 
     $("#rdo_attDoc").click(function(){
+        $("#faturas").removeClass("d-none");     
+        flagNovo = false;
+    });
 
-        
+    $("#rdo_novoDoc").click(function(){
+        $("#faturas").addClass("d-none");
+        flagNovo = true;
+    });
+
+    $("#cliente").change(function(){
+
+        if(!flagNovo){
+            var cliente = $("#cliente").children("option:selected").val();
+
+            $.get(URL_GET_DOC_BY_CLI,{"id_cli":cliente},function(data){
+
+                var json = JSON.parse(data);
+
+                for(item in json){
+
+                    var row = '<div class="row"><div class="col-4"><label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="FaturaX">'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    $("#faturas").append(row);
+                }
+            }).fail(function(){
+                toastr.warning("Nenhuma fatura cadadstrada!",SITE);
+            });
+        }
+
+
     });
 
     getClientes();
@@ -68,6 +97,10 @@ function getClientes(){
         }
     
     });
+}
+
+function getFaturas(cliente){
+
 }
 
 function getFinalDate(dateFromInput){

@@ -1352,6 +1352,7 @@ body{
     font-size: .8rem;
     font-weight: 700;
 }
+
 .radio{
     padding-right: 20px;
     font-size: .9rem;
@@ -1383,3 +1384,70 @@ body{
 .form-painel .form-painel-link:hover{
     color: #fab432;
   }
+
+.section-hero-cotacao .hero-jumbotron-cotacao{
+    background-image: url(../imgs/cotacao/banner_cotacao_sm.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 170px;
+}
+
+.section-hero-cotacao .hero-cotacao-title{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-left: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+    .section-hero-cotacao .hero-jumbotron-cotacao{
+        background-image: url(../imgs/cotacao/banner_cotacao_md.png);
+        background-position: center top;
+        height: 500px;
+    }
+
+    .section-hero-cotacao .hero-cotacao-title{
+        font-size: 3rem;
+        margin-top: 140px;
+        margin-left: 25px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .section-hero-cotacao .hero-jumbotron-cotacao{
+        background-image: url(../imgs/cotacao/banner_cotacao_lg.png);
+        background-position: center bottom;
+        height: 300px;
+    }
+
+    .section-hero-cotacao .hero-cotacao-title{
+        font-size: 2rem;
+        margin-left: 25px;
+        margin-top: 70px;
+    }
+}
+
+.content-cotacao{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-cotacao .content-cotacao-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.content-cotacao .content-cotacao-text{
+    font-size: .8rem;
+}
+
+.form-cotacao .form-cotacao-label{
+    padding-top: 5px;
+    margin-bottom: 0;
+    font-size: .8rem;
+    font-weight: 700;
+}

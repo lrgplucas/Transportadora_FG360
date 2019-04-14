@@ -6,6 +6,7 @@
 
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE_ENTREGA_API = './api/entrega/Post.php';
+const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/mailRastreamento.php';
 
 $(document).ready(function(){
 
@@ -43,6 +44,23 @@ $(document).ready(function(){
         
         $.post(URL_CREATE_ENTREGA_API,json,function(data){
             toastr.success("Cadastrado com sucesso","Transportadora FG-360");
+
+            var email ={
+                "cliente":cliente,
+                "produto":produto,
+                "id":id,
+                "tipo":tipo,
+                "previsao":previsao,
+                "data":data,
+                "motorista":motorista,
+                "veiculo":veiculo,
+                "status":status
+            }
+            
+
+            $.post(URL_EMAIL_CADASTRO,email,function(data){
+                
+            });
         }).fail(function(){
             toastr.error("Erro ao cadastrar!","Transportadora FG-360");
         });

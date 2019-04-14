@@ -1,6 +1,7 @@
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_GET_BY_CLIENTE = './api/entrega/GetAllByCliente.php';
 const URL_CREATE_MOV = './api/mov/CreateMov.php';
+const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/mailRastreamento.php';
 
 $(document).ready(function (){
     
@@ -41,6 +42,20 @@ $(document).ready(function (){
 
         $.post(URL_CREATE_MOV,json,function(){
             toastr.success("Cadastrado com sucesso","Transportadora FG-360");
+            var id =  $("#idRastreamento").children("option:selected").text();
+
+            var email = {
+                "cliente":cliente,
+                "id":id,
+                "previsao":previsao,
+                "motorista":motorista,
+                "veiculo":veiculo,
+                "status":status
+            }
+
+            $.post(URL_EMAIL_CADASTRO,email,function(data){
+                
+            });
         }).fail(function(){
             toastr.error("Erro ao cadastrar!","Transportadora FG-360");
         });

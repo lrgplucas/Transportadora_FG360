@@ -32,6 +32,69 @@ class DocController{
 
     }
 
+    public static function getDocById($id){
+
+      $generatorConn = new Connection();
+
+      //INSTANCIA DA CONEXAO
+      $conn = $generatorConn->getConection();
+
+      //QUERY
+
+      //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+      $result = $conn->query("SELECT * FROM doc WHERE id=".$id.";");
+      
+      //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+      try{
+          return self::parseResults($result);
+          
+      }catch(Exception $e){
+          return false;
+      }
+
+  }
+
+  public static function getDocByClienteAndId($id,$tipo){
+
+    $generatorConn = new Connection();
+
+    //INSTANCIA DA CONEXAO
+    $conn = $generatorConn->getConection();
+
+    //QUERY
+
+    $result = $conn->query("SELECT * FROM doc WHERE cli_id=".$id." AND tipo='$tipo' ;");
+
+    $result->execute();
+    
+    //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+    try{
+        return self::parseResults($result);
+        
+    }catch(Exception $e){
+        return false;
+    }
+
+}
+
+  public static function deleteDocById($id){
+
+    $generatorConn = new Connection();
+
+    //INSTANCIA DA CONEXAO
+    $conn = $generatorConn->getConection();
+
+    //QUERY
+
+    //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+    $result = $conn->query("DELETE FROM doc WHERE id=".$id.";");
+    
+    return $result->rowCount();
+
+}
+
+
+
     public static function insertDoc ($doc)
     { 
 
@@ -87,6 +150,7 @@ class DocController{
         $newDoc->setId_cliente($item['cli_id']);
         $newDoc->setVencimento($item['vencimento']);
         $newDoc->setValor($item['valor']);
+        $newDoc->setStatus($item['status']);
         
         array_push($docs,$newDoc);
       }

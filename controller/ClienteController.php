@@ -7,8 +7,8 @@ use PHPMailer\PHPMailer\Exception;
 * classe : Cliente Controller
 */
 
-include_once '../../helper/Connection.php'; // CONEXAO COM BD
-include_once '../../model/Cliente.php'; //MODEL
+include_once __DIR__.'/../helper/Connection.php'; // CONEXAO COM BD
+include_once  __DIR__.'/../model/Cliente.php'; //MODEL
 
 class ClienteController{
 

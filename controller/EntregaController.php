@@ -5,8 +5,8 @@
 * classe : Entrega Controller
 */
 
-include_once '../../helper/Connection.php'; // CONEXAO COM BD
-include_once '../../model/Entrega.php'; //MODEL
+include_once  __DIR__.'/../helper/Connection.php'; // CONEXAO COM BD
+include_once  __DIR__.'/../model/Entrega.php'; //MODEL
 
 class EntregaController
 {

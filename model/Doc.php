@@ -18,6 +18,7 @@ class Doc {
   public $id_cliente;
   public $valor;
   public $vencimento;
+  public $status;
 
 
   //METODOS
@@ -222,6 +223,26 @@ class Doc {
   public function setVencimento($vencimento)
   {
     $this->vencimento = $vencimento;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of status
+   */ 
+  public function getStatus()
+  {
+    return $this->status;
+  }
+
+  /**
+   * Set the value of status
+   *
+   * @return  self
+   */ 
+  public function setStatus($status)
+  {
+    $this->status = $status;
 
     return $this;
   }

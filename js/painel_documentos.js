@@ -2,6 +2,9 @@
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE = './api/doc/CreateDoc.php';
 const URL_GET_DOC_BY_CLI = './api/doc/GetDocByCliente.php';
+const URL_GET_DOC_BY_ID_CLI = './api/doc/GetDocByClienteAndId.php';
+const URL_GET_DOC_BY_ID = './api/doc/GetDocById.php';
+const URL_DELETE_DOC = './api/doc/DeleteDoc.php';
 const SITE = "Transportadora FG-360";
 
 var data = new FormData();
@@ -21,12 +24,39 @@ $(document).ready(function(){
     $("#rdo_attDoc").click(function(){
         $("#faturas").removeClass("d-none");     
         flagNovo = false;
+        clearFields();
     });
 
     $("#rdo_novoDoc").click(function(){
         $("#faturas").addClass("d-none");
         flagNovo = true;
+        clearFields();
     });
+
+
+    $("#divTipo input[type=radio]").click(function(){
+
+        if(!flagNovo){
+            var tipo = $("#divTipo input[type=radio]:checked").val();
+            var cliente = $("#cliente").children("option:selected").val();
+
+            $("#faturas").empty();
+
+            $.get(URL_GET_DOC_BY_ID_CLI,{"id":cliente,"tipo":tipo},function(data){
+                var json = JSON.parse(data);
+
+                for(item in json){
+
+                    var row = '<div class="row"><p hidden>'+json[item].id+'</p><div class="col-4"><label for="rdo_attFaturas" class="radio" ><input id="rdo_attFaturas" type="radio" name="attFaturas" value='+json[item].id+'onclick='+"alert('ok');"+' >'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    $("#faturas").append(row);
+                }
+            }).fail(function(){
+
+            });
+
+
+        }
+    })
 
     $("#cliente").change(function(){
 
@@ -39,7 +69,7 @@ $(document).ready(function(){
 
                 for(item in json){
 
-                    var row = '<div class="row"><div class="col-4"><label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="FaturaX">'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    var row = '<div class="row"><p hidden>'+json[item].id+'</p><div class="col-4"><label for="rdo_attFaturas" class="radio" ><input id="rdo_attFaturas" type="radio" name="attFaturas" value='+json[item].id+' onclick='+"getDadosDoc();"+' >'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a></div></div>';
                     $("#faturas").append(row);
                 }
             }).fail(function(){
@@ -52,13 +82,47 @@ $(document).ready(function(){
 
     getClientes();
 
+    
+   
+
     $("#btnSalvar").click(function(){
 
-        var tipoSelecionado = $("#rdo_fatura").attr("checked") ? "Fatura" : $("#rdo_cte").attr("checked") ? "CTE" : "2º Via";
+        //VERIFICAÇÃO
+        if( $("#fileUp").val("")){
+            toastr.error("Nescessário fazer upload do arquivo",SITE);
+            return;
+        }
+
+        if(flagNovo == false){
+            
+            var id_doc = $("#faturas input[type=radio]:checked").val();
+            $.get(URL_DELETE_DOC,{"id":id_doc},function(data){
+                toastr.success("Alterado com sucesso","Transportadora FG-360");
+            }).fail(function(){
+                toastr.error("Erro ao alterar!","Transportadora FG-360");
+            });
+            
+            
+            var cliente = $("#cliente").children("option:selected").val();
+
+            $.get(URL_GET_DOC_BY_CLI,{"id_cli":cliente},function(data){
+
+                var json = JSON.parse(data);
+
+                for(item in json){
+
+                    var row = '<div class="row"><div class="col-4"><label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="FaturaX">'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    $("#faturas").append(row);
+                }
+            }).fail(function(){
+                
+            });
+        }
+
+        var tipoSelecionado = $("#rdo_fatura").attr("checked") ? "Fatura" : $("#rdo_cte").attr("checked") ? "CTE" : "2Via";
 
         var cliente =  $("#cliente").children("option:selected").val();
         var tipo = tipoSelecionado;
-        var path = "teste";
         var vencimento = getFinalDate($("#vencimento").val());
         var status = $("#status").val();
         var valor = $("#valor").val();
@@ -75,16 +139,19 @@ $(document).ready(function(){
             }
 
             $.post(URL_CREATE ,json ,function(){
-                toastr.success("Cadastrado com sucesso","Transportadora FG-360");
+                if(flagNovo){
+                    toastr.success("Cadastrado com sucesso","Transportadora FG-360");
+                }
             }).fail(function(){
-                toastr.error("Erro ao cadastrar!","Transportadora FG-360");
+                if(flagNovo){
+                  toastr.error("Erro ao cadastrar!","Transportadora FG-360");
+                }
             });
 
          });
     });
 
 });
-
 
 
 function getClientes(){
@@ -127,4 +194,44 @@ function sendFile(returnData){
             returnData(data);
         }
     });
+}
+
+
+function getDadosDoc(){
+
+    var iddoc = $("#faturas input[type=radio]:checked").val();
+
+    $.get(URL_GET_DOC_BY_ID,{"id":iddoc},function(data){
+
+        var json = JSON.parse(data);
+        for (cliente in json ){
+
+           $("#vencimento").val(json[cliente].vencimento);
+           $("#status").val(json[cliente].status);
+           $("#valor").val(json[cliente].valor);
+
+           $("#status option").each(function(){
+               if($(this).val() == json[cliente].status ){
+                $(this).attr("selected", "selected");
+               }
+           })
+        }
+
+    }).fail(function(){
+
+    });
+
+} 
+
+//FUNÇOES BASICAS 
+
+function clearFields(){
+    $("#vencimento").val("");
+    $("#status").val("");
+    $("#valor").val("");
+    $("#status").val("0");
+    $("#cliente").val("0");
+    $("#faturas").empty();
+    $("#divTipo input[type=radio]").prop("checked",false);
+    $("#fileUp").val("");
 }

@@ -60,8 +60,6 @@ $(document).ready(function(){
       var download;
       for(item in json){
 
-        var download = '<td><a class="cliente-content-link" href="./files/SmithChart.pdf" id="linkFatura" download><i class="far fa-file-alt" id="tdValor"></i><span class="pl-1">Fatura</span></a></td>';
-
         if(json[item].tipo == "Fatura" ){
           alert(json[item].arquivoPath);
           download = '<td><a class="cliente-content-link" href="'+json[item].arquivoPath+'" id="linkFatura" download><i class="far fa-file-alt" id="tdValor"></i><span class="pl-1">Fatura</span></a></td>';

@@ -4,12 +4,4 @@
 * classe : CONTS JS
 */
 
-
-module.exports = {
-
-    //URL DA PAGINA DE STATUS
-    URL_STATUS = "status.html"
-
-
-}
-
+const URL_MAIL_COTACAO = './helper/PHPMailer/src/MailCotacao.php';

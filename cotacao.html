@@ -71,55 +71,60 @@
             <p class="content-cotacao-text">Preencha os campos abaixo para enviar uma solicitação de cotação.</p>
             <div class="row">
                 <div class="col-12">
-                    <form method="POST" class="form-cotacao">
+                    <form method="POST" class="form-cotacao" id="formSender">
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <label class="form-cotacao-label" for="origem">Origem</label>
-                                <input id="origem" type="text" class="form-control form-control-custom-secondary">
+                                <input id="origem" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-cotacao-label" for="destino">Destino</label>
-                                <input id="destino" type="text" class="form-control form-control-custom-secondary">
+                                <input id="destino" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-7 col-md-3">
                                 <label class="form-cotacao-label" for="km">Km</label>
-                                <input id="km" type="text" class="form-control form-control-custom-secondary">
+                                <input id="km" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-5 col-md-3">
                                 <label class="form-cotacao-label" for="peso">Peso</label>
-                                <input id="peso" type="text" class="form-control form-control-custom-secondary">
+                                <input id="peso" type="text" class="form-control form-control-custom-secondary" required> 
                             </div>
                             <div class="col-7 col-md-3">
                                 <label class="form-cotacao-label" for="quantidade">Quantidade</label>
-                                <input id="quantidade" type="text" class="form-control form-control-custom-secondary">
+                                <input id="quantidade" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-5 col-md-3">
                                 <label class="form-cotacao-label" for="pallet">Pallet</label>
                                 <select id="pallet" class="form-control form-control-custom-secondary">
                                     <option>Selecione...</option>
+                                    <option>Pequeno</option>
+                                    <option>Médio</option>
+                                    <option>Grande</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-4">
                                 <label class="form-cotacao-label" for="tipoMaterial">Tipo de material</label>
-                                <input id="tipoMaterial" type="text" class="form-control form-control-custom-secondary">
+                                <input id="tipoMaterial" type="text" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-12 col-md-8">
                                 <label class="form-cotacao-label" for="tipoVeiculo">Tipo de Veículo</label>
                                 <select id="tipoVeiculo" class="form-control form-control-custom-secondary">
                                     <option>Selecione...</option>
+                                    <option>Carro</option>
+                                    <option>Caminhão</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-cotacao-label" for="nomeSolicitante">Nome do solicitante</label>
-                                <input id="nomeSolicitante" type="text" class="form-control form-control-custom-secondary">
+                                <input id="nomeSolicitante" type="text" class="form-control form-control-custom-secondary" required> 
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-cotacao-label" for="telefone">Telefone</label>
-                                <input id="telefone" type="tel" class="form-control form-control-custom-secondary">
+                                <input id="telefone" type="tel" class="form-control form-control-custom-secondary" required>
                             </div>
                             <div class="col-12">
                                 <label class="form-cotacao-label" for="email">E-mail</label>
-                                <input id="email" type="email" class="form-control form-control-custom-secondary">
+                                <input id="email" type="email" class="form-control form-control-custom-secondary" required>
                             </div>
 
                             <div class="col-12 mt-3">
@@ -161,6 +166,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./toastr/toastr.js"></script>
-    <script src="js/contato.js"></script>
+    <script src="js/conts.js"></script>
+    <script src="js/cotacao.js"></script>
 </body>
 </html>

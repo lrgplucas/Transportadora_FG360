@@ -5,7 +5,7 @@
 */
 
 const URL_CREATE_CLIENTE_API = './api/cliente/CreateCliente.php';
-const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/mailCadastro.php';
+const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/MailCadastro.php';
 
 $(document).ready(function(){
 
@@ -52,6 +52,8 @@ $(document).ready(function(){
                     "senha":senha 
                 }
                 $.post(URL_EMAIL_CADASTRO,json,function(data){
+                   
+                    location.reload();
                     
                 });
            

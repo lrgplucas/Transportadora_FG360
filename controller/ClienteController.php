@@ -39,6 +39,32 @@ class ClienteController{
         }
     }
 
+    //METODO PARA FAZER A AUTENTICAÇÃO
+    public static function authClienteFisica($cpf , $senha){
+
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT id FROM cliente WHERE cpf='".$cpf."'  AND senha='".$senha."'");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return true;
+            }else{
+                return false;
+            }   
+        }catch(Exception $e){
+            return false;
+        }
+    }
+
     //FIX ME : NOME DO METODO
     //METODO PARA TRAZER OS DADOS DO CLIENTE 
     public static function getClienteByEmail($cnpj){

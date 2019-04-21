@@ -14,10 +14,17 @@ class Connection {
 
 
   //FIX:ME NEED A WAY TO DIFF DEVELOP ENVIROMENT AND PRODUCTION ENVIROMENT
-  private $user = "root";
+  /*private $user = "root";
   private $pass = "";
   private $host = "localhost";
+  private $bd = "transportadora";*/
+ 
+  private $user = "user";
+  private $pass = "Transp19@";
+  private $host = "107.180.108.3";
   private $bd = "transportadora";
+
+
 
   public function getConection(){
        try {

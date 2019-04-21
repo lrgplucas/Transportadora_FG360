@@ -16,11 +16,27 @@ $data = json_decode(file_get_contents("php://input"));
 if(!isset($_POST['cnpj']) || !isset($_POST['senha']) ){
     http_response_code(403);
 }
+
+$fisica = false;
+
+if(isset($_POST['cnpj'])){
+    $cnpj = $_POST['cnpj'];
+
+}else{
+    $fisica = true;
+    $cpf = $_POST['cpf'];
+}
 //DADOS
-$cnpj = $_POST['cnpj'];
+
 $senha = $_POST['senha'];
 
-$login = ClienteController::authCliente($cnpj,$senha);
+if($fisica){
+    $login = ClienteController::authClienteFisica($cpf,$senha);
+}else{
+    $login = ClienteController::authCliente($cnpj,$senha);
+}
+
+
 
 
 //HTTP 

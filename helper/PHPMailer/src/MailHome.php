@@ -120,15 +120,15 @@ try{
 	//Server settings
 	//$mail->SMTPDebug = 2;                                 // Enable verbose debug output
 	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'in-v3.mailjet.com';  					  // Specify main and backup SMTP servers
+	$mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = '6885b1386296619ecf0295f1b5eefc3f';          // SMTP username
-	$mail->Password = '6449208c639413de47dc582a892247a6';                    // SMTP password
+	$mail->Username = 'camila.feelix@fg360transportes.com.br';          // SMTP username
+	$mail->Password = 'log.30.camila';                    // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 587;                                    // TCP port to connect to
+	$mail->Port = 80;                                       // TCP port to connect to
 
 	//Recipients
-	$mail->setFrom('j.albertino.neto@gmail.com', 'FG-360');
+	$mail->setFrom('contato@fg360transportes.com.br', 'FG-360');
 	$mail->addAddress($email, $nome);     // Add a recipient
 	//Content
 	$mail->isHTML(true);                                  // Set email format to HTML

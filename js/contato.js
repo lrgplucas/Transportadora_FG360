@@ -10,6 +10,11 @@ var URL_CIDADES = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{
 
 $(document).ready(function(){
 
+      //TIRA O SUBMIT DO FORM
+    $("#formSender").submit(function(event){
+        event.preventDefault();
+    });
+
     $("#divNome").hide();
     $("#divCpf").hide(); 
     $("#divTelefone").hide();
@@ -59,11 +64,15 @@ $(document).ready(function(){
         var email = $("#email").val();
         var celular = $("#telcelular").val();
         var msg = $("#msg").val();
+        var area = $("#area").children("option:selected").val();
+        var assunto = $("#assunto").children("option:selected").val();
 
         if(document.getElementById("rdo_juridica").checked){
             var cnpj = $("#cnpj").val();
             var razao = $("#razaosocial").val();  
             var telComercial = $("#telcomercial").val();
+            var cidade = $("#Cidade").children("option:selected").text();
+            var estado = $("#estado").children("option:selected").text(); 
             jsonEmail = {
                 "razaoSocial":razao,
                 "cnpj":cnpj,
@@ -71,12 +80,18 @@ $(document).ready(function(){
                 "email":email,
                 "celular":celular,
                 "msg":msg,
-                "flag":"juridico"
+                "flag":"juridico",
+                "assunto":assunto,
+                "area":area,
+                "cidade":cidade,
+                "estado":estado
             }
         }else if(document.getElementById("rdo_fisica").checked){
             var cpf = $("#cpf").val();
             var nome = $("#nome").val();
             var tel = $("#telefone").val();
+            var cidade = $("#Cidade").children("option:selected").text();
+            var estado = $("#estado").children("option:selected").text(); 
             jsonEmail = {
                 "nome":nome,
                 "cpf":cpf,
@@ -84,15 +99,27 @@ $(document).ready(function(){
                 "email":email,
                 "celular":celular,
                 "msg":msg,
-                "flag":"fisica"
+                "flag":"fisica",
+                "assunto":assunto,
+                "area":area,
+                "cidade":cidade,
+                "estado":estado
             }
         }
        
-        
-        $.post(URL_EMAIL_CONTATO,jsonEmail,function(data){
-            toastr.success("Enviado!","Transportadora FG-360");
+
+        $.post(URL_EMAIL_CONTATO,jsonEmail,function(){
            
+            toastr.success("Enviado!","Transportadora FG-360");
+            setInterval(function(){},2000);
+            location.reload();
+           
+        }).fail(function(){
+            toastr.success("Enviado!","Transportadora FG-360");
+            setInterval(function(){},2000);
+            location.reload();
         });
+        
     });
 
 });

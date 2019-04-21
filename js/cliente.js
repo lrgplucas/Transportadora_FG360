@@ -82,7 +82,7 @@ $(document).ready(function(){
     
       }
     }).fail(function(){
-        toastr.warning("Nenhuma fatura cadadstrada!",SITE);
+        toastr.warning("Nenhuma fatura cadastrada!",SITE);
     });
 
    

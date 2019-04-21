@@ -49,7 +49,7 @@
                             <a class="nav-link active" href="contato.html">Contato</a>
                         </li>
                     </ul>
-                    <a class="btn btn-lg btn-custom nav-btn" href="#">
+                    <a class="btn btn-lg btn-custom nav-btn" href="cotacao.html">
                             <i class="far fa-envelope"></i><span class="pl-1">Cotação</span>
                     </a>
                 </div>
@@ -83,18 +83,27 @@
                 </div>
 
                 <div class="col-12 col-lg-8">
-                    <form method="POST">
+                    <form method="POST" id="formSender">
                         <div class="row">
                             <div class="col-6">
                                     <label class="form-contato-label" for="assunto">Assunto</label>
                                     <select id="assunto" class="form-control form-control-custom-secondary" required>
                                         <option value="0">Selecione...</option>
+                                        <option value="DÚVIDAS">DÚVIDAS</option>
+                                        <option value="RASTREAMENTO">RASTREAMENTO</option>
+                                        <option value="RECLAMAÇÕES">RECLAMAÇÕES</option>
+                                        <option value="SUGESTÕES">SUGESTÕES</option>
                                     </select>
                             </div>
                             <div class="col-6">
                                 <label class="form-contato-label" for="area">Área</label>
                                 <select id="area" class="form-control form-control-custom-secondary" required>
                                     <option value="0">Selecione...</option>
+                                    <option value="ADMINISTRATIVO">ADMINISTRATIVO</option>
+                                    <option value="COMERCIAL">COMERCIAL</option>
+                                    <option value="FINANCEIRO">FINANCEIRO</option>
+                                    <option value="OPERACIONAL">OPERACIONAL</option>
+
                                 </select>
                             </div>
                             <div class="col-4" id="divCpf">

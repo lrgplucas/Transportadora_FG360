@@ -108,7 +108,7 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
     <section class='email-header'><div class='container'>
             <div class='row'>
                 <div class='col-6'>
-                    <img src='http://transportadora-gf360.000webhostapp.com/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;'>
+                    <img src='http://transportadora-gf360.000webhostapp.com/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
 </div>
                 <div class='col-6 d-flex align-items-center'>
                     <a href='#' class='btn btn-custom-email' style='background-color: #fab432;
@@ -219,21 +219,21 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
 try{
 	//Server settings
     $mail->SMTPDebug = 2;  
-                                   // Enable verbose debug output
-	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'ssrs.reachmail.net';  					  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'j.albertino.neto@gmail.com';          // SMTP username
-	$mail->Password = 'neto1990';                    // SMTP password
-	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 587;                                    // TCP port to connect to
+    $mail->isSMTP();  
+    $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'camila.feelix@fg360transportes.com.br';          // SMTP username
+    $mail->Password = 'log.30.camila';                    // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 80;                                    // TCP port to connect to
 
 	//Recipients
-	$mail->setFrom('j.albertino.neto@gmail.com', 'FG-360');
+	$mail->setFrom('camila.feelix@fg360transportes.com.br', 'FG-360');
 	$mail->addAddress($email);     // Add a recipient
 	//Content
 	                                // Set email format to HTML
     $mail->Subject = "Rastreio";
+    $mail->AddCC('camila.feelix@fg360transportes.com.br');
     $mail->CharSet = 'UTF-8';
     $mail->IsHTML(true); 
     $mail->Body = $body;

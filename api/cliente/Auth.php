@@ -19,26 +19,12 @@ if(!isset($_POST['cnpj']) || !isset($_POST['senha']) ){
 
 $fisica = false;
 
-if(isset($_POST['cnpj'])){
-    $cnpj = $_POST['cnpj'];
-
-}else{
-    $fisica = true;
-    $cpf = $_POST['cpf'];
-}
 //DADOS
-
+$cnpj = $_POST['cnpj'];
 $senha = $_POST['senha'];
 
-if($fisica){
-    $login = ClienteController::authClienteFisica($cpf,$senha);
-}else{
-    $login = ClienteController::authCliente($cnpj,$senha);
-}
 
-
-
-
+$login = ClienteController::authCliente($cnpj,$senha);
 //HTTP 
 
 if($login == true){
@@ -50,8 +36,19 @@ if($login == true){
     $_SESSION['cnpj'] = $cnpj;
 
 }else {
-    //SET O HTTP STATUS CODE PARA 403
-    http_response_code(403);
+
+    $login = ClienteController::authClienteFisica($cpf,$senha);
+
+    if(!$login){
+         //SET O HTTP STATUS CODE PARA 403
+        http_response_code(403);
+    }
+   
+     //SET O HTTP STATUS CODE PARA 202
+     http_response_code(200);
+
+     //SETA O EMAIL SEESÃO
+     $_SESSION['cnpj'] = $cnpj;
 
 }
 

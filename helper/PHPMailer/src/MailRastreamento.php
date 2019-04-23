@@ -76,7 +76,7 @@ if($status == "Em Transporte"){
     $colorTransporte = "orange";
     $colorTransporteText = "000";
 }else if($status == "Pendente"){
-    $msgEntrega = "Ol&aacute;, <b>".$result->getNome()."</b> seu produto <b>est&aacute; Pendente</b>!";
+    $msgEntrega = "Ol&aacute;, <b>".$result->getNome()."</b> seu produto <b>foi Recebido</b>!";
     $colorPendente = "orange";
     $colorPendenteText = "000";
 }else{
@@ -96,14 +96,13 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
 <meta name='author' content='lrgp'>
 <meta name='description' content='Transportadora FG 360: O destino certo para o seu produto'>
 <meta name='keywords' content='Transportadora, transporte, produtos, servi&ccedil;os'>
-<!-- Bootstrap CSS --><link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+
 <!-- Font-Awesome--><link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
 <!-- Google Fonts --><link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet'>
 <!-- CSS --><link rel='stylesheet' href='css/style.css'>
 <!-- TOASTR --><title>FG360 - Email Rastreio</title>
 </head>
-<body class='email-marketing' style='max-width: 500px;
-            margin: 0 auto;'>
+<body class='email-marketing' style='width: 500px;margin: 0 auto;'>
   
     <section class='email-header'><div class='container'>
             <div class='row'>
@@ -129,56 +128,65 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
             padding: 10px 50px;'>
                 <div class='col-6 d-flex align-items-end flex-column'>
                     <p class='email-status-dados-produto ' style='font-size: .7rem;
-            margin: 0;'><b>Produto:</b>".$produto."</p>
+            margin: 0;color:#000;' ><b>Produto:</b>".$produto."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;'><b>ID:</b> ".$id."</p>
+            margin: 0;color:#000;'><b>ID:</b> ".$id."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;'><b>".$tipo."</b> Direta</p>
+            margin: 0;color:#000;'><b>".$tipo."</b> Direta</p>
                 </div>
                 <div class='col-6'>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;'><b>Previs&atilde;o de entrega:</b>".$previsao."</p>
+            margin: 0;color:#000;'><b>Previs&atilde;o de entrega:</b>".$previsao."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;'><b>Motorista:</b> ".$motorista."</p>
+            margin: 0;color:#000;'><b>Motorista:</b> ".$motorista."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;'><b>Ve&iacute;culo:</b> ".$veiculo."</p>
+            margin: 0;color:#000;'><b>Ve&iacute;culo:</b> ".$veiculo."</p>
                 </div>
             </div>
-            <div class='row email-status-status' style='background-color: #f7f7f7;'>
-                    <div class='col-12 d-flex flex-column align-items-center justify-content-center pt-3'>
+            <div class='row email-status-status' style='background-color: #f7f7f7; '>
+                    <div class='col-12 d-flex flex-column align-items-center justify-content-center pt-3' style='margin-left:17%'>
                         <div class='row d-inline-block'>
                             <div class='col-12'>
-                                <img src='http://transportadora-gf360.000webhostapp.com/imgs/rastreamento/recebido_".$colorPendente.".png' class='email-status-img' alt='' style='height: 50px;
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/recebido_".$colorPendente.".png' class='email-status-img' alt='' style='height: 50px;
             width: 50px;
             display: inline-block;'><div class='email-status-line-checked' style='width: 100px;
             border: 2px solid #fab432;
             margin-left: -4px;
             margin-right: -20px;
             display: inline-block;'></div>
-                                <img src='http://transportadora-gf360.000webhostapp.com/imgs/rastreamento/transporte_".$colorTransporte.".png' class='email-status-img' alt='' style='height: 50px;
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/transporte_".$colorTransporte.".png' class='email-status-img' alt='' style='height: 50px;
             width: 50px;
             display: inline-block;'><div class='email-status-line' style='width: 100px;
             border: 2px solid #".$lineColor.";
             margin-left: -4px;
             margin-right: -20px;
             display: inline-block;'></div>
-                                <img src='http://transportadora-gf360.000webhostapp.com/imgs/rastreamento/entregue_".$colorEntregue.".png' class='email-status-img' alt='' style='height: 50px;
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/entregue_".$colorEntregue.".png' class='email-status-img' alt='' style='height: 50px;
             width: 50px;
             display: inline-block;'>
 </div>
                         </div>
+                        
+                    
                         <div class='row pt-3'>
-                            <div class='col-4'>
+                 
+                            <div class='col-4' style='margin-left: -4px;
+            margin-right: -20px;
+            display: inline-block;'>
                                 <p class='email-status-text-checked' style='word-wrap: normal;
             font-size: .9rem;
             color: #".$colorPendenteText.";'>Produto recebido</p>
                             </div>
-                            <div class='col-4'>
+                            <div class='col-4' style='margin-left: 40px;
+            margin-right: -20px;
+            display: inline-block;'>
                                 <p class='email-status-text-check text-center' style='font-size: .9rem;
             color: #".$colorTransporteText.";
             margin: 0;'>Em transporte</p>
                             </div>
-                            <div class='col-4'>
+                            <div class='col-4' style='margin-left: 80px;
+            margin-right: -20px;
+            display: inline-block;'>
                                 <p class='email-status-text-check text-right' style='font-size: .9rem;
             color: #".$colorEntregueText.";
             margin: 0;'>Entregue</p>
@@ -200,18 +208,21 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
             text-align: center;
             margin: 0;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
         </div>
-    </section><footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem;'><ul style='margin:0; padding:0; list-style:none; display:flex; flex-direction:row;justify-content:center;background-color:#000;margin-right:15'>
-<li>
-                <a href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
-                    <span class='sr-only'>Facebook</span>
-                    <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/facebook_icon.png' alt='Facebook'></a>
+    </section>
+    <footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem;'>
+        <ul style='margin-left:12%; padding:0; list-style:none; display:flex; flex-direction:row;justify-content:center;background-color:#000;'>
+            <li>
+                <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
+                    <span class='sr-only' style='color:#000;'>Facebook</span>
+                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon.png' alt='Facebook'></a>
             </li>
             <li>
-                <a href='https://www.instagram.com/fg360transportes' class='footer-link'>
-                    <span class='sr-only'>Instagram</span>
-                    <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/instagram_icon.png' alt='Instagram'></a>
+                <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
+                    <span class='sr-only' style='color:#000;'>Instagram</span>
+                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon.png' alt='Instagram'></a>
             </li>
-        </ul></footer>
+        </ul>
+    </footer>
 </body>
 </html>
 ";
@@ -222,18 +233,18 @@ try{
     $mail->isSMTP();  
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'camila.feelix@fg360transportes.com.br';          // SMTP username
-    $mail->Password = 'log.30.camila';                    // SMTP password
+    $mail->Username = 'contato@fg360transportes.com.br';          // SMTP username
+    $mail->Password = 'contato.30';                    // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 80;                                    // TCP port to connect to
 
 	//Recipients
-	$mail->setFrom('camila.feelix@fg360transportes.com.br', 'FG-360');
+	$mail->setFrom('contato@fg360transportes.com.br', 'FG-360');
 	$mail->addAddress($email);     // Add a recipient
 	//Content
 	                                // Set email format to HTML
-    $mail->Subject = "Rastreio";
-    $mail->AddCC('camila.feelix@fg360transportes.com.br');
+    $mail->Subject = "ACOMPANHE SEU PRODUTO";
+    $mail->AddCC('contato@fg360transportes.com.br');
     $mail->CharSet = 'UTF-8';
     $mail->IsHTML(true); 
     $mail->Body = $body;

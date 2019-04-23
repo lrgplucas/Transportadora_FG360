@@ -212,14 +212,14 @@ try{
 	$mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'camila.feelix@fg360transportes.com.br';          // SMTP username
-	$mail->Password = 'log.30.camila';                    // SMTP password
+	$mail->Username = 'contato@fg360transportes.com.br';          // SMTP username
+	$mail->Password = 'contato.30';                    // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 80;                                    // TCP port to connect to
                                 // TCP port to connect to
 
 	//Recipients
-	$mail->setFrom('camila.feelix@fg360transportes.com.br', 'FG-360');
+	$mail->setFrom('contato@fg360transportes.com.br', 'FG-360');
 	$mail->addAddress($email, $nome);     // Add a recipient
 	//Content
                                     // Set email format to HTML

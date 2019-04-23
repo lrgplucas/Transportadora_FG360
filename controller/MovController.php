@@ -27,6 +27,8 @@ class MovController
         return $formatedResult;
     }
 
+    
+
     public static function getMovsByEntrega($id)
     {
         $generatorConn = new Connection();
@@ -91,6 +93,8 @@ class MovController
       $newMovs->setData($item['data']);
       $newMovs->setStatus($item['status']);
       $newMovs->setEntrega($item['entrega_id']);
+      $newMovs->setMotorista($item['motorista']);
+      $newMovs->setVeiculo($item['veiculo']);
      
 
       array_push($movs,$newMovs);

@@ -106,8 +106,8 @@ class EntregaController
     $dataPrevisao = $novaEntrega->getDataPrevisao() ;
     $dataCriacao = $novaEntrega->getDataCriacao();
     $nf = $novaEntrega->getNf();
-    $codRastreio = $novaEntrega->getProduto();
-    $produto = $novaEntrega->getCodRastreio() ;
+    $codRastreio = $novaEntrega->getCodRastreio() ;
+    $produto = $novaEntrega->getProduto();
     $id_cliente = $novaEntrega->getId_cliente();
     $tipo = $novaEntrega->getTipo_carga();
     $motorista =  $novaEntrega->getMotorista();

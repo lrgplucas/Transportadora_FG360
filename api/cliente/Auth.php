@@ -37,18 +37,19 @@ if($login == true){
 
 }else {
 
-    $login = ClienteController::authClienteFisica($cpf,$senha);
+    $login = ClienteController::authClienteFisica($cnpj,$senha);
 
-    if(!$login){
+    if($login == false){
          //SET O HTTP STATUS CODE PARA 403
         http_response_code(403);
-    }
-   
-     //SET O HTTP STATUS CODE PARA 202
-     http_response_code(200);
+    }else{
+    
+        //SET O HTTP STATUS CODE PARA 202
+        http_response_code(200);
 
-     //SETA O EMAIL SEESÃO
-     $_SESSION['cnpj'] = $cnpj;
+        //SETA O EMAIL SEESÃO
+        $_SESSION['cnpj'] = $cnpj;
+    }
 
 }
 

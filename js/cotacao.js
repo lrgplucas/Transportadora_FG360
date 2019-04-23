@@ -37,8 +37,8 @@ $(document).ready(function(){
 
         $.post(URL_MAIL_COTACAO,values,function(data){
             toastr.success("Enviado com sucesso","Transportadora FG-360");
-            setInterval(function(){},2000);
-            location.reload();
+            setTimeout(function(){location.reload()},3000);
+            
         }).fail(function(){
             /*toastr.success("Enviado com sucesso","Transportadora FG-360");
             setInterval(function(){},2000);

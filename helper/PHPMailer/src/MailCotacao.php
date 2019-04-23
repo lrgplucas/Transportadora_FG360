@@ -44,6 +44,13 @@ $email = $_POST["email"];
 $pallet = $_POST['pallet'];
 $tipoVeiculo = $_POST['tipoVeiculo'];
 
+$statusPallet;
+if($pallet == "Sim"){
+    $statusPallet = "Sim";
+}else{
+    $statusPallet = "N&atilde;o";
+}
+
 
 
 $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://www.w3.org/TR/REC-html40/loose.dtd'>
@@ -59,7 +66,7 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
 <!-- Google Fonts --><link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet'>
 <title>FG360 - Email Cota&ccedil;&atilde;o</title>
 </head>
-<body class='email-marketing' style='max-width: 500px;
+<body class='email-marketing' style='width: 500px;
             margin: 0 auto;'>
  
     <section class='email-header'><div class='container'>
@@ -67,60 +74,56 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
                 <div class='col-6'>
                     <img src='http://transportadora-gf360.000webhostapp.com/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
 </div>
-                <div class='col-6 d-flex align-items-center'>
-                    <a href='#' class='btn btn-custom-email' style='background-color: #fab432;
-            color: #fff;
-            font-size: .8rem;
-            border-radius: 0;
-            text-transform: uppercase;
-            font-weight: 700;'>Acessar sou cliente</a>
+            <div class='col-6 d-flex align-items-center' style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;float:right'> 
+                <a href='https://fg360transportes.com.br/' class='btn btn-custom-email' style='    text-decoration: none;    display: inline-block; color:#fff'>Acessar sou cliente</a> </div> 
                 </div>
             </div>
         </div>
     </section><section class='email-body-top mt-5'><div class='container'>
-            <h1 class='email-body-top-title' style='font-size: .8rem;'>Ol&aacute;, <b>$nome</b> sua cota&ccedil;&atilde;o foi cadastrada em nosso site.</h1>
+            <h1 class='email-body-top-title' style='font-size: .8rem;color:black;'>Ol&aacute;, <b>$nome</b> sua cota&ccedil;&atilde;o foi cadastrada em nosso site.</h1>
             
         </div>
     </section><section class='email-login' style='background-color: #f7f7f7;
-            padding: 25px 0;'><div class='container-fluid'>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Origem:</b>$origem</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Destino:</b>$destino</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Km:</b>$km</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Peso:</b>$peso</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Quantidade:</b>$quantidade</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Tipo:</b>$tipo</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Pallet:</b>pallet$pallet</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Tipo de Veiculo:</b>$tipoVeiculo</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Telefone:</b>$telefone</p>
-            <p class='email-login-dados' style='font-size: .9rem;'><b>Email:</b>$email</p>
+            padding: 25px 0;color:black;'><div class='container-fluid'>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Origem:</b>$origem</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Destino:</b>$destino</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Km:</b>$km</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Peso:</b>$peso</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Quantidade:</b>$quantidade</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Tipo:</b>$tipo</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Pallet:</b>$statusPallet</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Tipo de Veiculo:</b>$tipoVeiculo</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Telefone:</b>$telefone</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Email:</b>$email</p>
          
         </div>
     </section><section class='email-body-bottom mt-3 mb-3'><div class='container'>
             <h2 class='email-body-bottom-title mb-3' style='font-size: .8rem;
-            text-align: center;'>Clique no bot&atilde;o 'Acessar sou cliente para ser direcionado para nosso site</h2>
+            text-align: center;color:black;'>Clique no bot&atilde;o 'Acessar sou cliente para ser direcionado para nosso site</h2>
             <p class='email-body-bottom-text' style='font-size: .7rem;
             font-weight: 700;
             text-align: center;
-            margin: 0;'>Ficou alguma d&uacute;vida?</p>
+            margin: 0;color:black;'>Ficou alguma d&uacute;vida?</p>
             <p class='email-body-bottom-contato' style='font-size: .7rem;
             text-align: center;
-            margin: 0;'>Entre em contato: contato@fg360transportes.com.br</p>
+            margin: 0; color:black;'>Entre em contato: contato@fg360transportes.com.br</p>
             <p class='email-body-bottom-contato' style='font-size: .7rem;
-            text-align: center;
-            margin: 0;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
+            text-align: center;margin: 0;color:black;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
         </div>
-    </section><footer class='footer' style='background-color:#000; color: #fff; padding: 2rem;'><ul style='margin:0; padding:0; list-style:none; display:flex; flex-direction:row;justify-content:center;background-color:#000;margin-right:15'>
-<li>
-                <a href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
-                    <span class='sr-only'>Facebook</span>
-                    <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/facebook_icon.png' alt='Facebook'></a>
-            </li>
-            <li>
-                <a href='https://www.instagram.com/fg360transportes' class='footer-link'>
-                    <span class='sr-only'>Instagram</span>
-                    <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/instagram_icon.png' alt='Instagram'></a>
-            </li>
-        </ul></footer>
+    </section> <footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem;'>
+    <ul style='margin-left:12%; padding:0; list-style:none; display:flex; flex-direction:row;justify-content:center;background-color:#000;'>
+        <li>
+            <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
+                <span class='sr-only' style='color:#000;'>Facebook</span>
+                <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/facebook_icon.png' alt='Facebook'></a>
+        </li>
+        <li>
+            <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
+                <span class='sr-only' style='color:#000;'>Instagram</span>
+                <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/instagram_icon.png' alt='Instagram'></a>
+        </li>
+    </ul>
+</footer>
 </body>
 </html>";
 
@@ -131,17 +134,17 @@ try{
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'camila.feelix@fg360transportes.com.br';          // SMTP username
-	$mail->Password = 'log.30.camila';                    // SMTP password
+	$mail->Username = 'contato@fg360transportes.com.br';          // SMTP username
+	$mail->Password = 'contato.30';                    // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 80;                                 // TCP port to connect to
 
 	//Recipients
-	$mail->setFrom('camila.feelix@fg360transportes.com.br', 'FG-360');
+	$mail->setFrom('contato@fg360transportes.com.br', 'FG-360');
 	$mail->addAddress($email);     // Add a recipient
 	//Content
                                     // Set email format to HTML
-    $mail->AddCC('camila.feelix@fg360transportes.com.br');
+    $mail->AddCC('contato@fg360transportes.com.br');
     $mail->Subject = "Cotação Cliente";
     $mail->CharSet = 'UTF-8';
     $mail->IsHTML(true); 

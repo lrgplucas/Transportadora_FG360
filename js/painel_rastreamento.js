@@ -6,7 +6,7 @@
 
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE_ENTREGA_API = './api/entrega/Post.php';
-const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/mailRastreamento.php';
+const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/MailRastreamento.php';
 
 $(document).ready(function(){
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
         var cliente = $("#cliente").children("option:selected").val();
         var produto = $("#produto").val();
         var id =  $("#idRastramento").val();
-        var tipo = $("#rdo_direta").attr("checked") ? "Carga direta" : $("#rdo_fracionada").attr("checked") ? "Carga fracionada" : "Carga compartilhada";
+        var tipo = $("input:checked").val();
         var previsao = getFinalDate($("#previsaoEntrega").val());
         var data =  new Date();
         var motorista = $("#motorista").val();

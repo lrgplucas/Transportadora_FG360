@@ -9,8 +9,15 @@ const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/MailCadastro.php';
 
 $(document).ready(function(){
 
+    $("#formPainelCliente").trigger("reset");
+
     setPessoaJuridicaForm();
     var isJuridica = false;
+
+    $("#formPainelCliente").submit(function(event){
+        event.preventDefault();
+    });
+
 
     $("#rdo_fisica").click(function(){
         setPessoaFisicaForm();
@@ -24,6 +31,17 @@ $(document).ready(function(){
 
     //EVENTO DO BOTÃO DE ENVIAR
     $("#btnCadastrar").click(function(event){
+
+        if(!validate(isJuridica)){
+            toastr.error("Preencha todos campos","Transportadora FG-360");
+            return ;
+        }
+
+
+        if(!checkPassword()){
+            toastr.error("As Senhas não são compatíveis","Transportadora FG-360");
+            return ;
+        }
 
         //PEGAR VALORES
         var values = {};
@@ -52,8 +70,8 @@ $(document).ready(function(){
                     "senha":senha 
                 }
                 $.post(URL_EMAIL_CADASTRO,json,function(data){
-                   
-                    location.reload();
+                    setTimeout(function(){location.reload()},3000);
+               
                     
                 });
            
@@ -126,4 +144,36 @@ function salvarCliente(salvo){
          }
 
      });
+}
+
+function checkPassword(){
+    if($("#senha").val() == $("#confirmaSenha").val()){
+        return true;
+    }
+
+    return false;
+}
+
+function validate(isJuridica){
+
+    var fieldsFisica = ["cpf","nome","telefone","celular","email","senha","confirmaSenha"];
+    var fieldsJurica = ["cnpj","razaoSocial","telefone","celular","email","senha","confirmaSenha"];
+
+    var fields ;
+
+    if(isJuridica){
+        fields = fieldsJurica ;
+    }else{
+        fields = fieldsFisica ;
+    }
+
+    for (var i = 0; i < fields.length ; i++){
+
+        if($("#"+fields[i]).val() == ""){
+            
+            return false;
+        }
+    }
+
+    return true;
 }

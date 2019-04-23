@@ -69,7 +69,13 @@ function getCliente(id_cliente){
       $("#p_nome")[0].innerHTML = JSON.parse(data).nome;
       $("#p_mail")[0].innerHTML = "Email: "+JSON.parse(data).email;
       $("#p_tel")[0].innerHTML  = "Telefone: "+JSON.parse(data).tel;
-      $("#p_cnpj")[0].innerHTML = "CPF/CNPJ: "+JSON.parse(data).cnpj;
+
+      if(JSON.parse(data).cnpj == null){
+        $("#p_cnpj")[0].innerHTML = "CPF/CNPJ: "+JSON.parse(data).cpf;
+      }else{
+        $("#p_cnpj")[0].innerHTML = "CPF/CNPJ: "+JSON.parse(data).cnpj;
+      }
+      
     });
 }
 
@@ -79,11 +85,39 @@ function getMovs(id_entrega){
   
   var row2 = "";
 
-  $.get(URL_API_MOVIMENTACOES_BY_ENTREGA,{id:id_entrega},function(data){
+  $.get(URL_API_MOVIMENTACOES_BY_ENTREGA,{"id":id_entrega},function(data){
     var data_temporary = JSON.parse(data);
 
     //DATA BR 
     var ptBrTime = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+
+    var last = data_temporary.length - 1;
+    var status = data_temporary[last].status;
+   
+
+    if(status == "Em Transporte"){
+      $("#imgTransporte").attr("src","imgs/rastreamento/transporte_orange.png");
+      $("#imgEntregue").attr("src","imgs/rastreamento/transporte_grey.png");
+      $("#divLine").removeClass("section-status-line-checked");
+      $("#divLine").addClass("section-status-line");
+      $("#pTransporte").removeClass("section-status-text-check");
+      $("#pTransporte").addClass("section-status-text-checked");
+      $("#pEntregue").removeClass("section-status-text-checked");
+      $("#pEntregue").addClass("section-status-text-check");
+     
+    }
+
+    if(status == "Entregue"){
+      $("#imgTransporte").attr("src","imgs/rastreamento/transporte_orange.png");
+      $("#imgEntregue").attr("src","imgs/rastreamento/transporte_orange.png");
+      $("#divLine").addClass("section-status-line-checked");
+      $("#pTransporte").removeClass("section-status-text-check");
+      $("#pTransporte").addClass("section-status-text-checked");
+      $("#pEntregue").addClass("section-status-text-checked");
+      $("#pEntregue").removeClass("section-status-text-check");
+    }
+
+    
 
     for (item in data_temporary){
       ptBrTime = new Date(data_temporary[item].data);

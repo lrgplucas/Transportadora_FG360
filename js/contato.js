@@ -111,13 +111,13 @@ $(document).ready(function(){
         $.post(URL_EMAIL_CONTATO,jsonEmail,function(){
            
             toastr.success("Enviado!","Transportadora FG-360");
-            setInterval(function(){},2000);
-            location.reload();
+            setTimeout(function(){location.reload()},3000);
+          
            
         }).fail(function(){
             toastr.success("Enviado!","Transportadora FG-360");
-            setInterval(function(){},2000);
-            location.reload();
+            setTimeout(function(){location.reload()},3000);
+            
         });
         
     });

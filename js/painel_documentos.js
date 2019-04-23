@@ -67,6 +67,8 @@ $(document).ready(function(){
 
                 var json = JSON.parse(data);
 
+               
+
                 for(item in json){
 
                     var row = '<div class="row"><p hidden>'+json[item].id+'</p><div class="col-4"><label for="rdo_attFaturas" class="radio" ><input id="rdo_attFaturas" type="radio" name="attFaturas" value='+json[item].id+' onclick='+"getDadosDoc();"+' >'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a></div></div>';
@@ -88,7 +90,7 @@ $(document).ready(function(){
     $("#btnSalvar").click(function(){
 
         //VERIFICAÇÃO
-        if( $("#fileUp").val("")){
+        if( $("#fileUp").val() == ""){
             toastr.error("Nescessário fazer upload do arquivo",SITE);
             return;
         }

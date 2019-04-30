@@ -50,10 +50,10 @@
         <nav class="navbar navbar-painel navbar-expand-lg" id="navbarPainel">
             <div class="container">
                 <ul class="navbar-nav ml-auto" >
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="painel_cliente.html">Cadastro de clientes</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="painel_atualizar_cliente.html">Atualizar clientes</a>
                     </li>
                     <li class="nav-item">
@@ -66,8 +66,8 @@
 
     <section class="content-painel">
         <div class="container">
-            <h1 class="content-painel-title">Cadastro de clientes</h1>
-            <p class="content-painel-text">Preencha os campos abaixo para cadastrar um novo cliente para ter acesso ao <b>Sou cliente</b> do site</p>
+            <h1 class="content-painel-title">Atualizar clientes</h1>
+            <p class="content-painel-text">Preencha os campos abaixo para <b>atualizar</b> um cliente já cadastrado no site</p>
             <div class="row">
                     <div class="col-12">
                         <label for="rdo_fisica" class="radio">
@@ -82,6 +82,12 @@
                     <div class="col-12">
                         <form method="POST" class="form-painel" id="formPainelCliente" action="./api/cliente/CreateCliente.php">
                             <div class="row">
+                                <div class="col-12" id=divCliente>
+                                    <label class="form-painel-label" for="cliente">Cliente</label>
+                                    <select id="cliente" class="form-control form-control-custom-secondary">
+                                        <option value="0">Selecione...</option>
+                                    </select>  
+                                </div>
                                 <div class="col-4" id="divCpf">
                                     <label class="form-painel-label" for="cpf">CPF</label>
                                     <input id="cpf" type="text" class="form-control form-control-custom-secondary" required>
@@ -118,9 +124,14 @@
                                     <label class="form-painel-label" for="confirmaSenha">Confirmar senha</label>
                                     <input id="confirmaSenha" type="password" class="form-control form-control-custom-secondary" required>
                                 </div>
-                                <div class="col-12 mt-3">
-                                    <div class="row justify-content-center">
-                                        <input type="button" id="btnCadastrar" class="btn btn-custom text-center mt-2 mb-5" value="Cadastrar">
+                                <div class="col-6 mt-3">
+                                    <div class="row justify-content-end mr-1">
+                                        <input type="button" id="btnAtualizar" class="btn btn-custom text-center mt-2 mb-5" value="Atualizar">
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <div class="row justify-content-start ml-1">
+                                        <input type="button" id="btnExcluir" class="btn btn-custom text-center mt-2 mb-5" value="Excluir">
                                     </div>
                                 </div>
                             </div>

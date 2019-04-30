@@ -1,4 +1,5 @@
 
+
 const URL_GET_CLIENTE_API = './api/cliente/GetCliente.php';
 const URL_CREATE = './api/doc/CreateDoc.php';
 const URL_GET_DOC_BY_CLI = './api/doc/GetDocByCliente.php';
@@ -10,8 +11,12 @@ const SITE = "Transportadora FG-360";
 var data = new FormData();
 
 $(document).ready(function(){
-    var file ;
-    var fileName;
+
+    //LIMPA OS CHECKS DE NOVO OU DOC EXISTENTE
+    $("#rdo_novoDoc")[0].checked = false;
+    $("#rdo_attDoc")[0].checked = false;
+
+    var file , fileName;
     var flagNovo = true;
  
     $("#fileUp").on("change",function(){
@@ -44,10 +49,14 @@ $(document).ready(function(){
 
             $.get(URL_GET_DOC_BY_ID_CLI,{"id":cliente,"tipo":tipo},function(data){
                 var json = JSON.parse(data);
-
+                $("#faturas").empty();
                 for(item in json){
 
-                    var row = '<div class="row"><p hidden>'+json[item].id+'</p><div class="col-4"><label for="rdo_attFaturas" class="radio" ><input id="rdo_attFaturas" type="radio" name="attFaturas" value='+json[item].id+'onclick='+"alert('ok');"+' >'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    var row = '<div class="row"><div class="col-3">'+
+                    '<label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="'+json[item].id+'">'+json[item].vencimento+'</label>'+
+                    '</div><div class="col-3 text-center"><p>'+json[item].descricao+'</p></div>'+
+                    '<div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a>'+
+                    '</div><div class="col-2"><input type="button" class="btn btn-custom text-center" style="padding:0 0 0 0 ;border-radius:0;" onclick="deletarDoc('+json[item].id+')" value="excluir" /></div></div>';
                     $("#faturas").append(row);
                 }
             }).fail(function(){
@@ -68,14 +77,18 @@ $(document).ready(function(){
                 var json = JSON.parse(data);
 
                
-
+                $("#faturas").empty();
                 for(item in json){
 
-                    var row = '<div class="row"><p hidden>'+json[item].id+'</p><div class="col-4"><label for="rdo_attFaturas" class="radio" ><input id="rdo_attFaturas" type="radio" name="attFaturas" value='+json[item].id+' onclick='+"getDadosDoc();"+' >'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a></div></div>';
+                    var row = '<div class="row"><div class="col-3">'+
+                    '<label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="'+json[item].id+'">'+json[item].vencimento+'</label>'+
+                    '</div><div class="col-3 text-center"><p>'+json[item].descricao+'</p></div>'+
+                    '<div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a>'+
+                    '</div><div class="col-2"><input type="button" class="btn btn-custom text-center" style="padding:0 0 0 0 ;border-radius:0;" onclick="deletarDoc('+json[item].id+')" value="excluir" /></div></div>';
                     $("#faturas").append(row);
                 }
             }).fail(function(){
-                toastr.warning("Nenhuma fatura cadadstrada!",SITE);
+                toastr.warning("Nenhuma fatura cadastrada!",SITE);
             });
         }
 
@@ -96,7 +109,11 @@ $(document).ready(function(){
         }
 
         if(flagNovo == false){
-            
+            var tipoSelecionadoDoc = $("#divTipo > input:checked").val();
+            if(tipoSelecionadoDoc == null){
+                toastr.error("Selecione o tipo de documento",SITE);
+                return;
+            }
             var id_doc = $("#faturas input[type=radio]:checked").val();
             $.get(URL_DELETE_DOC,{"id":id_doc},function(data){
                 toastr.success("Alterado com sucesso","Transportadora FG-360");
@@ -110,24 +127,33 @@ $(document).ready(function(){
             $.get(URL_GET_DOC_BY_CLI,{"id_cli":cliente},function(data){
 
                 var json = JSON.parse(data);
-
+                $("#faturas").empty();
                 for(item in json){
 
-                    var row = '<div class="row"><div class="col-4"><label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="FaturaX">'+json[item].vencimento+'</label></div><div class="col-4 text-center"><p>'+json[item].descricao+'</p></div><div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href="#"><i class="far fa-file-alt"></i> </a></div></div>';
+                    var row = '<div class="row"><div class="col-3">'+
+                    '<label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="'+json[item].id+'">'+json[item].vencimento+'</label>'+
+                    '</div><div class="col-3 text-center"><p>'+json[item].descricao+'</p></div>'+
+                    '<div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a>'+
+                    '</div><div class="col-2"><input type="button" class="btn btn-custom text-center" style="padding:0 0 0 0 ;border-radius:0;" onclick="deletarDoc('+json[item].id+')" value="excluir" /></div></div>';
                     $("#faturas").append(row);
                 }
             }).fail(function(){
-                
+                toastr.warning("Nenhuma fatura cadastrada!",SITE);
             });
         }
 
-        var tipoSelecionado = $("#rdo_fatura").attr("checked") ? "Fatura" : $("#rdo_cte").attr("checked") ? "CTE" : "2Via";
+        var tipoSelecionado = $("#divTipo > input:checked").val();
 
         var cliente =  $("#cliente").children("option:selected").val();
         var tipo = tipoSelecionado;
         var vencimento = getFinalDate($("#vencimento").val());
         var status = $("#status").val();
         var valor = $("#valor").val();
+
+        if(tipoSelecionado == null){
+            toastr.error("Selecione o tipo de documento",SITE);
+            return;
+        }
          
         sendFile(function(data){
 
@@ -236,4 +262,30 @@ function clearFields(){
     $("#faturas").empty();
     $("#divTipo input[type=radio]").prop("checked",false);
     $("#fileUp").val("");
+   
+}
+
+function deletarDoc(id){
+
+    $.get(URL_DELETE_DOC,{"id":id},function(data){
+        toastr.success("Excluido com sucesso",SITE);
+
+        $("#faturas").empty();
+        $.get(URL_GET_DOC_BY_CLI,{"id_cli":cliente},function(data){
+
+            var json = JSON.parse(data);
+
+            for(item in json){
+
+                var row = '<div class="row"><div class="col-3">'+
+                    '<label for="rdo_attFaturas" class="radio"><input id="rdo_attFaturas" type="radio" name="attFaturas" value="'+json[item].id+'">'+json[item].vencimento+'</label>'+
+                    '</div><div class="col-3 text-center"><p>'+json[item].descricao+'</p></div>'+
+                    '<div class="col-4"><p class="d-inline-block pr-5">R$ '+json[item].valor+'</p><a class="attFaturas-link" href='+json[item].arquivoPath+' download><i class="far fa-file-alt"></i> </a>'+
+                    '</div><div class="col-2"><input type="button" class="btn btn-custom text-center"  style="padding:0 0 0 0 ; border-radius:0;" onclick="deletarDoc('+json[item].id+')" value="excluir" /></div></div>';
+                    $("#faturas").append(row);
+            }
+        }).fail(function(){
+            toastr.warning("Nenhuma fatura cadastrada!",SITE);
+        });
+    });
 }

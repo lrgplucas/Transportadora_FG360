@@ -54,7 +54,8 @@ $(document).ready(function(){
                 "data":data,
                 "motorista":motorista,
                 "veiculo":veiculo,
-                "status":status
+                "status":status,
+                "codRastreio":id
             }
             
 

@@ -19,9 +19,9 @@ class Connection {
   private $host = "localhost";
   private $bd = "transportadora";*/
  
-  private $user = "user";
-  private $pass = "Transp19@";
-  private $host = "107.180.108.3";
+  private $user = "joao";
+  private $pass = "neto1990";
+  private $host = "localhost";
   private $bd = "transportadora";
 
 

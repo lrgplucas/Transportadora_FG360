@@ -57,13 +57,13 @@
                 <div class="dropdown dropdown-profile m-auto ml-lg-2 pt-1">
                     <a href="#" data-toggle="dropdown" class="d-flex justify-content-end align-items-center">
                         <img src="imgs/profile/user_01.png" class="dropdown-profile-avatar rounded-circle align-self-center" alt="Avatar">
-                        <p class="dropdown-profile-text flex-column mb-auto align-self-start" id="appUsu">{{info.data.nome}}<br><small>CNPJ: {{info.data.cnpj}}</small></p>
+                        <p class="dropdown-profile-text flex-column mb-auto align-self-start" id="appUsu">{{info.data.nome}}<br><small  v-if="info.data.cnpj != null">CNPJ: {{info.data.cnpj}}</small><small  v-else>CPF: {{info.data.cpf}}</small></p>
                         <img src="imgs/profile/dropdown.png" class="icon-dropdown align-self-center" alt="">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#" class="dropdown-item">
+                        <li id="spanLogout"><a href="index.html" class="dropdown-item">
                         <img src="imgs/profile/logout.png" class="icon-logout">
-                        <span class="pl-1" id="spanLogout">Sair</span></a></li>
+                        <span class="pl-1" >Sair</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +76,7 @@
             <div class="row cliente-content-consultar d-flex justify-content-center align-items-center">
                 <label for="consultar" class="cliente-content-label pr-2">Informe o mês que deseja consultar:</label>
                 <select id="consultar" class="cliente-content-select">
-                    <option>Fev/19</option>
+                    <option>Jan/19</option>
                 </select>             
             </div>
 

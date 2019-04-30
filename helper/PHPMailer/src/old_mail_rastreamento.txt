@@ -1,0 +1,49 @@
+  <div class='row d-inline-block'>
+                            <div class='col-12'>
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/recebido_".$colorPendente.".png' class='email-status-img' alt='' style='height: 50px;
+            width: 50px;
+            display: inline-block;'><div class='email-status-line-checked' style='width: 100px;
+            border: 2px solid #fab432;
+            margin-left: -4px;
+            margin-right: -20px;
+            display: inline-block;'></div>
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/transporte_".$colorTransporte.".png' class='email-status-img' alt='' style='height: 50px;
+            width: 50px;
+            display: inline-block;'><div class='email-status-line' style='width: 100px;
+            border: 2px solid #".$lineColor.";
+            margin-left: -4px;
+            margin-right: -20px;
+            display: inline-block;'></div>
+                                <img src='https://fg360transportes.com.br/imgs/rastreamento/entregue_".$colorEntregue.".png' class='email-status-img' alt='' style='height: 50px;
+            width: 50px;
+            display: inline-block;'>
+</div>
+                        </div>
+                        
+                    
+                        <div class='row pt-3'>
+                 
+                            <div class='col-4' style='margin-left: -4px;
+            margin-right: -20px;
+            display: inline-block;'>
+                                <p class='email-status-text-checked' style='word-wrap: normal;
+            font-size: .9rem;
+            color: #".$colorPendenteText.";'>Produto recebido</p>
+                            </div>
+                            <div class='col-4' style='margin-left: 40px;
+            margin-right: -20px;
+            display: inline-block;'>
+                                <p class='email-status-text-check text-center' style='font-size: .9rem;
+            color: #".$colorTransporteText.";
+            margin: 0;'>Em transporte</p>
+                            </div>
+                            <div class='col-4' style='margin-left: 80px;
+            margin-right: -20px;
+            display: inline-block;'>
+                                <p class='email-status-text-check text-right' style='font-size: .9rem;
+            color: #".$colorEntregueText.";
+            margin: 0;'>Entregue</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>

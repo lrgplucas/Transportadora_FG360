@@ -9,6 +9,9 @@ const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/MailCadastro.php';
 
 $(document).ready(function(){
 
+    //RESETA O FORM
+    $("#rdo_fisica")[0].checked = false;
+    $("#rdo_juridica")[0].checked = false;
     $("#formPainelCliente").trigger("reset");
 
     setPessoaJuridicaForm();

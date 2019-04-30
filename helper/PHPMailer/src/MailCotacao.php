@@ -53,33 +53,35 @@ if($pallet == "Sim"){
 
 
 
-$body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://www.w3.org/TR/REC-html40/loose.dtd'>
+$body = "
 <html lang='pt-br'>
-<head>
-<!-- Meta tags --><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-<meta name='author' content='lrgp'>
-<meta name='description' content='Transportadora FG 360: O destino certo para o seu produto'>
-<meta name='keywords' content='Transportadora, transporte, produtos, servi&ccedil;os'>
-<!-- Bootstrap CSS --><link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
-<!-- Font-Awesome--><link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
-<!-- Google Fonts --><link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet'>
-<title>FG360 - Email Cota&ccedil;&atilde;o</title>
-</head>
-<body class='email-marketing' style='width: 500px;
-            margin: 0 auto;'>
- 
-    <section class='email-header'><div class='container'>
-            <div class='row'>
-                <div class='col-6'>
-                    <img src='http://transportadora-gf360.000webhostapp.com/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
-</div>
-            <div class='col-6 d-flex align-items-center' style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;float:right'> 
-                <a href='https://fg360transportes.com.br/' class='btn btn-custom-email' style='    text-decoration: none;    display: inline-block; color:#fff'>Acessar sou cliente</a> </div> 
-                </div>
-            </div>
+
+<style>
+
+#li_footer{margin-left:20%'}
+@media only screen and (max-width: 500px) {
+    #li_footer{
+        margin-left:15%;
+    }
+</style>
+
+<body class='email-marketing' style='width: 100%; max-width: 960px;margin: 0 auto;'>
+<section class='email-header'>
+<div class='container'>
+    <div class='row'>
+        <div class='col-6'>
+            <img src='https://fg360transportes.com.br/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
         </div>
-    </section><section class='email-body-top mt-5'><div class='container'>
+        <br/>
+        <div class='col-6 d-flex align-items-center' style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;width:70%;'> 
+             <a href='https://fg360transportes.com.br/' class='btn btn-custom-email' style='    text-decoration: none;    display: inline-block; color:#fff;padding-left:16px'>Acessar sou cliente</a> 
+        </div>
+    </div>
+</div>
+</section>
+ 
+    
+    <section class='email-body-top mt-5'><div class='container'>
             <h1 class='email-body-top-title' style='font-size: .8rem;color:black;'>Ol&aacute;, <b>$nome</b> sua cota&ccedil;&atilde;o foi cadastrada em nosso site.</h1>
             
         </div>
@@ -111,25 +113,28 @@ $body = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN' 'http://w
             text-align: center;margin: 0;color:black;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
         </div>
     </section> <footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem;'>
-    <ul style='margin-left:12%; padding:0; list-style:none; display:flex; flex-direction:row;justify-content:center;background-color:#000;'>
-        <li>
-            <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
-                <span class='sr-only' style='color:#000;'>Facebook</span>
-                <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/facebook_icon.png' alt='Facebook'></a>
+    <center>
+    <ul style='padding:0; list-style:none;  flex-direction:row;justify-content:center;background-color:#000;text-align: center;  '>
+       
+    <li style='display:inline;'>
+            <a style='text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
+                <span class='sr-only' style='color:#000;'>Fa</span>
+                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon.png' alt='Facebook'></a>
         </li>
-        <li>
-            <a style='padding-left: 1rem;text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
+        <li style='display:inline;'>
+            <a style='text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
                 <span class='sr-only' style='color:#000;'>Instagram</span>
-                <img class='footer-img' src='http://transportadora-gf360.000webhostapp.com/imgs/social/instagram_icon.png' alt='Instagram'></a>
+                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon.png' alt='Instagram'></a>
         </li>
     </ul>
+    </center>
 </footer>
 </body>
 </html>";
 
 try{
 	//Server settings
-   // $mail->SMTPDebug = 2;  
+    $mail->SMTPDebug = 2;  
                                    // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers

@@ -71,6 +71,7 @@ $(document).ready(function (){
         $.post(URL_CREATE_MOV,json,function(){
             toastr.success("Cadastrado com sucesso","Transportadora FG-360");
             var id =  $("#idRastreamento").children("option:selected").text();
+            var codRastreio2 = $("#idRastreamento").children("option:selected").text();
 
             var email = {
                 "cliente":cliente,
@@ -78,7 +79,8 @@ $(document).ready(function (){
                 "previsao":previsao,
                 "motorista":motorista,
                 "veiculo":veiculo,
-                "status":status
+                "status":status,
+                "codRastreio":codRastreio2,
             }
 
             $.post(URL_EMAIL_CADASTRO,email,function(data){

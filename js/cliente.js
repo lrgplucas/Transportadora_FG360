@@ -48,10 +48,7 @@ $(document).ready(function(){
 
     fillDebito();
 
-    //LISTENERS
-    $("#spanLogout").click(function(){
-        logout();
-    });
+
 
     
     $.get(URL_GET_DOC_BY_CLI,{"id_cli":""},function(data){
@@ -117,12 +114,13 @@ $(document).ready(function(){
 
 //Logout
 function logout(){
-    $.get(URL_LOGOUT,function(){
-       window.location = URL_HOME ;
-    }).fail(function(){
-        toastr.error("Erro ao deslogar!","Transportadora FG-360");
-    });
+  $.get(URL_LOGOUT,function(){
+    window.location = URL_HOME ;
+ }).fail(function(){
+     toastr.error("Erro ao deslogar!","Transportadora FG-360");
+ });
 
+  
 }
 
 function fillDebito(){

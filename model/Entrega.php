@@ -20,10 +20,8 @@ class Entrega {
     public $motorista;
     public $veiculo;
     public $tipo_carga;
-
-
-
-    //METODOS
+    public $origem;
+    public $destino;
 
     /**
      * Get the value of Id
@@ -248,6 +246,46 @@ class Entrega {
     public function setTipo_carga($tipo_carga)
     {
         $this->tipo_carga = $tipo_carga;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of origem
+     */ 
+    public function getOrigem()
+    {
+        return $this->origem;
+    }
+
+    /**
+     * Set the value of origem
+     *
+     * @return  self
+     */ 
+    public function setOrigem($origem)
+    {
+        $this->origem = $origem;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of destino
+     */ 
+    public function getDestino()
+    {
+        return $this->destino;
+    }
+
+    /**
+     * Set the value of destino
+     *
+     * @return  self
+     */ 
+    public function setDestino($destino)
+    {
+        $this->destino = $destino;
 
         return $this;
     }

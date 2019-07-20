@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\Exception;
+
 /*
 * author : joao
 * data : 01/03/2019
@@ -20,7 +22,7 @@ class DocController{
         //QUERY
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
-        $result = $conn->query("SELECT * FROM doc WHERE cli_id=".$id.";");
+        $result = $conn->query("SELECT * FROM doc WHERE cli_id=$id ORDER BY vencimento desc ;");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{
@@ -104,31 +106,53 @@ class DocController{
       //INSTANCIA DA CONEXAO
       $conn = $generatorConn->getConection();
 
-      $data_upload = date('Y-m-d');
-      $arquivo_path  = $doc->getArquivoPath() ;
-      $tipo = $doc->getTipo();
-      $cli_id = $doc->getId_cliente();
-      $status = $doc->getDescricao();
-      $valor = $doc->getValor();
-      $vencimento = $doc->getVencimento();
+      try{
 
-      $insert = $conn->prepare("INSERT INTO `doc` ( `data_upload`, `arquivo_path`, `tipo`, `descricao`, `cli_id`, `vencimento`, `status`, `valor`)  VALUES ".
-                                    "  (:data_upload , :arquivo_path , :descricao , :tipo , :cli_id , :vencimento , :status , :valor);");
+        $data_upload = date('Y-m-d');
+        
+        $arquivo_path  = $doc->getArquivoPath() ;
+        $tipo = $doc->getTipo();
+        $cli_id = $doc->getId_cliente();
+        $status = $doc->getDescricao();
+        $valor = $doc->getValor();
+        $vencimento = $doc->getVencimento() == "" ? null : $doc->getVencimento(); 
 
-      $insert->bindParam(":data_upload", $data_upload);
-      $insert->bindParam(":arquivo_path", $arquivo_path );
-      $insert->bindParam(":tipo",  $tipo );
-      $insert->bindParam(":cli_id", $cli_id);
-      $insert->bindParam(":vencimento", $vencimento);
-      $insert->bindParam(":status", $status);
-      $insert->bindParam(":valor", $valor);
-      $insert->bindParam(":descricao", $tipo);
+        if($arquivo_path == ""){
+          $insert = $conn->prepare("INSERT INTO `doc` ( `data_upload`, `tipo`, `descricao`, `cli_id`, `vencimento`, `status`, `valor`)  VALUES ".
+          "  (:data_upload  , :descricao , :tipo , :cli_id , :vencimento , :status , :valor);");
+        
+          $insert->bindParam(":data_upload", $data_upload);
+          $insert->bindParam(":tipo",  $tipo );
+          $insert->bindParam(":cli_id", $cli_id);
+          $insert->bindParam(":vencimento", $vencimento);
+          $insert->bindParam(":status", $status);
+          $insert->bindParam(":valor", $valor);
+          $insert->bindParam(":descricao", $tipo);
+        }else{
+          $insert = $conn->prepare("INSERT INTO `doc` ( `data_upload`, `arquivo_path`, `tipo`, `descricao`, `cli_id`, `vencimento`, `status`, `valor`)  VALUES ".
+                                      "  (:data_upload , :arquivo_path , :descricao , :tipo , :cli_id , :vencimento , :status , :valor);");
+          
+          $insert->bindParam(":data_upload", $data_upload);
+          $insert->bindParam(":arquivo_path", $arquivo_path );
+          $insert->bindParam(":tipo",  $tipo );
+          $insert->bindParam(":cli_id", $cli_id);
+          $insert->bindParam(":vencimento", $vencimento);
+          $insert->bindParam(":status", $status);
+          $insert->bindParam(":valor", $valor);
+          $insert->bindParam(":descricao", $tipo);
+       
+        }
+       
 
 
-  
-      $insert->execute();
-  
-      return $insert->rowCount();
+    
+        $insert->execute();
+    
+        return $insert->rowCount();
+      }catch(Exception $e){
+        return var_dump($e->getMessage());
+      }
+
   
     }
 

@@ -20,6 +20,9 @@ class Movimentacoes {
     public $status;
     public $motorista;
     public $veiculo;
+    public $nomeEntrega;
+    public $rg;
+    public $doc_entrega;
 
 
     /**
@@ -158,6 +161,66 @@ class Movimentacoes {
     public function setVeiculo($veiculo)
     {
         $this->veiculo = $veiculo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nomeEntrega
+     */ 
+    public function getNomeEntrega()
+    {
+        return $this->nomeEntrega;
+    }
+
+    /**
+     * Set the value of nomeEntrega
+     *
+     * @return  self
+     */ 
+    public function setNomeEntrega($nomeEntrega)
+    {
+        $this->nomeEntrega = $nomeEntrega;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of rg
+     */ 
+    public function getRg()
+    {
+        return $this->rg;
+    }
+
+    /**
+     * Set the value of rg
+     *
+     * @return  self
+     */ 
+    public function setRg($rg)
+    {
+        $this->rg = $rg;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of doc_entrega
+     */ 
+    public function getDoc_entrega()
+    {
+        return $this->doc_entrega;
+    }
+
+    /**
+     * Set the value of doc_entrega
+     *
+     * @return  self
+     */ 
+    public function setDoc_entrega($doc_entrega)
+    {
+        $this->doc_entrega = $doc_entrega;
 
         return $this;
     }

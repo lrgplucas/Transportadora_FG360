@@ -37,7 +37,7 @@ class MovController
         $conn = $generatorConn->getConection();
 
         //QUERY
-        $result = $conn->query("SELECT * FROM movimentacoes WHERE entrega_id =$id;");
+        $result = $conn->query("SELECT * FROM movimentacoes WHERE entrega_id =$id order by id asc;");
         $formatedResult = self::parseResults($result);
 
         $conn = null;
@@ -58,9 +58,12 @@ class MovController
         $status = $mov->getStatus();
         $motorista = $mov->getMotorista();
         $veiculo = $mov->getVeiculo();
+        $nomeEntrega = $mov->getNomeEntrega();
+        $rg = $mov->getRg();
+        $docEntrega = $mov->getDoc_entrega();
 
-        $insert = $conn->prepare("INSERT INTO `movimentacoes` (`entrega_id`, `data`, `data_criacao`, `status` , `motorista` ,`veiculo`)  VALUES".
-        "  (:entrega_id , :data , :data_criacao , :status ,:motorista , :veiculo );");
+        $insert = $conn->prepare("INSERT INTO `movimentacoes` (`entrega_id`, `data`, `data_criacao`, `status` , `motorista` ,`veiculo` , `nome_entrega` , `rg` , `doc_entrega`)  VALUES".
+        "  (:entrega_id , :data , :data_criacao , :status ,:motorista , :veiculo , :nome_entrega , :rg , :doc_entrega);");
 
         $insert->bindParam(":entrega_id", $entrega );
         $insert->bindParam(":data",  $data );
@@ -68,6 +71,9 @@ class MovController
         $insert->bindParam(":status", $status);
         $insert->bindParam(":motorista", $motorista);
         $insert->bindParam(":veiculo", $veiculo);
+        $insert->bindParam(":nome_entrega", $nomeEntrega);
+        $insert->bindParam(":rg", $rg);
+        $insert->bindParam(":doc_entrega", $docEntrega);
 
         $insert->execute();
 
@@ -95,7 +101,9 @@ class MovController
       $newMovs->setEntrega($item['entrega_id']);
       $newMovs->setMotorista($item['motorista']);
       $newMovs->setVeiculo($item['veiculo']);
-     
+      $newMovs->setRg($item['rg']);
+      $newMovs->setNomeEntrega($item['nome_entrega']);
+      $newMovs->setDoc_entrega($item['doc_entrega']);
 
       array_push($movs,$newMovs);
     }

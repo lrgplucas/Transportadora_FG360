@@ -12,6 +12,19 @@ $mov->setData_create(date("Y-m-d"));
 $mov->setMotorista($_POST['motorista']);
 $mov->setVeiculo($_POST['veiculo']);
 
+if(isset($_POST['rg']) ){
+    $mov->setRg($_POST['rg']);
+}
+
+if(isset($_POST['nomeEntrega']) ){
+    $mov->setNomeEntrega($_POST['nomeEntrega']);
+}
+
+if(isset($_POST['docEntrega'])){
+    $mov->setDoc_entrega($_POST['docEntrega']);
+}
+
+
 $result = MovController::InsertMov($mov);
 
 if($result == 1){

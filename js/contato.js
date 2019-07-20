@@ -5,6 +5,7 @@
 */
 //URL DO EMAIL
 var URL_EMAIL_CONTATO = './helper/PHPMailer/src/MailContato.php';
+var URL_EMAIL_CONTATO_JURIDICA = './helper/PHPMailer/src/MailContatoPessoaJuridica.php';
 var URL_ESTADOS = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/';
 var URL_CIDADES = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{id}/municipios';
 
@@ -60,6 +61,33 @@ $(document).ready(function(){
     $("#btnEnviar").click(function(event){
         event.stopPropagation();
         var jsonEmail = "";
+
+        //VERIFICAÇÃO DOS COMBOBOXES
+        if($("#rdo_juridica")[0].checked == false && $("#rdo_fisica")[0].checked == false){
+            toastr.warning("Selecione o tipo de cliente");
+            $("#rdo_fisica").focus();
+            return;
+        }
+        if($("#assunto").val() == "0"){
+            toastr.warning("Selecione o assunto");
+            $("#assunto").focus();
+            return;
+        }
+        if($("#area").val() == "0"){
+            toastr.warning("Selecione a área");
+            $("#area").focus();
+            return;
+        }
+        if($("#estado").val() == "0"){
+            toastr.warning("Selecione o estado");
+            $("#estado").focus();
+            return;
+        }
+        if($("#Cidade").val() == "0"){
+            toastr.warning("Selecione a cidade");
+            $("#Cidade").focus();
+            return;
+        }
         //DADOS
 
         var email = $("#email").val();
@@ -75,6 +103,7 @@ $(document).ready(function(){
             var telComercial = $("#telcomercial").val();
             var cidade = $("#Cidade").children("option:selected").text();
             var estado = $("#estado").children("option:selected").text(); 
+            var contato = $("#nomecontato").val();
             isJuridica = true;
             jsonEmail = {
                 "razaoSocial":razao,
@@ -87,7 +116,8 @@ $(document).ready(function(){
                 "assunto":assunto,
                 "area":area,
                 "cidade":cidade,
-                "estado":estado
+                "estado":estado,
+                "contato":contato
             }
 
         }else if(document.getElementById("rdo_fisica").checked){
@@ -96,6 +126,7 @@ $(document).ready(function(){
             var tel = $("#telefone").val();
             var cidade = $("#Cidade").children("option:selected").text();
             var estado = $("#estado").children("option:selected").text(); 
+            var contato = $("#nomecontato").val();
             isJuridica = false;
             jsonEmail = {
                 "nome":nome,
@@ -108,7 +139,8 @@ $(document).ready(function(){
                 "assunto":assunto,
                 "area":area,
                 "cidade":cidade,
-                "estado":estado
+                "estado":estado,
+                "contato":contato
             }
         }
 
@@ -129,9 +161,11 @@ $(document).ready(function(){
             return;
         }*/
 
-       
+       var URL_EMAIL_CURRENT;
 
-        $.post(URL_EMAIL_CONTATO,jsonEmail,function(){
+       URL_EMAIL_CURRENT = isJuridica ? URL_EMAIL_CONTATO_JURIDICA : URL_EMAIL_CONTATO;
+
+        $.post(URL_EMAIL_CURRENT,jsonEmail,function(){
            
             toastr.success("Enviado!","Transportadora FG-360");
             setTimeout(function(){location.reload()},3000);

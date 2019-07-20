@@ -78,7 +78,7 @@ $(document).ready(function(){
     });
 
     $("#btn_rastreio").on("click",function(){
-
+        rastreio();
       
     });
 

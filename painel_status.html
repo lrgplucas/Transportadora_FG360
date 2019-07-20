@@ -102,14 +102,20 @@
                                     <option value="Entregue">Entregue</option>
                                 </select>
                             </div>
-                            <div class="col-12 d-none">
-                                <label class="form-painel-label" for="entregue">Entregue em</label>
-                                <input id="entregue" type="text" class="form-control form-control-custom-secondary">
+                            <div class="col-12" id="divEntregue">
+                                <label class="form-painel-label" for="rg">Rg</label>
+                                <input id="rg" type="text" class="form-control form-control-custom-secondary">
+                                <label class="form-painel-label" for="nomeEntrega">Recebido por</label>
+                                <input id="nomeEntrega" type="text" class="form-control form-control-custom-secondary">
+                                    <p hidden id="path">Arraste seu arquivo aqui</p>
+                                    <p class="text-center">Arraste seu arquivo aqui</p>
+                                    <div class="">
+										<label for="fileUp">Upload do arquivo : </label>
+                                        <input id="fileUp"  type="file">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12 d-none">
-                                <label class="form-painel-label" for="recebido">Recebido por</label>
-                                <input id="recebido" type="text" class="form-control form-control-custom-secondary">
-                            </div>
+
                             <div class="col-12 mt-3">
                                 <div class="row justify-content-center">
                                     <input type="button" id="btnSalvar" class="btn btn-custom text-center mt-2 mb-5" value="Salvar">

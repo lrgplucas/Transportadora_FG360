@@ -20,11 +20,11 @@ $telComercial = $_POST['telefone'];
 $razao = $_POST['razaoSocial'];
 $celular = $_POST['celular'];
 $email = $_POST['email'];
-$password = $_POST['senha'];
-
+$password = $_POST['senha'] ;
 
 
 $isJuridica = $cpf == "" ? true : false;
+
 
 //CRIA O NOVO USUARIO
 $newCliente = new Cliente ();
@@ -40,12 +40,24 @@ if($isJuridica){
 $newCliente->setId($id);
 $newCliente->setTel($tel);
 $newCliente->setEmail($email);
-$newCliente->setSenha($password);
+
+//SE CASO HOUVER ALTERAÇÃO NA SENHA
+$isPasswordChanged = false;
+if($password != ""){
+    $newCliente->setSenha($password);
+    $isPasswordChanged = true;
+
+}
+
 $newCliente->setCelular($celular);
 
 $clienteController = new ClienteController();
 
-$rowsAffected = $clienteController::updateCliente($newCliente,$isJuridica);
+if($isPasswordChanged){
+    $rowsAffected = $clienteController::updateCliente($newCliente,$isJuridica);
+}else{
+    $rowsAffected = $clienteController::updateClienteSemSenha($newCliente,$isJuridica);
+}
 
 
 if($rowsAffected == 1){
@@ -53,26 +65,5 @@ if($rowsAffected == 1){
 }else{
     http_response_code(403);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

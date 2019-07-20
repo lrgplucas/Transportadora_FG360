@@ -30,6 +30,8 @@ $entrega->setMotorista($_POST["motorista"]);
 $entrega->setVeiculo($_POST["veiculo"]);
 $entrega->setNf($_POST["status"]);
 $entrega->setTipo_carga($_POST["tipo"]);
+$entrega->setOrigem($_POST["origem"]);
+$entrega->setDestino($_POST["destino"]);
 
 
 $result = EntregaController::postEntrega($entrega);

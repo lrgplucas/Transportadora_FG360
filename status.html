@@ -86,32 +86,31 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-12 col-lg-4 section-status-descricao py-2 d-flex flex-column justify-content-center">
-                        <p class="section-status-descricao-text" id="p_produto"><b>Produto:</b> Lorem Ipsum</p>
-                        <p class="section-status-descricao-text" id="p_id"><b>ID:</b> 12543365241</p>
-                        <p class="section-status-descricao-text" id="p_tipo"><b>Tipo de carga:</b> Direta</p>
-                        <p class="section-status-descricao-text" id="p_previsao"><b>Previsão de entrega:</b> 25/03/2019</p>
-                        <p class="section-status-descricao-text" id="p_motorista"><b>Motorista:</b> Paulo</p>
-                        <p class="section-status-descricao-text" id="p_veiculo"><b>Veículo:</b> Truck DLC-4563</p>
+                        <p class="section-status-descricao-text" id="p_produto"><b>Produto:</b></p>
+                        <p class="section-status-descricao-text" id="p_id"><b>Cod Rastreio:</b></p>
+                        <p class="section-status-descricao-text" id="p_tipo"><b>Tipo de carga:</b> </p>
+                        <p class="section-status-descricao-text" id="p_previsao"><b>Previsão de entrega:</b></p>
+                        <p class="section-status-descricao-text" id="p_motorista"><b>Motorista:</b></p>
+                        <p class="section-status-descricao-text" id="p_veiculo"><b>Veículo:</b> </p>
                     </div>
                     <div class="col-12 col-lg-8 section-status-status d-flex flex-column align-items-center justify-content-center py-5">
                         <div class="row d-inline-block">
                             <div class="col-12">
                                 <img id="imgRecebido" src="imgs/rastreamento/recebido_orange.png" class="section-status-img" alt="">
-                                <div class="section-status-line-checked"></div>
+                                <div id="divLineRec"  class="section-status-line-checked"></div>
                                 <img id="imgTransporte" src="imgs/rastreamento/transporte_grey.png" class="section-status-img" alt="">
                                 <div id="divLine" class="section-status-line"></div>
                                 <img id="imgEntregue" src="imgs/rastreamento/entregue_grey.png" class="section-status-img" alt="">
                             </div>
                         </div>
-                        <div class="row pt-3">
-                            <div class="col-4">
-                                <p id="pRecebido" class="section-status-text-checked">Produto recebido</p>
-                            </div>
-                            <div class="col-4">
-                                <p id="pTransporte" class="section-status-text-check text-center">Em transporte</p>
-                            </div>
-                            <div class="col-4">
-                                <p id="pEntregue" class="section-status-text-check text-right">Entregue</p>
+                        <div class="row d-inline-block">
+                            <div class="col-12">
+                                <span id="pRecebido" class="section-status-text-checked">Produto recebido</span>
+								
+								<div class="section-space"></div>
+                                <span id="pTransporte" class="section-status-text-check text-center">Em transporte</span>
+								<div class="section-space"></div>
+                                <span id="pEntregue" class="section-status-text-check text-right">Entregue</span>
                             </div>
                         </div>
                     </div>
@@ -122,6 +121,9 @@
                             <tr class="table-status-thead-tr">
                                 <th class="table-status-thead-title">Data</th>
                                 <th class="table-status-thead-title">Status</th>
+                                <th class="table-status-thead-title">Recebido</th>
+                                <th class="table-status-thead-title">RG</th>
+                                <th class="table-status-thead-title">Doc. Entrega</th>
                             </tr>
                         </thead>
                         <tbody id="tbodyOne">

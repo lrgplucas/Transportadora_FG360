@@ -54,11 +54,21 @@ if(isset($_POST['tipo'])){
 }
 
 
-$previsao = $_POST['previsao'];//
+$previsao = formatData($_POST['previsao']);//
 $motorista = $_POST['motorista'];//
 $veiculo = $_POST['veiculo'];//
 $status = $_POST['status'];//
 $cod = $_POST['codRastreio'];
+$isOrigemDestino = false;
+$origem = "";
+$destino = "";
+
+if(isset($_POST['origem']) && isset( $_POST['destino'])){
+    $origem = $_POST['origem'];
+    $destino = $_POST['destino'];
+    $isOrigemDestino = true;
+}
+
 
 //$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 $mail = new PHPMailer(null);  
@@ -79,7 +89,6 @@ if($status == "Em Transporte"){
     $img = "mail_transporte.png";
 }else if($status == "Pendente"){
     $msgEntrega = "Ol&aacute;, <b>".$result->getNome()."</b> seu produto <b>foi Recebido</b>!";
-    $colorPendente = "orange";
     $colorPendenteText = "000";
     $img = "mail_recebido.png";
 }else{
@@ -100,25 +109,24 @@ $body = "<html lang='pt-br'>
                 <div class='col-6'>
                     <img src='https://fg360transportes.com.br/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
 </div>
-                <div class='col-6 d-flex align-items-center'  style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;width:50%;'>
+                <div class='col-6 d-flex align-items-center'  style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;width:20%;'>
                 <a href='https://fg360transportes.com.br/status.html?cod=$cod' class='btn btn-custom-email' style='    text-decoration: none;    display: inline-block; color:#fff;padding-left:16px'>Acompanhar produto</a>
                 </div>
             </div>
         </div>
     </section><section class='email-body-top mt-5'><div class='container'>
-            <h1 class='email-body-top-title' style='font-size: .8rem;
-            text-align: center;'>".$msgEntrega."</h1>
+            <h1 class='email-body-top-title' style='
+            text-align: center;color:#000'>".$msgEntrega."</h1>
         </div>
     </section><section class='email-status-rastreio mt-3'><div class='container-fluid'>
-            <div class='row email-status-dados' style='background-color: #d1d1d1;
-            padding: 10px 50px;'>
+            <div class='row email-status-dados' style='padding: 10px 50px;'>
                 <div class='col-6 d-flex align-items-end flex-column'>
                     <p class='email-status-dados-produto ' style='font-size: .7rem;
             margin: 0;color:#000;' ><b>Produto:</b>".$produto."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
             margin: 0;color:#000;'><b>ID:</b> ".$id."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
-            margin: 0;color:#000;'><b>".$tipo."</b> Direta</p>
+            margin: 0;color:#000;'><b>".$tipo."</b> </p>
                 </div>
                 <div class='col-6'>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
@@ -127,6 +135,10 @@ $body = "<html lang='pt-br'>
             margin: 0;color:#000;'><b>Motorista:</b> ".$motorista."</p>
                     <p class='email-status-dados-produto' style='font-size: .7rem;
             margin: 0;color:#000;'><b>Ve&iacute;culo:</b> ".$veiculo."</p>
+            <p class='email-status-dados-produto' style='font-size: .7rem;
+            margin: 0;color:#000;'><b>Origem:</b> $origem </p>
+                    <p class='email-status-dados-produto' style='font-size: .7rem;
+            margin: 0;color:#000;'><b>Destino:</b> $destino</p>
                 </div>
             </div>
             <div class='row email-status-status' style='background-color: #f7f7f7; '>
@@ -148,17 +160,17 @@ $body = "<html lang='pt-br'>
             margin: 0;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
         </div>
     </section>
-    <footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem; '>
-        <ul style='padding:0; list-style:none; flex-direction:row;justify-content:center;background-color:#000;text-align: center; '>
+    <footer class='footer'  style='background-color: white;color: #fff; padding: 2rem; '>
+        <ul style='padding:0; list-style:none; flex-direction:row;justify-content:center;text-align: center; '>
             <li style='display:inline;'>
                 <a style='text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
-                    <span class='sr-only' style='color:#000;'>Fa</span>
-                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon.png' alt='Facebook'></a>
+                    <span class='sr-only' style='color:white;'>Fa</span>
+                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon_black.png' alt='Facebook'></a>
             </li>
             <li style='display:inline;'>
                 <a style='text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
-                    <span class='sr-only' style='color:#000;'>Instagram</span>
-                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon.png' alt='Instagram'></a>
+                    <span class='sr-only' style='color:white;'>Instagram</span>
+                    <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon_black.png' alt='Instagram'></a>
             </li>
         </ul>
     </footer>
@@ -168,7 +180,7 @@ $body = "<html lang='pt-br'>
 
 try{
 	//Server settings
-    $mail->SMTPDebug = 2;  
+    //$mail->SMTPDebug = 2;  
     $mail->isSMTP();  
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -196,6 +208,14 @@ try{
 	echo "true";
 }catch(\PHPMailer\PHPMailer\Exception $e){
 	echo $e;
+}
+
+
+function formatData($data){
+    $result = date("d-m-Y", strtotime($data) );
+
+
+    return $result;
 }
  
 

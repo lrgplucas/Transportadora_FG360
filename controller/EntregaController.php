@@ -112,9 +112,11 @@ class EntregaController
     $tipo = $novaEntrega->getTipo_carga();
     $motorista =  $novaEntrega->getMotorista();
     $veiculo =$novaEntrega->getVeiculo();
+    $destino = $novaEntrega->getDestino();
+    $origem = $novaEntrega->getOrigem();
 
-    $insert = $conn->prepare("INSERT INTO entrega ( nf , produto , cod_rastreio,cli_id,tipo_carga ,data_criacao,data_previsao ,motorista ,veiculo) VALUES".
-                                  "  ( :nf , :produto , :cod_rastreio , :cli_id,:tipo_carga , :data_criacao,:data_previsao ,:motorista ,:veiculo);");
+    $insert = $conn->prepare("INSERT INTO entrega ( nf , produto , cod_rastreio,cli_id,tipo_carga ,data_criacao,data_previsao ,motorista ,veiculo , destino , origem) VALUES".
+                                  "  ( :nf , :produto , :cod_rastreio , :cli_id,:tipo_carga , :data_criacao,:data_previsao ,:motorista ,:veiculo, :destino , :origem);");
 
     $insert->bindParam(":data_criacao", $dataCriacao);
     $insert->bindParam(":data_previsao", $dataPrevisao);
@@ -125,6 +127,9 @@ class EntregaController
     $insert->bindParam(":tipo_carga", $tipo);
     $insert->bindParam(":motorista", $motorista);
     $insert->bindParam(":veiculo", $veiculo);
+    $insert->bindParam(":destino", $destino);
+    $insert->bindParam(":origem", $origem);
+
 
     $insert->execute();
 

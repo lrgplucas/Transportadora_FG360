@@ -43,6 +43,7 @@ $telefone = $_POST["telefone"];
 $email = $_POST["email"];
 $pallet = $_POST['pallet'];
 $tipoVeiculo = $_POST['tipoVeiculo'];
+$obs = $_POST['obs'];
 
 $statusPallet;
 if($pallet == "Sim"){
@@ -73,7 +74,7 @@ $body = "
             <img src='https://fg360transportes.com.br/imgs/logotipo.png' class='email-header-logo' alt='' style='max-width: 180px;' href='https://fg360transportes.com.br/'>
         </div>
         <br/>
-        <div class='col-6 d-flex align-items-center' style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;width:70%;'> 
+        <div class='col-6 d-flex align-items-center' style='background-color: #fab432; color: #fff; font-size: .8rem; border-radius: 0; text-transform: uppercase; font-weight: 700;width:20%;'> 
              <a href='https://fg360transportes.com.br/' class='btn btn-custom-email' style='    text-decoration: none;    display: inline-block; color:#fff;padding-left:16px'>Acessar sou cliente</a> 
         </div>
     </div>
@@ -82,11 +83,10 @@ $body = "
  
     
     <section class='email-body-top mt-5'><div class='container'>
-            <h1 class='email-body-top-title' style='font-size: .8rem;color:black;'>Ol&aacute;, <b>$nome</b> sua cota&ccedil;&atilde;o foi cadastrada em nosso site.</h1>
+            <h1 class='email-body-top-title' style='color:black;'>Ol&aacute;, <b>$nome</b> sua cota&ccedil;&atilde;o foi cadastrada em nosso site.</h1>
             
         </div>
-    </section><section class='email-login' style='background-color: #f7f7f7;
-            padding: 25px 0;color:black;'><div class='container-fluid'>
+    </section><section class='email-login' style='padding: 25px 0;color:black;'><div class='container-fluid'>
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Origem:</b>$origem</p>
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Destino:</b>$destino</p>
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Km:</b>$km</p>
@@ -97,11 +97,11 @@ $body = "
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Tipo de Veiculo:</b>$tipoVeiculo</p>
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Telefone:</b>$telefone</p>
             <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Email:</b>$email</p>
+            <p class='email-login-dados' style='font-size: .9rem;color:black;'><b>Observa&ccedil;&atilde;o:</b>$obs</p>
          
         </div>
     </section><section class='email-body-bottom mt-3 mb-3'><div class='container'>
-            <h2 class='email-body-bottom-title mb-3' style='font-size: .8rem;
-            text-align: center;color:black;'>Clique no bot&atilde;o 'Acessar sou cliente para ser direcionado para nosso site</h2>
+            
             <p class='email-body-bottom-text' style='font-size: .7rem;
             font-weight: 700;
             text-align: center;
@@ -112,19 +112,19 @@ $body = "
             <p class='email-body-bottom-contato' style='font-size: .7rem;
             text-align: center;margin: 0;color:black;'>(12) 3655-3099 ou (12) 9 8275-0506</p>
         </div>
-    </section> <footer class='footer'  style='background-color:#000; color: #fff; padding: 2rem;'>
+    </section> <footer class='footer'  style='background-color:white; color: #fff; padding: 2rem;'>
     <center>
-    <ul style='padding:0; list-style:none;  flex-direction:row;justify-content:center;background-color:#000;text-align: center;  '>
+    <ul style='padding:0; list-style:none;  flex-direction:row;justify-content:center;background-color:white;text-align: center;  '>
        
     <li style='display:inline;'>
             <a style='text-decoration:none;background-color: transparent;' href='https://www.facebook.com/FG-360-Transportes-571421250024615/' class='footer-link'>
-                <span class='sr-only' style='color:#000;'>Fa</span>
-                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon.png' alt='Facebook'></a>
+                <span class='sr-only' style='color:white;'>Fa</span>
+                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/facebook_icon_black.png' alt='Facebook'></a>
         </li>
         <li style='display:inline;'>
             <a style='text-decoration:none;background-color: transparent;' href='https://www.instagram.com/fg360transportes' class='footer-link'>
-                <span class='sr-only' style='color:#000;'>Instagram</span>
-                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon.png' alt='Instagram'></a>
+                <span class='sr-only' style='color:white;'>Instagram</span>
+                <img class='footer-img' src='https://fg360transportes.com.br/imgs/social/instagram_icon_black.png' alt='Instagram'></a>
         </li>
     </ul>
     </center>
@@ -134,7 +134,7 @@ $body = "
 
 try{
 	//Server settings
-    $mail->SMTPDebug = 2;  
+    //$mail->SMTPDebug = 2;  
                                    // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtpout.secureserver.net';  				  // Specify main and backup SMTP servers

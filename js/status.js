@@ -19,6 +19,9 @@ $(document).ready(function(){
     var url = new URL(url_string);
     cod = location.search.substring(5);
 
+    $("#divLineRec").removeClass("section-status-line-checked");
+        $("#divLineRec").addClass("section-status-line");
+
     //FIX ME - PROMISE PRA TRAZER O VALOR ASSINCRONO
     let promise = new Promise(function(success , fail) {
       $.get(URL_API_ENTREGA_BY_COD,{cod:cod}, function (data){
@@ -35,18 +38,23 @@ $(document).ready(function(){
         id_entrega = entrega[0].id ;
 
         //DATA BR 
-        var ptBrTime = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+        //var ptBrTime = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
 
         //PREENCHE DADOS ENTREGA
         $("#p_produto")[0].innerHTML = "<b>Produto : </b><b>"+entrega[0].produto+"</b>";
-        $("#p_id")[0].innerHTML = "<b>ID : </b><b>"+entrega[0].id+"</b>";
+        $("#p_id")[0].innerHTML = "<b>Cod. Rastreio : </b><b>"+entrega[0].codRastreio+"</b>";
         $("#p_tipo")[0].innerHTML = "<b>Tipo de Carga : </b><b>"+entrega[0].tipo_carga+"</b>";
-        ptBrTime = new Date(entrega[0].dataPrevisao);
+        //var ptBrTime = new Date();
+        dataTemp = new Date(entrega[0].dataPrevisao);
+        var dataTempx = new Date();
+        dataTempx.setDate(dataTemp.getDate()+1);
+        ptBrTime = dataAtualFormatada(dataTempx);
 
-        $("#p_previsao")[0].innerHTML = "<b>Previsão de Entrega : </b><b>"+ptBrTime.toLocaleString().substring(0,10)+"</b>";
+        $("#p_previsao")[0].innerHTML = "<b>Previsão de Entrega : </b><b>"+ptBrTime+"</b>";
         $("#p_motorista")[0].innerHTML = "<b>Motorista : </b><b>"+entrega[0].motorista+"</b>";
         $("#p_veiculo")[0].innerHTML = "<b>Veículo : </b><b>"+entrega[0].veiculo+"</b>";
-
+        
+        setStatusRecebido(entrega[0].dataPrevisao);
         getMovs(id_entrega);
         getCliente(id_cliente);
      }).fail(function(){
@@ -54,12 +62,6 @@ $(document).ready(function(){
      });
 
     });
-
-
-    //PREENCHER CAMPOS 
-
-    
-
 
 });
 
@@ -93,6 +95,20 @@ function getMovs(id_entrega){
 
     var last = data_temporary.length - 1;
     var status = data_temporary[last].status;
+
+    dataTemp = new Date(data_temporary[last].data);
+    var dataTempx = new Date();
+    dataTempx.setDate(dataTemp.getDate()+1);
+    ptBrTime = dataAtualFormatada(dataTempx);
+
+    $("#p_previsao")[0].innerHTML = "<b>Previsão de Entrega : </b><b>"+ptBrTime+"</b>";
+    
+    if(status == "Recebido"){
+      $("#divLineRec").removeClass("section-status-line");
+      $("#divLineRec").addClass("section-status-line-checked");
+      
+
+    }
    
 
     if(status == "Em Transporte"){
@@ -100,38 +116,71 @@ function getMovs(id_entrega){
       $("#imgEntregue").attr("src","imgs/rastreamento/transporte_grey.png");
       $("#divLine").removeClass("section-status-line-checked");
       $("#divLine").addClass("section-status-line");
+      $("#pRecebido").removeClass("section-status-text-check");
+      $("#pRecebido").addClass("section-status-text-checked");
       $("#pTransporte").removeClass("section-status-text-check");
       $("#pTransporte").addClass("section-status-text-checked");
       $("#pEntregue").removeClass("section-status-text-checked");
       $("#pEntregue").addClass("section-status-text-check");
+      $("#divLineRec").removeClass("section-status-line");
+      $("#divLineRec").addClass("section-status-line-checked");
      
     }
 
     if(status == "Entregue"){
       $("#imgTransporte").attr("src","imgs/rastreamento/transporte_orange.png");
-      $("#imgEntregue").attr("src","imgs/rastreamento/transporte_orange.png");
+      $("#imgEntregue").attr("src","imgs/rastreamento/entregue_orange.png");
+      $("#divLine").removeClass("section-status-line");
       $("#divLine").addClass("section-status-line-checked");
       $("#pTransporte").removeClass("section-status-text-check");
       $("#pTransporte").addClass("section-status-text-checked");
       $("#pEntregue").addClass("section-status-text-checked");
       $("#pEntregue").removeClass("section-status-text-check");
+      $("#divLineRec").removeClass("section-status-line");
+      $("#divLineRec").addClass("section-status-line-checked");
     }
 
     
-
-    for (item in data_temporary){
-      ptBrTime = new Date(data_temporary[item].data);
-      var row1 = "<tr><td>"+ptBrTime.toLocaleString().substring(0,10)+"</td><td>"+data_temporary[item].status+"</td></tr>";
-      $('#tbodyOne').append(
-        row1
-      );
+    
+    for (var i = 0 ; i <= data_temporary.length;i++){
+     
+      if(!isEmpty(data_temporary[i])){
+        //alert(data_temporary[i]);
+        ptBrTime = new Date(data_temporary[i].data);
+        ptBrTime.setDate(ptBrTime.getDate()+1);
+        var row1 = "<tr><td>"+ptBrTime.toLocaleString().substring(0,10)+"</td><td>"+data_temporary[i].status+"</td><td>"+(data_temporary[i].nomeEntrega == null ? '': data_temporary[i].nomeEntrega)+"</td><td>"+(data_temporary[i].rg == null ? '': data_temporary[i].rg)+"</td>"+"</td><td>"+(data_temporary[i].doc_entrega == null ? '': "<a  href= '"+data_temporary[i].doc_entrega+"' download>entrega<a/>")+"</td></tr>";
+        //alert(row1);
+        $('#tbodyOne').append(row1);
+      }
     }
     
-   
   });
 
 }
 
+function setStatusRecebido(data){
+  ptBrTime = new Date(data);
+  ptBrTime.setDate(ptBrTime.getDate()+1);
+  var row1 = "<tr><td>"+ptBrTime.toLocaleString().substring(0,10)+"</td><td>Recebido</td><td></td><td></td><td></td></tr>";
+  $('#tbodyOne').append(row1);
+}
+
+function dataAtualFormatada(data){
+      var dia  = data.getDate().toString(),
+      diaF = (dia.length == 1) ? '0'+dia : dia,
+      mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+      mesF = (mes.length == 1) ? '0'+mes : mes,
+      anoF = data.getFullYear();
+      return diaF+"/"+mesF+"/"+anoF;
+}
+
+function isEmpty(obj) {
+  for(var key in obj) {
+      if(obj.hasOwnProperty(key))
+          return false;
+  }
+  return true;
+}
 
 
 

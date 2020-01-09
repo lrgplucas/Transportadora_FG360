@@ -1,0 +1,106 @@
+[16-Apr-2019 00:48:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[16-Apr-2019 00:59:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[22-Apr-2019 11:50:21 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:52:10 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:52:12 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:52:13 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:52:26 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:52:28 UTC] PHP Notice:  Undefined index: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 23
+[22-Apr-2019 11:52:28 UTC] PHP Notice:  Undefined index: senha in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 24
+[22-Apr-2019 11:52:28 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:53:27 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:53:28 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:53:35 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:16 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:53 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:54 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:55 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:56 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:54:57 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:03 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:04 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:05 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:12 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:13 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:14 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:15 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:55:15 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:01 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:02 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:03 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:04 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:12 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:26 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 11:56:27 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 12:01:52 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 12:01:56 UTC] PHP Fatal error:  Call to undefined method ClienteController::authClienteFisica() in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 40
+[22-Apr-2019 12:03:09 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[22-Apr-2019 16:10:47 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[22-Apr-2019 16:12:20 UTC] PHP Notice:  Undefined index: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[22-Apr-2019 16:12:20 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[22-Apr-2019 16:14:53 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 02:00:10 UTC] PHP Notice:  Undefined index: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[23-Apr-2019 02:00:10 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 12:21:48 UTC] PHP Notice:  Undefined index: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[23-Apr-2019 12:21:48 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:18:56 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:26:22 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:37:32 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:37:49 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:37:58 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:38:26 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:38:33 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:38:48 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:39:24 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:43:48 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 15:44:50 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[23-Apr-2019 20:07:08 UTC] PHP Notice:  Undefined index: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[23-Apr-2019 20:07:08 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 19:56:29 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 20:00:55 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 20:01:37 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 20:01:47 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 20:02:04 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 23
+[26-Apr-2019 21:29:19 UTC] PHP Notice:  Undefined index: cpf in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 28
+[26-Apr-2019 21:29:19 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 35
+[26-Apr-2019 21:29:19 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 49
+[26-Apr-2019 21:29:35 UTC] PHP Notice:  Undefined index: cpf in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 28
+[26-Apr-2019 21:29:35 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 35
+[26-Apr-2019 21:29:35 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 49
+[26-Apr-2019 21:36:36 UTC] PHP Notice:  Undefined index: cpf in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 28
+[26-Apr-2019 21:36:36 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 37
+[26-Apr-2019 21:36:36 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 51
+[26-Apr-2019 21:36:46 UTC] PHP Notice:  Undefined index: cpf in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 28
+[26-Apr-2019 21:36:46 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 37
+[26-Apr-2019 21:36:46 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 51
+[26-Apr-2019 21:37:19 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 37
+[26-Apr-2019 21:37:19 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 51
+[26-Apr-2019 21:37:22 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 37
+[26-Apr-2019 21:37:22 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 51
+[26-Apr-2019 21:37:42 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 37
+[26-Apr-2019 21:37:42 UTC] PHP Notice:  Undefined variable: cnpj in /home/wev4zzcqgc7y/public_html/api/cliente/Auth.php on line 51
+[02-May-2019 12:19:54 UTC] PHP Fatal error:  Call to a member function getId() on null in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 25
+[02-May-2019 18:14:11 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[02-May-2019 18:14:11 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[02-May-2019 18:14:11 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83
+[02-May-2019 19:55:23 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[02-May-2019 19:55:23 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[02-May-2019 19:55:23 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83
+[02-May-2019 19:56:37 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[02-May-2019 19:56:37 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[02-May-2019 19:56:37 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83
+[08-Nov-2019 15:29:16 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[08-Nov-2019 15:29:16 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[08-Nov-2019 15:29:16 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83
+[08-Nov-2019 15:35:43 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[08-Nov-2019 15:35:43 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[08-Nov-2019 15:35:43 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83
+[11-Nov-2019 11:57:19 UTC] PHP Notice:  Undefined index: doc in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 16
+[11-Nov-2019 11:57:19 UTC] PHP Notice:  Undefined index: value in /home/wev4zzcqgc7y/public_html/api/cliente/GetClienteByMail.php on line 17
+[11-Nov-2019 11:57:19 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/ClienteController.php on line 83

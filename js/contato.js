@@ -5,10 +5,17 @@
 */
 //URL DO EMAIL
 var URL_EMAIL_CONTATO = './helper/PHPMailer/src/MailContato.php';
+var URL_EMAIL_CONTATO_JURIDICA = './helper/PHPMailer/src/MailContatoPessoaJuridica.php';
 var URL_ESTADOS = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/';
 var URL_CIDADES = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{id}/municipios';
 
 $(document).ready(function(){
+
+    //RESET
+    $("#rdo_juridica")[0].checked = false;
+    $("#rdo_fisica")[0].checked = false;
+
+    $("#formSender").trigger("reset");
 
       //TIRA O SUBMIT DO FORM
     $("#formSender").submit(function(event){
@@ -45,20 +52,42 @@ $(document).ready(function(){
     });
 
     $("#estado").change(function(){
-        //var length = $('#Cidade > option').length;
-        //if(length < 2){
-            var id = $("#estado").val();
-            getCidadePorEstado(id);
+        var id = $("#estado").val();
+        getCidadePorEstado(id);
 
-        //}
-        
-       
     });
 
     //ENVIO DO EMAIL
-    $("#btnEnviar").click(function(){
-
+    $("#btnEnviar").click(function(event){
+        event.stopPropagation();
         var jsonEmail = "";
+
+        //VERIFICAÇÃO DOS COMBOBOXES
+        if($("#rdo_juridica")[0].checked == false && $("#rdo_fisica")[0].checked == false){
+            toastr.warning("Selecione o tipo de cliente");
+            $("#rdo_fisica").focus();
+            return;
+        }
+        if($("#assunto").val() == "0"){
+            toastr.warning("Selecione o assunto");
+            $("#assunto").focus();
+            return;
+        }
+        if($("#area").val() == "0"){
+            toastr.warning("Selecione a área");
+            $("#area").focus();
+            return;
+        }
+        if($("#estado").val() == "0"){
+            toastr.warning("Selecione o estado");
+            $("#estado").focus();
+            return;
+        }
+        if($("#Cidade").val() == "0"){
+            toastr.warning("Selecione a cidade");
+            $("#Cidade").focus();
+            return;
+        }
         //DADOS
 
         var email = $("#email").val();
@@ -66,6 +95,7 @@ $(document).ready(function(){
         var msg = $("#msg").val();
         var area = $("#area").children("option:selected").val();
         var assunto = $("#assunto").children("option:selected").val();
+        var isJuridica ;
 
         if(document.getElementById("rdo_juridica").checked){
             var cnpj = $("#cnpj").val();
@@ -73,6 +103,8 @@ $(document).ready(function(){
             var telComercial = $("#telcomercial").val();
             var cidade = $("#Cidade").children("option:selected").text();
             var estado = $("#estado").children("option:selected").text(); 
+            var contato = $("#nomecontato").val();
+            isJuridica = true;
             jsonEmail = {
                 "razaoSocial":razao,
                 "cnpj":cnpj,
@@ -84,14 +116,18 @@ $(document).ready(function(){
                 "assunto":assunto,
                 "area":area,
                 "cidade":cidade,
-                "estado":estado
+                "estado":estado,
+                "contato":contato
             }
+
         }else if(document.getElementById("rdo_fisica").checked){
             var cpf = $("#cpf").val();
             var nome = $("#nome").val();
             var tel = $("#telefone").val();
             var cidade = $("#Cidade").children("option:selected").text();
             var estado = $("#estado").children("option:selected").text(); 
+            var contato = $("#nomecontato").val();
+            isJuridica = false;
             jsonEmail = {
                 "nome":nome,
                 "cpf":cpf,
@@ -103,12 +139,33 @@ $(document).ready(function(){
                 "assunto":assunto,
                 "area":area,
                 "cidade":cidade,
-                "estado":estado
+                "estado":estado,
+                "contato":contato
             }
         }
-       
 
-        $.post(URL_EMAIL_CONTATO,jsonEmail,function(){
+
+        if($.isEmptyObject(jsonEmail)){
+            return;
+        }
+        
+
+        if(validate(isJuridica) ==  false){            
+            event.stopPropagation();
+            return;
+            
+        }
+
+       /* if ($("#formSender input:invalid").length) {
+            alert($("#formSender input:invalid")[0].id);
+            return;
+        }*/
+
+       var URL_EMAIL_CURRENT;
+
+       URL_EMAIL_CURRENT = isJuridica ? URL_EMAIL_CONTATO_JURIDICA : URL_EMAIL_CONTATO;
+
+        $.post(URL_EMAIL_CURRENT,jsonEmail,function(){
            
             toastr.success("Enviado!","Transportadora FG-360");
             setTimeout(function(){location.reload()},3000);
@@ -147,3 +204,29 @@ function getCidadePorEstado(id){
     });
 
 }
+
+function validate(isJuridica){
+    var isValid = true;
+    $("#formSender input:invalid").each(function(){
+
+                if(isJuridica){
+                    
+                    if($(this)[0].id != "cpf" && $(this)[0].id !="telefone" && $(this)[0].id !="nome"){
+       
+                        isValid =  false;
+                    }
+                }else{
+                   
+                    if($(this)[0].id != "cnpj" && $(this)[0].id !="telcomercial" && $(this)[0].id !="razaosocial"){
+              
+                        isValid =  false;
+                    }
+                }
+
+
+        
+    });
+    
+    return isValid;
+}
+

@@ -893,6 +893,22 @@ body{
     display: inline-block;
 }
 
+.section-status .section-status-line{
+    width: 100px;
+    border: 2px solid #e1e1e1;
+    margin-left: -4px;
+    margin-right: -20px;
+    display: inline-block;
+}
+
+.section-space{
+    width: 100px;
+    border: 2px solid transparent;
+    margin-left: -4px;
+    margin-right: -20px;
+    display: inline-block;
+}
+
 .section-status .section-status-text-check{
     font-size: .9rem;
     color: #e1e1e1;
@@ -906,15 +922,18 @@ body{
 }
 
 @media screen and (min-width: 768px){
-    .section-status .section-status-line{
+    .section-status .section-status-line {
         width: 250px;
     }
 
-    .section-status .section-status-line-checked{
+    .section-status .section-status-line-checked  { 
         width: 250px;
     }
+    .section-space {
+        width: 205px;
+    }
 
-    .section-status .section-status-text-check{
+    .section-status .section-status-text-check {
         padding: 0 auto;
     }
 

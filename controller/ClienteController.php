@@ -67,7 +67,7 @@ class ClienteController{
 
     //FIX ME : NOME DO METODO
     //METODO PARA TRAZER OS DADOS DO CLIENTE 
-    public static function getClienteByEmail($cnpj){
+    public static function getClienteByEmail($doc, $value){
         $generatorConn = new Connection();
 
         //INSTANCIA DA CONEXAO
@@ -76,19 +76,27 @@ class ClienteController{
         //QUERY
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
-        $result = $conn->query("SELECT * FROM cliente WHERE cnpj='".$cnpj."'");
+        $result = $conn->query("SELECT * FROM cliente WHERE $doc='".$value."'");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{
+            
             $count = $result->rowCount();
             if( $count >0){
                 return self::parseCliente($result)[0];
             }else{
                 return null;
             }   
-        }catch(Exception $e){
+        } catch (PDOException $e) {
+            
+            //echo $doc ;
+            //echo $value ;
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
             return null;
         }
+    
+       
+    
     }
 
 
@@ -104,6 +112,58 @@ class ClienteController{
 
         //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
         $result = $conn->query("SELECT * FROM cliente WHERE id=".$id."");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result)[0];
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
+
+    //FIX ME : NOME DO METODO
+    //METODO PARA TRAZER OS DADOS DO CLIENTE JURIDICA
+    public static function getClienteByJuridicaId($id){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT * FROM cliente WHERE id=".$id." AND cpf is null");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result)[0];
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
+
+    //FIX ME : NOME DO METODO
+    //METODO PARA TRAZER OS DADOS DO CLIENTE FISICA
+    public static function getClienteByFisicaId($id){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT * FROM cliente WHERE id=".$id." AND cnpj is null");
         
         //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
         try{
@@ -145,12 +205,157 @@ class ClienteController{
     }
 
 
+    //GET CLIENTES PESSOA FISICA
+    public static function getClientesPessoaFisica(){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+        try{
+            //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+            $result = $conn->query("SELECT * FROM cliente WHERE cnpj is null ;");
+            
+            //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result);
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
+
+     //GET CLIENTES PESSOA JURICA
+     public static function getClientesPessoaJuridica(){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        //QUERY
+
+        //FIX ME : E NESCESSARIO FAZER O BINDING PELO PDO OU QUALQUER COISA QUE FAÇA O ESCAPE
+        $result = $conn->query("SELECT * FROM cliente WHERE cpf is null ;");
+        
+        //FIX PARA PROTEGER A CONSULTA RESPONSAVEL PELA AUTENTICACAO
+        try{
+            $count = $result->rowCount();
+            if( $count >0){
+                return self::parseCliente($result);
+            }else{
+                return null;
+            }   
+        }catch(Exception $e){
+            return null;
+        }
+    }
+
+
+    //DELETE CLIENTE
+    public static function deleteCliente($id){
+        $generatorConn = new Connection();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+
+        try{
+            $result = $conn->query("DELETE FROM cliente WHERE id=$id;");
+            $count = $result->rowCount();
+            return $count;
+        }catch(Exception $e){
+            return $e;
+        }
+    }
+
+
+    //UPDATE
+    public static function updateCliente($cliente,$isJuridica){
+        $generatorConn = new Connection();
+
+        $id = $cliente->getId();
+        $nome = $cliente->getNome();
+        $cpf =  $cliente->getCpf();
+        $cnpj = $cliente->getCnpj();
+        $tel = $cliente->getTel();
+        $celular =  $cliente->getCelular();
+        $email =  $cliente->getEmail();
+        $senha =  $cliente->getSenha();
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+        try{
+            $insert = $conn->prepare("UPDATE cliente SET nome =  :nome , tel = :tel ,celular = :celular , cpf = :cpf, cnpj = :cnpj, email = :email , senha = :senha WHERE id = :id;");
+
+            $insert->bindValue(":id",$id);
+            $insert->bindValue(":nome",$nome);
+            $insert->bindValue(":cpf",$cpf);
+            $insert->bindValue(":cnpj",$cnpj);
+            $insert->bindValue(":tel",$tel);
+            $insert->bindValue(":celular",$celular);
+            $insert->bindValue(":email",$email);
+            $insert->bindValue(":senha",$senha);
+
+            $insert->execute();
+        
+
+            return $insert->rowCount();
+        }catch (PDOException $e) {
+            return $e->getMessage();
+
+        }
+
+    }
+
+    //UPDATE
+    public static function updateClienteSemSenha($cliente,$isJuridica){
+        $generatorConn = new Connection();
+
+        $id = $cliente->getId();
+        $nome = $cliente->getNome();
+        $cpf =  $cliente->getCpf();
+        $cnpj = $cliente->getCnpj();
+        $tel = $cliente->getTel();
+        $celular =  $cliente->getCelular();
+        $email =  $cliente->getEmail();
+
+
+        //INSTANCIA DA CONEXAO
+        $conn = $generatorConn->getConection();
+        try{
+            $insert = $conn->prepare("UPDATE cliente SET nome =  :nome , tel = :tel ,celular = :celular , cpf = :cpf, cnpj = :cnpj, email = :email WHERE id = :id;");
+
+            $insert->bindValue(":id",$id);
+            $insert->bindValue(":nome",$nome);
+            $insert->bindValue(":cpf",$cpf);
+            $insert->bindValue(":cnpj",$cnpj);
+            $insert->bindValue(":tel",$tel);
+            $insert->bindValue(":celular",$celular);
+            $insert->bindValue(":email",$email);
+
+
+            $insert->execute();
+        
+
+            return $insert->rowCount();
+        }catch (PDOException $e) {
+            return $e->getMessage();
+
+        }
+
+    }
+
+
     public static function insertCliente($cliente,$isJuridica){
         $generatorConn = new Connection();
 
         $nome = $cliente->getNome();
         $cpf =  $cliente->getCpf();
-        $cnpj = "111";
+        $cnpj = $cliente->getCnpj();
         $tel = $cliente->getTel();
         $celular =  $cliente->getCelular();
         $email =  $cliente->getEmail();
@@ -194,10 +399,12 @@ class ClienteController{
 
              $newCliente->setId($item['id']);
              $newCliente->setNome($item['nome']);
+             $newCliente->setNome($item['nome']);
              $newCliente->setEmail($item['email']);
              $newCliente->setCnpj($item['cnpj']);
              $newCliente->setCpf($item['cpf']);
              $newCliente->setTel($item['tel']);
+             $newCliente->setSenha($item['senha']);
              $newCliente->setCelular($item['celular']);
 
              array_push($arrayClientes,$newCliente);

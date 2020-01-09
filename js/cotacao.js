@@ -8,20 +8,54 @@
 
 $(document).ready(function(){
 
-
+    //RESETA O FORM
+    $("#formSender").trigger("reset");
+   // $("#km")[0].disabled = true;
 
     //TIRA O SUBMIT DO FORM
     $("#formSender").submit(function(event){
         event.preventDefault();
     });
 
-    $("#km").focus(function(){
+    $("#peso").focus(function(){
+       // CalculaDistancia();
+    });
 
-        CalculaDistancia();
+    $("#km").on("mouseenter",function(){
+       // toastr.info("Quando for preencher o peso a distância será calculada entre as 2 cidades");
+    });
+
+    $("#km").on("mouseleave",function(){
+        toastr.remove();
     });
 
 
     $("#btnEnviar").click(function(){
+
+        //VALIDAÇÃO COMBO
+        if($("#pallet").val() == "0"){
+            toastr.warning("Todos os campos são obrigatórios");
+            $("#pallet").focus();
+            return;
+        }
+
+        if($("#tipoVeiculo").val() == "0"){
+            toastr.warning("Todos os campos são obrigatórios");
+            $("#tipoVeiculo").focus();
+            return;
+        }
+
+        if ($("#formSender input:invalid").length) {
+            toastr.warning("Todos os campos são obrigatórios");
+            $("#tipoVeiculo").focus();
+            return;
+        }
+
+        if($("#obs").val() == ""){
+            toastr.warning("Todos os campos são obrigatórios");
+            $("#obs").focus();
+            return;
+        }
     
          //PEGAR VALORES
          var values = {};
@@ -32,6 +66,7 @@ $(document).ready(function(){
              }
          });
 
+         values["obs"] = $("#obs").val();
          values['pallet'] = $('#pallet').children('option:checked').val();
          values['tipoVeiculo'] = $('#tipoVeiculo').children('option:checked').val();
 

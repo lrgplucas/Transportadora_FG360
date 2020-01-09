@@ -1,0 +1,158 @@
+[22-Apr-2019 12:03:09 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[22-Apr-2019 12:03:09 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[22-Apr-2019 16:10:47 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[22-Apr-2019 16:10:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[22-Apr-2019 16:12:20 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[22-Apr-2019 16:12:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[22-Apr-2019 16:14:53 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[22-Apr-2019 16:14:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 02:00:10 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 02:00:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 12:21:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 12:21:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 12:21:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 12:21:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:18:56 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:18:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:18:56 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:18:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:26:22 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:26:22 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:26:22 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:26:22 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:37:32 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:37:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:37:32 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:37:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:37:49 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:37:49 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:37:53 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:37:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:37:58 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:37:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:03 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:26 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:29 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:34 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:37 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:38:51 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:38:51 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:39:24 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:39:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:39:27 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:39:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:43:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:43:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:43:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:43:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:44:51 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:44:51 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 15:44:51 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 15:44:51 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[23-Apr-2019 20:07:10 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[23-Apr-2019 20:07:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[25-Apr-2019 00:28:25 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 00:30:49 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 01:29:48 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:29:48 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 01:30:22 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:30:35 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:31:30 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:31:31 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 01:34:23 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 01:40:55 UTC] PHP Notice:  Undefined index: tipo in /home/wev4zzcqgc7y/public_html/api/doc/CreateDoc.php on line 13
+[25-Apr-2019 01:41:42 UTC] PHP Notice:  Undefined index: id in /home/wev4zzcqgc7y/public_html/api/doc/DeleteDoc.php on line 6
+[25-Apr-2019 01:41:42 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:42:12 UTC] PHP Notice:  Undefined index: id in /home/wev4zzcqgc7y/public_html/api/doc/DeleteDoc.php on line 6
+[25-Apr-2019 01:42:12 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:42:19 UTC] PHP Notice:  Undefined index: id in /home/wev4zzcqgc7y/public_html/api/doc/DeleteDoc.php on line 6
+[25-Apr-2019 01:42:19 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:42:28 UTC] PHP Notice:  Undefined index: id in /home/wev4zzcqgc7y/public_html/api/doc/DeleteDoc.php on line 6
+[25-Apr-2019 01:42:28 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[25-Apr-2019 01:42:31 UTC] PHP Notice:  Undefined index: id in /home/wev4zzcqgc7y/public_html/api/doc/DeleteDoc.php on line 6
+[25-Apr-2019 01:42:31 UTC] PHP Fatal error:  Call to a member function rowCount() on boolean in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 92
+[26-Apr-2019 19:46:03 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 19:46:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 19:56:29 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 19:56:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 19:56:29 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 19:56:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:00:55 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:00:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:00:55 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:00:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:01:37 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:01:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:01:37 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:01:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:01:47 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:01:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:01:47 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:01:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:02:04 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:02:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[26-Apr-2019 20:02:04 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[26-Apr-2019 20:02:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[01-May-2019 17:29:48 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[01-May-2019 17:29:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[01-May-2019 17:32:44 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[01-May-2019 17:32:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[01-May-2019 17:39:38 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[01-May-2019 17:39:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 141
+[02-May-2019 18:14:11 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 18:14:11 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 18:14:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[02-May-2019 18:14:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[02-May-2019 18:14:24 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 18:14:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[02-May-2019 18:16:38 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 18:16:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[02-May-2019 19:55:23 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 19:55:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[02-May-2019 19:56:37 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[02-May-2019 19:56:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:04:14 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:04:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:06:01 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:06:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:07:05 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:07:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:13:34 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:13:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:13:46 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:13:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:14:08 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:14:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:15:30 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:15:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:15:34 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:15:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:15:41 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:15:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:16:11 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:16:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:16:42 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:16:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:16:54 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:16:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[04-May-2019 01:19:46 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[04-May-2019 01:19:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 149
+[13-May-2019 18:01:08 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[13-May-2019 18:01:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165
+[08-Nov-2019 02:04:26 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[08-Nov-2019 02:04:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165
+[08-Nov-2019 15:29:16 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[08-Nov-2019 15:29:16 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165
+[08-Nov-2019 15:35:43 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[08-Nov-2019 15:35:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165
+[11-Nov-2019 11:57:20 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[11-Nov-2019 11:57:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165
+[08-Jan-2020 21:33:01 UTC] PHP Notice:  Undefined index: id_cli in /home/wev4zzcqgc7y/public_html/api/doc/GetDocByCliente.php on line 19
+[08-Jan-2020 21:33:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/DocController.php on line 165

@@ -1,0 +1,9 @@
+[04-May-2019 12:32:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/MovController.php on line 87
+[04-May-2019 12:32:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/MovController.php on line 87
+[04-May-2019 12:33:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/MovController.php on line 87
+[04-May-2019 12:33:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/wev4zzcqgc7y/public_html/controller/MovController.php on line 87
+[21-May-2019 20:25:13 UTC] PHP Notice:  Undefined index: rg in /home/wev4zzcqgc7y/public_html/api/mov/CreateMov.php on line 14
+[21-May-2019 20:25:13 UTC] PHP Notice:  Undefined index: nomeEntrega in /home/wev4zzcqgc7y/public_html/api/mov/CreateMov.php on line 15
+[05-Jun-2019 03:19:48 UTC] PHP Notice:  Array to string conversion in /home/wev4zzcqgc7y/public_html/api/mov/CreateMov.php on line 41
+[05-Jun-2019 03:22:57 UTC] PHP Notice:  Array to string conversion in /home/wev4zzcqgc7y/public_html/api/mov/CreateMov.php on line 41
+[05-Jun-2019 03:23:23 UTC] PHP Notice:  Array to string conversion in /home/wev4zzcqgc7y/public_html/api/mov/CreateMov.php on line 41

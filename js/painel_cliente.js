@@ -6,9 +6,14 @@
 
 const URL_CREATE_CLIENTE_API = './api/cliente/CreateCliente.php';
 const URL_EMAIL_CADASTRO = './helper/PHPMailer/src/MailCadastro.php';
+const URL_EMAIL_CADASTRO_PESSOA_JURIDICA = './helper/PHPMailer/src/MailCadastroPessoaJurica.php';
+
 
 $(document).ready(function(){
 
+    //RESETA O FORM
+    $("#rdo_fisica")[0].checked = false;
+    $("#rdo_juridica")[0].checked = false;
     $("#formPainelCliente").trigger("reset");
 
     setPessoaJuridicaForm();
@@ -69,7 +74,9 @@ $(document).ready(function(){
                     "doc":doc,
                     "senha":senha 
                 }
-                $.post(URL_EMAIL_CADASTRO,json,function(data){
+
+                var URL_EMAIL_CURRENT = isJuridica ? URL_EMAIL_CADASTRO_PESSOA_JURIDICA : URL_EMAIL_CADASTRO;
+                $.post(URL_EMAIL_CURRENT,json,function(data){
                     setTimeout(function(){location.reload()},3000);
                
                     

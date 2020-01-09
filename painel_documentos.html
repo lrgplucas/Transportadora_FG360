@@ -53,6 +53,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="painel_cliente.html">Cadastro de clientes</a>
                     </li>
+ 		    <li class="nav-item">
+                        <a class="nav-link" href="painel_atualizar_cliente.html">Atualizar clientes</a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="painel_documentos.html">Documentos</a>
                     </li>
@@ -68,7 +71,7 @@
             <div class="row">
                     <div class="col-12">
                         <label for="rdo_novoDoc" class="radio">
-                            <input id="rdo_novoDoc" type="radio" name="documento" value="Novo documento" checked>
+                            <input id="rdo_novoDoc" type="radio" name="documento" value="Novo documento">
                             Novo documento
                         </label>
                         <label for="rdo_attDoc" class="radio">
@@ -86,16 +89,18 @@
                                         </select>  
                                 </div>
                                 <div class="col-12 mt-3" id="divTipo">
-                                    <label for="rdo_fatura" class="radio">
+                                  
                                         <input id="rdo_fatura" type="radio" name="tipoDoc" value="Fatura">
-                                        Fatura
-                                    </label>
-                                    <label for="rdo_cte" class="radio">
+                                        <label for="rdo_fatura" class="radio">
+                                                Fatura
+                                            </label>
+                                        
+                                    
                                         <input id="rdo_cte" type="radio" name="tipoDoc" value="CTE">
-                                        CTE's
-                                    </label>
-                                    <label for="rdo_2via" class="radio">
+                                        <label for="rdo_cte" class="radio">CTE's</label>
+                                   
                                         <input id="rdo_2via" type="radio" name="tipoDoc" value="2Via">
+                                        <label for="rdo_2via" class="radio">
                                         2º via de boletos
                                     </label>
                                 </div>
@@ -107,6 +112,7 @@
                                 <div class="col-12" >
                                     <div class="row upload-doc">
                                         <div class="col-12">
+                                            <p hidden id="path">Arraste seu arquivo aqui</p>
                                             <p class="text-center">Arraste seu arquivo aqui</p>
                                         </div>
                                         <div class="col-12">

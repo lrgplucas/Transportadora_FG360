@@ -8,7 +8,7 @@
 try{
     session_start(); // CARREGA NA SEÇÃO OS VALORES
 
-    if(isset($_SESSION['cnpj'])){
+    if(isset($_SESSION['value'])){
         http_response_code(200);
     }else{
         http_response_code(401);

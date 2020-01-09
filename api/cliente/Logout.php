@@ -6,11 +6,12 @@
 */
 
 try{
-    session_start(); // CARREGA NA SEÇÃO OS VALORES
+    session_start(); 
 
     session_destroy(); 
 
     http_response_code(200);
+
 }catch(Exception $e){
     http_response_code(500);
 }

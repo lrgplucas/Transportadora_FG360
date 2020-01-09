@@ -13,16 +13,24 @@ include_once '../../controller/ClienteController.php'; //CONTROLLER
 //O RETORNO SEMPRE SERA 200
 //FIX ME DESEMPENHO 
 
-$emailInSession = $_SESSION['cnpj'];
+$doc = $_SESSION['doc'];
+$value = $_SESSION['value'];
 
-$returnedCliente = ClienteController::getClienteByEmail($emailInSession);
 
-http_response_code(200);
+try{
 
-//SET O ID NA SESSÃO
-$id = $returnedCliente->getId();
-$_SESSION['id_cli'] = $id;
+    $returnedCliente = ClienteController::getClienteByEmail($doc,$value);
 
-echo json_encode($returnedCliente);
+    //SET O ID NA SESSÃO
+    $id = $returnedCliente->getId();
+    $_SESSION['id_cli'] = $id;
+
+    http_response_code(200);
+    echo json_encode($returnedCliente);
+
+}catch(Exception $e){
+
+    http_response_code(500);
+}
 
 ?>

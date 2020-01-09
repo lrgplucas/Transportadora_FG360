@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lrgp">
+    <meta name="description" content="Transportadora FG 360: O destino certo para o seu produto">
+    <meta name="keywords" content="Transportadora, transporte, produtos, serviços">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font-Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- TOASTR -->
+    <link rel="stylesheet" href="./toastr/build/toastr.css">
+
+    <title>FG360 - Painel Administrativo</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg shadow-sm">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span class="sr-only">Abrir ou fechar menu</span> <span class="toggler-icon-color">&#9776;</span>
+                    </span>
+                </button>
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="imgs/logotipo.png" class="nav-img" alt="Logotipo FG 360">
+                </a>
+                
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="painel_cliente.html">Sou cliente<span class="sr-only">(Página atual)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="painel_rastreamento.html">Rastreamento</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-painel navbar-expand-lg" id="navbarPainel">
+            <div class="container">
+                <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="painel_cliente.html">Cadastro de clientes</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="painel_atualizar_cliente.html">Atualizar clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="painel_documentos.html">Documentos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="content-painel">
+        <div class="container">
+            <h1 class="content-painel-title">Atualizar clientes</h1>
+            <p class="content-painel-text">Preencha os campos abaixo para <b>atualizar</b> um cliente já cadastrado no site</p>
+            <div class="row">
+                    <div class="col-12">
+                        <label for="rdo_fisica" class="radio">
+                            <input id="rdo_fisica" type="radio" name="pessoa" value="Pessoa física">
+                            Pessoa física
+                        </label>
+                        <label for="rdo_juridica" class="radio">
+                            <input id="rdo_juridica" type="radio" name="pessoa" value="Pessoa jurídica" checked>
+                            Pessoa jurídica
+                        </label>
+                    </div>
+                    <div class="col-12">
+                        <form method="POST" class="form-painel" id="formPainelCliente" action="./api/cliente/CreateCliente.php">
+                            <div class="row">
+                                <p hidden id="oldEmail"></p>
+                                <div class="col-12" id=divCliente>
+                                    <label class="form-painel-label" for="cliente">Cliente</label>
+                                    <select id="cliente" class="form-control form-control-custom-secondary">
+                                        <option value="0">Selecione...</option>
+                                    </select>  
+                                </div>
+                                <div class="col-4" id="divCpf">
+                                    <label class="form-painel-label" for="cpf">CPF</label>
+                                    <input id="cpf" type="text" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-4 d-none" id="divCnpj">
+                                    <label class="form-painel-label" for="cnpj">CNPJ</label>
+                                    <input id="cnpj" type="text" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-8" id="divNome">
+                                   
+                                    <label class="form-painel-label" for="nome">Nome</label>
+                                    <input id="nome" type="text" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-8 d-none" id="divRazaoSocial">
+                                    <label class="form-painel-label" for="razaoSocial">Razão social</label>
+                                    <input id="razaoSocial" type="text" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-painel-label" for="telefone">Telefone</label>
+                                    <input id="telefone" type="tel" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-painel-label" for="celular">Celular</label>
+                                    <input id="celular" type="tel" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-painel-label" for="email">E-mail</label>
+                                    <input id="email" type="email" class="form-control form-control-custom-secondary" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-painel-label" for="senha" >Senha</label>
+                                    <input id="senha" type="password" class="form-control form-control-custom-secondary" title="Para a atualização de cadastro de clientes este campo não é obrigatório , embora se quiser alterar a senha basta preencher e atualizar.">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-painel-label" for="confirmaSenha">Confirmar senha</label>
+                                    <input id="confirmaSenha" type="password" class="form-control form-control-custom-secondary" title="Para a atualização de cadastro de clientes este campo não é obrigatório , embora se quiser alterar a senha basta preencher e atualizar.">
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <div class="row justify-content-end mr-1">
+                                        <input type="button" id="btnAtualizar" class="btn btn-custom text-center mt-2 mb-5" value="Atualizar">
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <div class="row justify-content-start ml-1">
+                                        <input type="button" id="btnExcluir" class="btn btn-custom text-center mt-2 mb-5" value="Excluir">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <ul>
+            <li class="footer-copy">&copy; Copyright 2019 FG 360 - <a href="http://www.agencialuzcomunica.com.br/" class="footer-link-luz">Por Luz Comunicação</a></li>
+        </ul>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="./js/dist/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./toastr/toastr.js"></script>
+    <script src="js/conts.js"></script>
+    <script src="js/painel_atualizar_cliente.js"></script>
+</body>
+</html>

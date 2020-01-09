@@ -25,7 +25,7 @@ if($result == 1){
     echo $result;
 
 }else{
-
+    echo $result;
     //SET O HTTP STATUS CODE PARA 400
     http_response_code(500);
 }
